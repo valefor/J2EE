@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+	<wb-module deploy-name="alcapphello">
+		<wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="zkmax.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zkmax.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bsh.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/bsh.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jxl.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/jxl.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jasperreports.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/jasperreports.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jcommon.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/jcommon.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zk.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zk.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zkplus.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zkplus.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="silvertail.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/silvertail.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jfreechart.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/jfreechart.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="itext.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/itext.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="timelinez.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/timelinez.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/commons-logging.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zuljsp.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zuljsp.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="poi.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/poi.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="Filters.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/Filters.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zml.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zml.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zcommon.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zcommon.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zkex.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zkex.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-io.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/commons-io.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zhtml.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zhtml.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="gmapsz.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/gmapsz.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="timeplotz.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/timeplotz.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zkbind.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zkbind.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-collections.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/commons-collections.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-fileupload.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/commons-fileupload.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zel.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zel.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zul.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zul.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zweb.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/zweb.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sapphire.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/sapphire.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="flashchart.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/ehuufei/Desktop/BKUP/zklib/flashchart.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+		<property name="context-root" value="alcapphello"/>
+		<property name="java-output-path" value="/alcapphello/build/classes"/>
+	</wb-module>
+</project-modules>
