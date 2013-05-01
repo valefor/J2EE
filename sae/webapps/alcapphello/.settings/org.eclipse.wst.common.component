@@ -1,96 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
 	<wb-module deploy-name="alcapphello">
-		<wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
-		<wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="commons-collections.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/commons-collections.jar">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="zul.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zul.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="zkplus.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zkplus.jar">
+        <dependent-module archiveName="zcommon.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zcommon.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="timelinez.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/timelinez.jar">
+        <dependent-module archiveName="zk.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zk.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="gmapsz.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/gmapsz.jar">
+        <dependent-module archiveName="commons-io.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/commons-io.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="zkbind.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zkbind.jar">
+        <dependent-module archiveName="flashchart.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/flashchart.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="zcommon.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zcommon.jar">
+        <dependent-module archiveName="zhtml.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zhtml.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sapphire.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/sapphire.jar">
+        <dependent-module archiveName="commons-fileupload.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/commons-fileupload.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="zkex.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zkex.jar">
+        <dependent-module archiveName="zkbind.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zkbind.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="Filters.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/Filters.jar">
+        <dependent-module archiveName="zel.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zel.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="jfreechart.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/jfreechart.jar">
+        <dependent-module archiveName="sapphire.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/sapphire.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="silvertail.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/silvertail.jar">
+        <dependent-module archiveName="bsh.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/bsh.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="zkmax.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zkmax.jar">
+        <dependent-module archiveName="silvertail.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/silvertail.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="jcommon.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/jcommon.jar">
+        <dependent-module archiveName="zkplus.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zkplus.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="zel.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zel.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="bsh.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/bsh.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zml.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zml.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="commons-fileupload.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/commons-fileupload.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="jasperreports.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/jasperreports.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="commons-io.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/commons-io.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="itext.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/itext.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="poi.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/poi.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="commons-logging.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/commons-logging.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="jxl.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/jxl.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zk.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zk.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="timeplotz.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/timeplotz.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zul.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zul.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zweb.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zweb.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zhtml.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zhtml.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="flashchart.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/flashchart.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zuljsp.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkee-bin-eval-6.5.2/WebContent/WEB-INF/lib/zuljsp.jar">
+        <dependent-module archiveName="zweb.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zweb.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
 		<property name="context-root" value="alcapphello"/>
