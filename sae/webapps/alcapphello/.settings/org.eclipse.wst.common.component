@@ -1,50 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
 	<wb-module deploy-name="alcapphello">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module archiveName="zul.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zul.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zcommon.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zcommon.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zk.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zk.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="commons-io.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/commons-io.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="flashchart.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/flashchart.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zhtml.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zhtml.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="commons-fileupload.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/commons-fileupload.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zkbind.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zkbind.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zel.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zel.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="sapphire.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/sapphire.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="bsh.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/bsh.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="silvertail.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/silvertail.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zkplus.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zkplus.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="zweb.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/ZKs/ZKReleases/zkce-bin-6.5.2/WebContent/WEB-INF/lib/zweb.jar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
 		<property name="context-root" value="alcapphello"/>
 		<property name="java-output-path" value="/alcapphello/build/classes"/>
 	</wb-module>
