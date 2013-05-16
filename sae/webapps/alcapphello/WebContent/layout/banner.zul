@@ -1,0 +1,13 @@
+<div hflex="1" vflex="1" sclass="banner">
+	<hbox hflex="1" vflex="1" align="center">
+		<a href="/index.zul">
+			<image src="/images/logo.png" />
+		</a>
+		<div width="400px">
+			<label value="${labels.app.welcomeForum}" sclass="banner-head" />
+		</div>
+		<hbox hflex="1" vflex="1" pack="end" align="end">
+			Anonymous
+		</hbox>
+	</hbox>
+</div>

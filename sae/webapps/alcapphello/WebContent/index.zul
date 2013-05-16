@@ -1,6 +1,5 @@
-<?page title="Hello World"?>
-<window title="你好!!" border="normal" width="200px">
-
-	<label value="屌丝们。。。" />
-
-</window>
+<?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<zk>
+	<include id="mainInclude" self="@define(content)" src="/registration.zul"/>
+</zk>

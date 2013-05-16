@@ -1,0 +1,12 @@
+<zk>
+	<borderlayout>
+		<north height="100px" border="none">
+			<include src="/layout/banner.zul"/>
+		</north>
+		<center id="mainContent" autoscroll="true" border="none" self="@insert(content)">
+		</center>
+		<west border="none" width="100px" flex="true" maxsize="200" splittable="true" collapsible="true">
+			<include src="/layout/sidebar.zul"/>
+		</west>
+	</borderlayout>
+</zk>

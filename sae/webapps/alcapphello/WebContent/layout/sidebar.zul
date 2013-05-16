@@ -1,0 +1,13 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<grid hflex="1" vflex="1" sclass="sidebar" id="fnList" apply="org.alc.hello.SidebarController">
+	<auxhead>
+		<auxheader label="${labels.app.sidebarTitle}" colspan="2"/>
+	</auxhead>
+	<columns>
+		<column width="36px"/>
+		<column/>
+	</columns>
+	<rows />
+</grid>
+</zk>
