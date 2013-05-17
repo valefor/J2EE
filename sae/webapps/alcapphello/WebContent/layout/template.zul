@@ -5,8 +5,10 @@
 		</north>
 		<center id="mainContent" autoscroll="true" border="none" self="@insert(content)">
 		</center>
-		<west border="none" width="100px" flex="true" maxsize="200" splittable="true" collapsible="true">
+		<west border="none" width="200px" flex="true" maxsize="200" splittable="true" collapsible="true" title="${labels.app.sidebarTitle}">
 			<include src="/layout/sidebar.zul"/>
 		</west>
+		<east border="normal" width="100px"  flex="true" splittable="false" collapsible="true" title="${labels.app.toolbarTitle}">
+		</east>
 	</borderlayout>
 </zk>

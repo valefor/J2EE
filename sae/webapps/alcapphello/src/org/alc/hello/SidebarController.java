@@ -52,12 +52,13 @@ public class SidebarController extends SelectorComposer<Component> {
 		row.appendChild(img);
 		row.appendChild(lab);
 		
-		System.out.println(row);
-		System.out.println(img);
-		System.out.println(lab);
-		System.out.println(name);
-		System.out.println(label);
-		System.out.println(iconUri);
+		row.setSclass("sidebar-fn");
+//		System.out.println(row);
+//		System.out.println(img);
+//		System.out.println(lab);
+//		System.out.println(name);
+//		System.out.println(label);
+//		System.out.println(iconUri);
 		
 		EventListener<Event> onActionListener = new SerializableEventListener<Event>(){
             private static final long serialVersionUID = 1L;

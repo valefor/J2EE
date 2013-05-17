@@ -15,7 +15,11 @@
 .banner .logout{
 	text-decoration: underline;
 	cursor: pointer;
-} 
+}
+
+.sidebar-fn{
+	cursor: pointer;
+}
 
 .footer {
 	background-color:#102d35;
