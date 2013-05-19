@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2013/5/16 0:36:12                            */
+/* Created on:     2013/5/19 22:03:34                           */
 /*==============================================================*/
 
 
@@ -19,13 +19,13 @@ drop table if exists User;
 /*==============================================================*/
 create table Reply
 (
-   RID                  int not null auto_increment,
-   UID                  int not null,
-   SID                  int not null,
-   TID                  int not null,
-   RContent             text,
-   RTime                datetime,
-   primary key (RID)
+   id                   int not null auto_increment,
+   userId               int not null,
+   sectionId            int not null,
+   topicId              int not null,
+   content              text,
+   time                 datetime,
+   primary key (id)
 );
 
 /*==============================================================*/
@@ -33,13 +33,13 @@ create table Reply
 /*==============================================================*/
 create table Section
 (
-   SID                  int not null auto_increment,
-   SName                varchar(20) not null,
-   SProfile             varchar(200),
-   SStatement           varchar(200),
-   STopicCount          int,
-   SClickCount          int,
-   primary key (SID)
+   id                   int not null auto_increment,
+   name                 varchar(20) not null,
+   profile              varchar(200),
+   statement            varchar(200),
+   topicCount           int,
+   clickCount           int,
+   primary key (id)
 );
 
 /*==============================================================*/
@@ -47,9 +47,9 @@ create table Section
 /*==============================================================*/
 create table Section_Master
 (
-   UID                  int not null,
-   SID                  int not null,
-   primary key (UID, SID)
+   id                   int not null,
+   sectionId            int not null,
+   primary key (id, sectionId)
 );
 
 /*==============================================================*/
@@ -57,19 +57,19 @@ create table Section_Master
 /*==============================================================*/
 create table Topic
 (
-   TID                  int not null auto_increment,
-   SID                  int not null,
-   UID                  int not null,
-   TReplyCount          int,
-   TFace                varchar(100),
-   TTitle               varchar(100),
-   TContent             text,
-   TPostTime            datetime,
-   TLastUpdateTime      datetime,
-   TClickCount          int,
-   TStatus              int,
-   TLastReplayTime      datetime,
-   primary key (TID)
+   id                   int not null auto_increment,
+   sectionId            int not null,
+   userId               int not null,
+   replyCount           int,
+   face                 varchar(100),
+   title                varchar(100),
+   content              text,
+   postTime             datetime,
+   lastUpdateTime       datetime,
+   clickCount           int,
+   status               int,
+   lastReplayTime       datetime,
+   primary key (id)
 );
 
 /*==============================================================*/
@@ -77,39 +77,39 @@ create table Topic
 /*==============================================================*/
 create table User
 (
-   UID                  int not null auto_increment,
-   UName                varchar(255) not null,
-   UPassword            varchar(100) not null,
-   UEmail               varchar(100) not null,
-   UBirthday            datetime,
-   USex                 int,
-   UAvatar              longblob,
-   URemark              varchar(100),
-   URegDate             datetime,
-   UStatus              int,
-   UPoint               int,
-   UIsSectioner         int,
-   primary key (UID)
+   id                   int not null auto_increment,
+   name                 varchar(255) not null,
+   password             varchar(100) not null,
+   email                varchar(100) not null,
+   birthday             datetime,
+   sex                  int,
+   avatar               longblob,
+   remark               varchar(100),
+   regDate              datetime,
+   status               int,
+   point                int,
+   isSectioner          int,
+   primary key (id)
 );
 
-alter table Reply add constraint FK_Section_Reply foreign key (SID)
-      references Section (SID) on delete restrict on update restrict;
+alter table Reply add constraint FK_Section_Reply foreign key (sectionId)
+      references Section (id) on delete restrict on update restrict;
 
-alter table Reply add constraint FK_Topic_Reply foreign key (TID)
-      references Topic (TID) on delete restrict on update restrict;
+alter table Reply add constraint FK_Topic_Reply foreign key (topicId)
+      references Topic (id) on delete restrict on update restrict;
 
-alter table Reply add constraint FK_User_Reply foreign key (UID)
-      references User (UID) on delete restrict on update restrict;
+alter table Reply add constraint FK_User_Reply foreign key (userId)
+      references User (id) on delete restrict on update restrict;
 
-alter table Section_Master add constraint FK_Section_Master foreign key (UID)
-      references User (UID) on delete restrict on update restrict;
+alter table Section_Master add constraint FK_sectionId foreign key (id)
+      references User (id) on delete restrict on update restrict;
 
-alter table Section_Master add constraint FK_Section_Master2 foreign key (SID)
-      references Section (SID) on delete restrict on update restrict;
+alter table Section_Master add constraint FK_userId foreign key (sectionId)
+      references Section (id) on delete restrict on update restrict;
 
-alter table Topic add constraint FK_Section_Topic foreign key (SID)
-      references Section (SID) on delete restrict on update restrict;
+alter table Topic add constraint FK_Section_Topic foreign key (sectionId)
+      references Section (id) on delete restrict on update restrict;
 
-alter table Topic add constraint FK_User_Topic foreign key (UID)
-      references User (UID) on delete restrict on update restrict;
+alter table Topic add constraint FK_User_Topic foreign key (userId)
+      references User (id) on delete restrict on update restrict;
 

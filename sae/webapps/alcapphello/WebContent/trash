@@ -1,0 +1,22 @@
+ 	<!-- Database 
+ 	<bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+ 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+ 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/forum" />
+        <property name="user" value="root" />
+        <property name="password" value="111111" />
+ 	</bean>
+ 	-->
+ 	
+ 	<!-- JPA -->
+ 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- set other Hibernate properties in hibernate.cfg.xml file -->
+        <property name="configLocation" value="/WEB-INF/hibernate.cfg.xml" />
+    </bean>
+     
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+     
+    <!-- for using annotation @Transaction in DAOs -->
+    <tx:annotation-driven />
