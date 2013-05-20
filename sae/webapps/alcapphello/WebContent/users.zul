@@ -1,24 +1,19 @@
 <?page title="users" contentType="text/html;charset=UTF-8"?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
- <zscript><![CDATA[
-     import org.alc.dao.*;
-     import org.alc.model.*;
-
-     //fetch all allEvents from database
-     List users = (new UserDao()).queryAll();
- ]]></zscript>
-<window title="users" border="normal">
-	<listbox>
+<window title="" border="normal" apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('org.alc.viewModel.UserViewModel')">
+	<listbox model="@load(vm.users)" selectedItem="@bind('vm.selectedItem')" rows="10">
 		<listhead>
 			<listheader label="${labels.app.username}" sort="auto" />
 			<listheader label="${labels.app.email}" sort="auto" />
 		</listhead>
-		<listitem forEach="${users}" value="${each}">
-			<listcell label="${each.name }" />
-			<listcell label="${each.email }" />
-		</listitem>
-		
+		<template name="model" var="user">
+			<listitem>
+				<listcell label="@load(user.name)" />
+				<listcell label="@load(user.email)" />
+			</listitem>
+		</template>		
 	</listbox>
 
 </window>

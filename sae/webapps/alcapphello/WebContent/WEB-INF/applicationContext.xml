@@ -15,7 +15,7 @@
  	<!-- Scans for application @Components to deploy -->
     <context:component-scan base-package="org.alc" />
  	<context:property-placeholder  
-    location="classpath:org/alc/database.properties" />
+    location="classpath:org/alc/config/database.properties" />
 
 	<!-- Database -->
  	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  

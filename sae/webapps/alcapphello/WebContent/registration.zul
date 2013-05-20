@@ -2,7 +2,7 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
 <zk>
-<window title="${labels.app.welcome}!" border="normal" width="400px" apply="org.alc.hello.RegistrationComposer">
+<window title="${labels.app.welcome}!" border="normal" width="400px" apply="org.alc.composer.RegistrationComposer">
 	<grid hflex="1">
 		<auxhead>
 			<auxheader label="${labels.app.registration}" colspan="2" style="font-size:16px;" image="images/form.png"/>

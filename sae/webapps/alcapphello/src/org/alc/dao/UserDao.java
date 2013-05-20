@@ -2,7 +2,8 @@ package org.alc.dao;
 
 import java.util.List;
 
-import org.alc.model.*;
+import org.alc.entity.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -15,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserDao {
 	
 	@PersistenceContext
-	private EntityManager em;
+	public EntityManager em;
 	
 	@Transactional(readOnly=true)
-	public List<User> queryAll() {
+	public List<User> findAll() {
 		Query query = em.createQuery("from User as o");
 		List<User> result = query.getResultList();
 		return result;
