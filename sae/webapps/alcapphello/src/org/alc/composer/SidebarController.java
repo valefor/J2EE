@@ -2,6 +2,7 @@ package org.alc.composer;
 
 import org.alc.services.SidebarPage;
 import org.alc.services.SidebarPageConfig;
+import org.alc.services.impl.SidebarPageConfigImpl;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;

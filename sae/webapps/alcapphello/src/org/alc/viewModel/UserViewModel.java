@@ -32,4 +32,11 @@ public class UserViewModel {
 	public void setSelectedItem(User selectedItem) {
 		this.selectedItem = selectedItem;
 	}
+	
+	public User getSelectedItem() {
+		if (selectedItem!=null) {
+			selectedItem = userDao.reload(selectedItem);
+		}
+		return selectedItem;
+	}
 }

@@ -15,11 +15,11 @@
 			</row>
 			<row>
 				<label value="${labels.app.password}" />
-				<textbox id="pwdBox" hflex="1" constraint="no empty:${labels.err.noEmpty}"/>	
+				<textbox id="pwdBox" hflex="1" constraint="no empty:${labels.err.noEmpty}" type="password"/>	
 			</row>
 			<row>
 				<label value="${labels.app.confirmPassword}" />
-				<textbox id="cfmPwdBox" hflex="1" constraint="no empty:${labels.err.noEmpty}"/>	
+				<textbox id="cfmPwdBox" hflex="1" constraint="no empty:${labels.err.noEmpty}" type="password"/>	
 			</row>
 			<row>
 				<label value="${labels.app.email}" />

@@ -31,4 +31,16 @@ public class UserDao {
 		em.flush();
 		return newUser;
 	}
+	
+	@Transactional
+	public User reload(User user) {
+		return em.find(User.class, user.getId());
+	}
+	
+	@Transactional
+	public boolean isUserExist(String name) {
+		Query query = em.createQuery("select x from User x where x.name = '" +name+ "' ");
+		List<User> result = query.getResultList();
+		return (result.isEmpty())?false:true;
+	}
 }

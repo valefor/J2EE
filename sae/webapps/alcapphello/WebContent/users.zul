@@ -3,7 +3,7 @@
 <zk>
 <window title="" border="normal" apply="org.zkoss.bind.BindComposer"
 	viewModel="@id('vm') @init('org.alc.viewModel.UserViewModel')">
-	<listbox model="@load(vm.users)" selectedItem="@bind('vm.selectedItem')" rows="10">
+	<listbox model="@load(vm.users)" selectedItem="@bind(vm.selectedItem)" rows="10">
 		<listhead>
 			<listheader label="${labels.app.username}" sort="auto" />
 			<listheader label="${labels.app.email}" sort="auto" />
