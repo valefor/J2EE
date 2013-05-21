@@ -7,8 +7,13 @@ import java.util.Map;
 
 import org.alc.services.SidebarPage;
 import org.alc.services.SidebarPageConfig;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Service;
 import org.zkoss.util.resource.Labels;
 
+@Service("sidebarPageConfig")
+@Scope(value="singleton",proxyMode=ScopedProxyMode.TARGET_CLASS)
 public class SidebarPageConfigImpl implements SidebarPageConfig {
 
 	HashMap<String,SidebarPage> pageMap = new HashMap<String,SidebarPage>();
