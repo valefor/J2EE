@@ -26,7 +26,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>2.3</version>
         <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
+          <warSourceDirectory>${webAppRoot}</warSourceDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
       </plugin>
@@ -128,5 +128,38 @@
   	<zk.version>6.5.2</zk.version>
   	<springsecurity.version>3.1.4.RELEASE</springsecurity.version>
   	<springcommon.version>3.2.2.RELEASE</springcommon.version>
+  	<webAppRoot>WebContent</webAppRoot>
   </properties>
+  <profiles>
+  	<profile>
+  	  <id>dev</id>
+  	  <build>
+	  	<resources>
+	      <resource>
+	    	<targetPath>org/alc/config</targetPath>
+	    	<filtering>false</filtering>
+	    	<directory>${basedir}/src/org/alc/resource/dev</directory>
+	    	<includes>
+	    	  <include>database.properties</include>
+	    	</includes>
+	      </resource>
+	    </resources>  	  	  
+  	  </build>  		
+  	</profile>
+  	<profile>
+  	  <id>deploy</id>
+  	  <build>
+	  	<resources>
+	      <resource>
+	    	<targetPath>org/alc/config</targetPath>
+	    	<filtering>false</filtering>
+	    	<directory>${basedir}/src/org/alc/resource/deploy</directory>
+	    	<includes>
+	    	  <include>database.properties</include>
+	    	</includes>
+	      </resource>
+	    </resources>  	  	  
+  	  </build>  		
+  	</profile>
+  </profiles>
 </project>
