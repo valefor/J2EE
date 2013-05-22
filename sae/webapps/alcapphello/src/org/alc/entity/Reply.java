@@ -17,7 +17,6 @@ public class Reply implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	@Lob
 	private String content;
 
 	@Temporal(TemporalType.TIMESTAMP)

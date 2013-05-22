@@ -31,13 +31,22 @@ public class Section implements Serializable {
 	@OneToMany(mappedBy="section")
 	private Set<Reply> replies;
 
+	//bi-directional many-to-many association to User
+	@ManyToMany
+	@JoinTable(
+		name="section_master"
+		, joinColumns={
+			@JoinColumn(name="sectionId")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="id")
+			}
+		)
+	private Set<User> users;
+
 	//bi-directional many-to-one association to Topic
 	@OneToMany(mappedBy="section")
 	private Set<Topic> topics;
-
-	//bi-directional many-to-many association to User
-	@ManyToMany(mappedBy="sections")
-	private Set<User> users;
 
 	public Section() {
 	}
@@ -112,6 +121,14 @@ public class Section implements Serializable {
 		return reply;
 	}
 
+	public Set<User> getUsers() {
+		return this.users;
+	}
+
+	public void setUsers(Set<User> users) {
+		this.users = users;
+	}
+
 	public Set<Topic> getTopics() {
 		return this.topics;
 	}
@@ -132,14 +149,6 @@ public class Section implements Serializable {
 		topic.setSection(null);
 
 		return topic;
-	}
-
-	public Set<User> getUsers() {
-		return this.users;
-	}
-
-	public void setUsers(Set<User> users) {
-		this.users = users;
 	}
 
 }

@@ -20,7 +20,6 @@ public class Topic implements Serializable {
 
 	private int clickCount;
 
-	@Lob
 	private String content;
 
 	private String face;

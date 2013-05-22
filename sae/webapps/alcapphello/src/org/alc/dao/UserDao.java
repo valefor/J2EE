@@ -24,6 +24,16 @@ public class UserDao {
 		List<User> result = query.getResultList();
 		return result;
 	}
+	
+	@Transactional(readOnly=true)
+	public User findByName(String userName) {
+		Query query = em.createQuery("select x from User x where x.name = '" +userName+ "' ");
+		List<User> result = query.getResultList();
+		if (!result.isEmpty()) {
+			return result.get(0);
+		}
+		return null;
+	}
 
 	@Transactional
 	public User save(User newUser) {
@@ -39,8 +49,6 @@ public class UserDao {
 	
 	@Transactional
 	public boolean isUserExist(String name) {
-		Query query = em.createQuery("select x from User x where x.name = '" +name+ "' ");
-		List<User> result = query.getResultList();
-		return (result.isEmpty())?false:true;
+		return (findByName(name) == null)?false:true;
 	}
 }

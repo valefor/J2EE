@@ -18,8 +18,7 @@ public class User implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	@Lob
-	private byte[] avatar;
+	private String avatar;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date birthday;
@@ -47,22 +46,26 @@ public class User implements Serializable {
 	@OneToMany(mappedBy="user")
 	private Set<Reply> replies;
 
+	//bi-directional many-to-many association to Section
+	@ManyToMany(mappedBy="users")
+	private Set<Section> sections;
+
 	//bi-directional many-to-one association to Topic
 	@OneToMany(mappedBy="user")
 	private Set<Topic> topics;
 
-	//bi-directional many-to-many association to Section
+	//bi-directional many-to-many association to Authority
 	@ManyToMany
 	@JoinTable(
-		name="section_master"
+		name="user_role"
 		, joinColumns={
 			@JoinColumn(name="id")
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="sectionId")
+			@JoinColumn(name="role")
 			}
 		)
-	private Set<Section> sections;
+	private Set<Authority> authorities;
 
 	public User() {
 	}
@@ -75,11 +78,11 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public byte[] getAvatar() {
+	public String getAvatar() {
 		return this.avatar;
 	}
 
-	public void setAvatar(byte[] avatar) {
+	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
 
@@ -185,6 +188,14 @@ public class User implements Serializable {
 		return reply;
 	}
 
+	public Set<Section> getSections() {
+		return this.sections;
+	}
+
+	public void setSections(Set<Section> sections) {
+		this.sections = sections;
+	}
+
 	public Set<Topic> getTopics() {
 		return this.topics;
 	}
@@ -207,12 +218,12 @@ public class User implements Serializable {
 		return topic;
 	}
 
-	public Set<Section> getSections() {
-		return this.sections;
+	public Set<Authority> getAuthorities() {
+		return this.authorities;
 	}
 
-	public void setSections(Set<Section> sections) {
-		this.sections = sections;
+	public void setAuthorities(Set<Authority> authorities) {
+		this.authorities = authorities;
 	}
 
 }
