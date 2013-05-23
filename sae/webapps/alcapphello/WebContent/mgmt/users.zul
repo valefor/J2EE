@@ -1,0 +1,20 @@
+<?page title="users" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="" border="normal" apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init('org.alc.viewModel.UserViewModel')">
+	<listbox model="@load(vm.users)" selectedItem="@bind(vm.selectedItem)" rows="10">
+		<listhead>
+			<listheader label="${labels.app.username}" sort="auto" />
+			<listheader label="${labels.app.email}" sort="auto" />
+		</listhead>
+		<template name="model" var="user">
+			<listitem>
+				<listcell label="@load(user.name)" />
+				<listcell label="@load(user.email)" />
+			</listitem>
+		</template>		
+	</listbox>
+
+</window>
+</zk>

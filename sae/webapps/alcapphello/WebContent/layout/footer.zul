@@ -1,6 +1,5 @@
-<?page title="new page title" contentType="text/html;charset=UTF-8"?>
-<zk>
-<window title="new page title" border="normal">
-New Content Here!
-</window>
-</zk>
+<div hflex="1" vflex="1" sclass="footer">
+	<vbox hflex="1" vflex="1" align="center">
+		Powered By Adrian.F.Tepes(adrian.f.tepes@hotmail.com)
+	</vbox>
+</div>

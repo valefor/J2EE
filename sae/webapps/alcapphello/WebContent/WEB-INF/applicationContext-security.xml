@@ -14,16 +14,18 @@
         <!-- ZK AU reqeust -->
         <intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <!-- the login page -->
-        <intercept-url pattern="/login.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+<!--         <intercept-url pattern="/login.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" /> -->
         <!-- pages for anonymous access in an application -->
         <intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-        <intercept-url pattern="/articleContent.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/styles/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <!-- secure pages -->
-        <intercept-url pattern="/**" access="ROLE_USER" />
+        <intercept-url pattern="/**" access="ROLE_ROOT,ROLE_ADMIN,ROLE_SUPER,ROLE_USER" />
          
-        <form-login login-page="/login.zul"
-            authentication-failure-url="/login.zul?login_error=1"
-            login-processing-url="/j_spring_security_check"/>
+        <form-login login-page="/public/login.zul"
+            authentication-failure-url="/public/login.zul?login_error=1"
+            login-processing-url="/public/j_spring_security_check"/>
              
         <logout logout-success-url="/index.zul" invalidate-session="true" />
     </http>  

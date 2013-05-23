@@ -1,7 +1,7 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
-<grid hflex="1" vflex="1" sclass="sidebar" id="fnList" apply="org.alc.composer.SidebarController">
+<grid hflex="1" vflex="1" sclass="sidebar" id="fnList" apply="org.alc.controller.SidebarController">
 	<columns>
 		<column width="36px"/>
 		<column/>

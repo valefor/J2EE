@@ -1,5 +1,5 @@
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
-<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template_anonymous.zul"?>
 <zk>
-	<include id="mainInclude" self="@define(content)" src="/registration.zul"/>
+	<include id="mainInclude" self="@define(content)" src="/public/hello.zul"/>
 </zk>

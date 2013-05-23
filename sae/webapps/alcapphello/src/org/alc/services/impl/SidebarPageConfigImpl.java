@@ -20,9 +20,9 @@ public class SidebarPageConfigImpl implements SidebarPageConfig {
 	
 	public SidebarPageConfigImpl() {
 //		pageMap.put("reg", new SidebarPage("fn1","New User Registration","","/registration.zul"));
-		pageMap.put("hello", new SidebarPage("fn1",Labels.getLabel("app.welcome"),"","/hello.zul"));
-		pageMap.put("reg", new SidebarPage("fn2",Labels.getLabel("app.registration"),"","/registration.zul"));
-		pageMap.put("user", new SidebarPage("fn3",Labels.getLabel("app.userList"),"","/users.zul"));
+		pageMap.put("hello", new SidebarPage("fn1",Labels.getLabel("app.welcome"),"","/public/hello.zul"));
+		pageMap.put("reg", new SidebarPage("fn2",Labels.getLabel("app.registration"),"","/public/registration.zul"));
+		pageMap.put("user", new SidebarPage("fn3",Labels.getLabel("app.userList"),"","/mgmt/users.zul"));
 	}
 
 	@Override

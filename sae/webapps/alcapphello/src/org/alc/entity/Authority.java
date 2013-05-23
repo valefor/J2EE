@@ -45,7 +45,7 @@ public class Authority implements GrantedAuthority,Serializable {
 
 	@Override
 	public String getAuthority() {
-		// TODO Auto-generated method stub
+		System.out.println(getRole());
 		return getRole();
 	}
 

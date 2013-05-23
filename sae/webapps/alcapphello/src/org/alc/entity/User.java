@@ -55,7 +55,7 @@ public class User implements Serializable {
 	private Set<Topic> topics;
 
 	//bi-directional many-to-many association to Authority
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(
 		name="user_role"
 		, joinColumns={
