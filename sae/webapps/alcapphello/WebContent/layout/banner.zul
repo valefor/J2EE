@@ -1,7 +1,7 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <div hflex="1" vflex="1" sclass="banner">
 	<hbox apply="org.alc.controller.LogoutController" hflex="1" vflex="1" align="center" >
-		<a href="/index.zul">
+		<a href="/forum/index.zul">
 			<image src="/images/logo.png" />
 		</a>
 		<div width="400px">
