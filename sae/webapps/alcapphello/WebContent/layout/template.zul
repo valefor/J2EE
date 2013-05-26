@@ -1,7 +1,9 @@
 <zk>
 	<borderlayout>
-		<north height="100px" border="none">
-			<include src="/layout/banner.zul"/>
+		<north height="80px" border="none">
+			<div align="center">
+				<include src="/layout/banner.zul"/>
+			</div>
 		</north>
 		<center id="mainContent" autoscroll="true" border="none" self="@insert(content)">
 		</center>
@@ -10,5 +12,8 @@
 		</west>
 		<east border="normal" width="100px"  flex="true" splittable="false" collapsible="true" title="${labels.app.toolbarTitle}">
 		</east>
+		<south height="50px" border="none">
+			<include src="/layout/footer.zul"/>		
+		</south>
 	</borderlayout>
 </zk>
