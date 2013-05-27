@@ -5,8 +5,12 @@ import org.alc.util.SecurityUtil;
 import org.alc.util.ZkEventHandlerUtil;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.Page;
 import org.zkoss.zk.ui.WrongValueException;
+import org.zkoss.zk.ui.metainfo.ComponentInfo;
 import org.zkoss.zk.ui.select.SelectorComposer;
+import org.zkoss.zk.ui.select.Selectors;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -38,14 +42,26 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Wire
 	private Checkbox acceptTermBox;
 	
-	@Override
+/*	@Override
 	public void doBeforeComposeChildren(Component comp) throws Exception {
 		if (!SecurityUtil.isAnonymous()) {
 			Messagebox.show("You are a login user, can not do registration for another new account!", 
 					"Warning", new Messagebox.Button[] {Messagebox.Button.OK}, 
 					Messagebox.ERROR, ZkEventHandlerUtil.createMessageBoxActionListener("/",""));
 		}
+		if (!SecurityUtil.isAnonymous()) {
+			Executions.getCurrent().sendRedirect("/");
+		}
 	}
+	
+	@Override
+	public ComponentInfo doBeforeCompose(Page page, Component parent,
+	ComponentInfo compInfo) {
+		if (!SecurityUtil.isAnonymous()) {
+			Executions.getCurrent().sendRedirect("/");
+		}
+		return super.doBeforeCompose(page, parent, compInfo);
+	}*/
 	
 	@Listen("onCheck = #acceptTermBox")
 	public void changeSubmitStatus(){
@@ -77,7 +93,7 @@ public class RegistrationController extends SelectorComposer<Component> {
 		}
 	}
 	
-	@Listen("OnClick = #submitButton")
+	@Listen("onClick = #submitButton")
 	public void submit() {
 		
 	}

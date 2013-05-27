@@ -28,6 +28,7 @@
 	    <property name="initialPoolSize" value="${c3p0.initialPoolSize}" />  
 	</bean>
  	
+ 	<!-- Use Hibernate JPA Implementation -->
  	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">  
 	    <property name="dataSource" ref="dataSource" />
 	    <property name="persistenceUnitName" value="forum"/>  
@@ -64,6 +65,7 @@
 	  
 	<tx:annotation-driven/> 
 
+	<!-- Spring Security -->
 	<import resource="applicationContext-security.xml"/>
 
 </beans>
