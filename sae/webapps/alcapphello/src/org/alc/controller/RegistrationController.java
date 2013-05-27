@@ -1,6 +1,8 @@
 package org.alc.controller;
 
 import org.alc.dao.UserDao;
+import org.alc.util.SecurityUtil;
+import org.alc.util.ZkEventHandlerUtil;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.WrongValueException;
@@ -11,6 +13,7 @@ import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Checkbox;
+import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Textbox;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
@@ -35,6 +38,15 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Wire
 	private Checkbox acceptTermBox;
 	
+	@Override
+	public void doBeforeComposeChildren(Component comp) throws Exception {
+		if (!SecurityUtil.isAnonymous()) {
+			Messagebox.show("You are a login user, can not do registration for another new account!", 
+					"Warning", new Messagebox.Button[] {Messagebox.Button.OK}, 
+					Messagebox.ERROR, ZkEventHandlerUtil.createMessageBoxActionListener("/",""));
+		}
+	}
+	
 	@Listen("onCheck = #acceptTermBox")
 	public void changeSubmitStatus(){
 		if (acceptTermBox.isChecked()) {
@@ -49,7 +61,7 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Listen("onBlur = #nameBox")
 	public void userNameCheck() {
 		userName.clearErrorMessage();
-		if ( userDao.isUserExist(userName.getText()) ) {
+		if ( !userName.getText().trim().isEmpty() && userDao.isUserExist(userName.getText()) ) {
 			System.out.println(userName.getText());
 			throw new WrongValueException(userName,Labels.getLabel("err.userAlreadyExist"));
 		}
@@ -63,5 +75,10 @@ public class RegistrationController extends SelectorComposer<Component> {
 			System.out.println(password.getText());
 			throw new WrongValueException(cfmPassword,Labels.getLabel("err.passwordMismatch"));
 		}
+	}
+	
+	@Listen("OnClick = #submitButton")
+	public void submit() {
+		
 	}
 }

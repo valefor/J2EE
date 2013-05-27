@@ -1,9 +1,10 @@
 <?page title="${labels.app.welcome}" contentType="text/html;charset=UTF-8"?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template_anonymous.zul"?>
 <zk>
-<window title="${labels.app.welcome}!" border="normal" width="400px" apply="org.alc.controller.RegistrationController">
-	<grid hflex="1">
+<window self="@define(content)" title="${labels.app.welcome}!" border="normal" width="400px" apply="org.alc.controller.RegistrationController">
+	<grid hflex="1" >
 		<auxhead>
 			<auxheader label="${labels.app.registration}" colspan="2" style="font-size:16px;" image="/images/form.png"/>
 		</auxhead>
@@ -43,8 +44,8 @@
 			</row>
 			<row spans="2" align="right">
 				<hlayout>
-					<button label="${labels.app.reset}" onClick="" id="resetButton" />
-					<button label="${labels.app.submit}" onClick="" id="submitButton" disabled="true" />
+					<button label="${labels.app.reset}" onClick="" id="resetButton" type="reset"/>
+					<button label="${labels.app.submit}" onClick="" id="submitButton" disabled="true" type="submit"/>
 				</hlayout>
 			</row>
 		</rows>

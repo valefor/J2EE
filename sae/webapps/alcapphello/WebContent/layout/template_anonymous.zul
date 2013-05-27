@@ -6,7 +6,9 @@
 			</div>			
 		</north>
 		<center autoscroll="true" border="2px black" >
-		 <div id="mainContent" self="@insert(content)" align="center"></div>
+			<hbox  hflex="1" vflex="1" align="center" pack="center">
+					<div id="mainContent" self="@insert(content)"></div>
+			</hbox>
 		</center>
 		<south height="50px" border="none">
 			<include src="/layout/footer.zul"/>

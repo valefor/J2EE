@@ -1,13 +1,10 @@
 package org.alc.controller;
 
 import org.alc.util.SecurityUtil;
+import org.alc.util.ZkEventHandlerUtil;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.Executions;
-import org.zkoss.zk.ui.event.Event;
-import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
-import org.zkoss.zk.ui.event.SerializableEventListener;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -30,23 +27,20 @@ public class LogoutController extends SelectorComposer<Component> {
 		super.doAfterCompose(comp);
 	
 		if (SecurityUtil.isAnonymous()) {
-			Label anonymous = new Label();
+			Label register = new Label();
 			Label login = new Label();
-			anonymous.setValue(Labels.getLabel("app.anonymous"));
 			
-			login.setValue(Labels.getLabel("app.login"));
+			register.setValue(Labels.getLabel("app.register"));
+			register.setSclass("logout");
+			login.setValue(Labels.getLabel("app.login"));			
 			login.setSclass("logout");
-			EventListener<Event> onActionListener = new SerializableEventListener<Event>(){
-	            private static final long serialVersionUID = 1L;
-	 
-	            public void onEvent(Event event) throws Exception {
-	                //redirect current url to logout
-	            	Executions.getCurrent().sendRedirect("/public/login.zul");
-	            }
-	        };
-	        login.addEventListener(Events.ON_CLICK, onActionListener);
+
+			register.addEventListener(Events.ON_CLICK, 
+	        		ZkEventHandlerUtil.createRedirectActionListener("/public/registration.zul"));
+	        login.addEventListener(Events.ON_CLICK, 
+	        		ZkEventHandlerUtil.createRedirectActionListener("/public/login.zul"));
 			
-			statusBar.appendChild(anonymous);
+			statusBar.appendChild(register);
 			statusBar.appendChild(login);
 		} else {
 			String name = SecurityUtil.getUser().getUsername();
@@ -57,15 +51,8 @@ public class LogoutController extends SelectorComposer<Component> {
 				
 				logout.setValue(Labels.getLabel("app.logout"));
 				logout.setSclass("logout");							
-				EventListener<Event> onActionListener = new SerializableEventListener<Event>(){
-		            private static final long serialVersionUID = 1L;
-		 
-		            public void onEvent(Event event) throws Exception {
-		                //redirect current url to logout
-		            	Executions.getCurrent().sendRedirect("/j_spring_security_logout");
-		            }
-		        };
-		        logout.addEventListener(Events.ON_CLICK, onActionListener);
+		        logout.addEventListener(Events.ON_CLICK, 
+		        		ZkEventHandlerUtil.createRedirectActionListener("/j_spring_security_logout"));
 		        
 		        statusBar.appendChild(username);
 		        statusBar.appendChild(logout);

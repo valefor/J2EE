@@ -1,5 +1,5 @@
 <?page title="Hello World"?>
-<window title="你好!!" border="normal" width="200px">
+<window title="${labels.app.hello}" border="normal" width="200px">
 
 	<label value="屌丝们。。。" />
 

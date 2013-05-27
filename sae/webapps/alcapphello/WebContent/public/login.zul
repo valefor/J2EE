@@ -2,7 +2,7 @@
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template_anonymous.zul"?>
 <zk>
-<hbox self="@define(content)" vflex="1" hflex="1" align="center" pack="center" spacing="20px">
+<hbox self="@define(content)" spacing="20px">
 	<window id="loginwin" title="${labels.app.login}" border="normal" width="400px">
 		<html style="color:red" if="${not empty param.login_error}">
 			<![CDATA[
