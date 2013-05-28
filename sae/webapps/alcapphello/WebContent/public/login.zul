@@ -15,13 +15,18 @@
 			<html:form action="j_spring_security_check" method="POST" xmlns:html="native">
 				<grid>
 					<rows>
-						<row>User: <textbox id="u" name="j_username"/></row>
-						<row>Password: <textbox id="p" type="password" name="j_password"/></row>
-						<row spans="2">
-							<hbox>
-								<button type="reset" label="Reset"/>
-								<button type="submit" label="Submit"/>
-							</hbox>
+						<row>${labels.app.username}: <textbox id="u" name="j_username" constraint="no empty"/></row>
+						<row>${labels.app.password}: <textbox id="p" type="password" name="j_password" constraint="no empty"/></row>
+						<row spans="2" align="center">
+							<hlayout>
+								<checkbox id="r" name="_spring_security_remember_me"/>${labels.app.rememberme}
+							</hlayout>
+						</row>
+						<row spans="2" align="center">
+							<hlayout>
+								<button type="reset" label="${labels.app.reset}"/>
+								<button type="submit" label="${labels.app.submit}"/>
+							</hlayout>
 						</row>
 					</rows>
 				</grid>
