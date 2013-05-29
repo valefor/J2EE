@@ -14,11 +14,12 @@
 	<http auto-config="true" access-decision-manager-ref="affirmativeBased">
 		<!-- ZK AU reqeust -->
 		<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<!-- the login page: ANONYMOUSE ONLY -->
-		<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS" />
+		
+		<!-- the login page: ANONYMOUSE ONLY -->		
 		<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/public/registration.zul"
 			access="ROLE_ANONYMOUS" />
+			<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS" />
 		<!-- the login page:IS_AUTHENTICATED_ANONYMOUSLY -->
 		<!-- pages for anonymous access in an application -->
 		<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />

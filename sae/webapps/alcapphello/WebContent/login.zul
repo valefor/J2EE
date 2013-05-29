@@ -11,7 +11,7 @@
 		</html>
 		<groupbox>
 			<caption>Login</caption>
-			<html:form action="j_spring_security_check" method="POST" xmlns:html="native">
+			<html:form action="public/j_spring_security_check" method="POST" xmlns:html="native">
 				<grid>
 					<rows>
 						<row>User: <textbox id="u" name="j_username"/></row>

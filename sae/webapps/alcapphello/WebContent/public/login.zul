@@ -12,7 +12,7 @@
 		</html>
 		<groupbox>
 			<caption>${labels.app.login}</caption>
-			<html:form action="j_spring_security_check" method="POST" xmlns:html="native">
+			<html:form action="${pageContext.request.contextPath}/public/j_spring_security_check" method="POST" xmlns:html="native">
 				<grid>
 					<rows>
 						<row>${labels.app.username}: <textbox id="u" name="j_username" constraint="no empty"/></row>
