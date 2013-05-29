@@ -143,6 +143,14 @@
 	    	  <include>database.properties</include>
 	    	</includes>
 	      </resource>
+	      <resource>
+	    	<targetPath>org/alc/config</targetPath>
+	    	<filtering>false</filtering>
+	    	<directory>${basedir}/src/org/alc/resource/dev</directory>
+	    	<includes>
+	    	  <include>database.properties</include>
+	    	</includes>
+	      </resource>
 	    </resources>  	  	  
   	  </build>  		
   	</profile>
