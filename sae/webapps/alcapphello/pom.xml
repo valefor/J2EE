@@ -144,11 +144,11 @@
 	    	</includes>
 	      </resource>
 	      <resource>
-	    	<targetPath>org/alc/config</targetPath>
+	    	<targetPath>.</targetPath>
 	    	<filtering>false</filtering>
 	    	<directory>${basedir}/src/org/alc/resource/dev</directory>
 	    	<includes>
-	    	  <include>database.properties</include>
+	    	  <include>log4j.properties</include>
 	    	</includes>
 	      </resource>
 	    </resources>  	  	  
@@ -164,6 +164,14 @@
 	    	<directory>${basedir}/src/org/alc/resource/deploy</directory>
 	    	<includes>
 	    	  <include>database.properties</include>
+	    	</includes>
+	      </resource>
+	      <resource>
+	    	<targetPath>.</targetPath>
+	    	<filtering>false</filtering>
+	    	<directory>${basedir}/src/org/alc/resource/deploy</directory>
+	    	<includes>
+	    	  <include>log4j.properties</include>
 	    	</includes>
 	      </resource>
 	    </resources>  	  	  
