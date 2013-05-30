@@ -20,3 +20,5 @@
      
     <!-- for using annotation @Transaction in DAOs -->
     <tx:annotation-driven />
+    
+UsernamePasswordAuthenticationFilter
