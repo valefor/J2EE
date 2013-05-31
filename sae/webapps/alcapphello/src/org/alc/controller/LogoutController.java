@@ -26,6 +26,7 @@ public class LogoutController extends SelectorComposer<Component> {
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);
 	
+		System.out.println("Test for logs!");
 		if (SecurityUtil.isAnonymous()) {
 			Label register = new Label();
 			Label login = new Label();

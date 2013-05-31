@@ -28,6 +28,8 @@
 	<filter-mapping>
     	<filter-name>springSecurityFilterChain</filter-name>
     	<url-pattern>/*</url-pattern>
+    	<dispatcher>FORWARD</dispatcher>
+			<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
 	
 	<filter>
@@ -37,8 +39,6 @@
 	<filter-mapping>
 		<filter-name>OpenEntityManagerInViewFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-		<dispatcher>FORWARD</dispatcher>
-		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
 	
 	<servlet>

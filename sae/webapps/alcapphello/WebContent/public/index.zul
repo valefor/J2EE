@@ -1,6 +1,9 @@
 <?page title="Hello World"?>
 <window title="${labels.app.hello}" border="normal" width="200px">
 
-	<label value="屌丝们。。。" />
-
+	<vlayout>
+	<label value="contextPath:${pageContext.request.contextPath}" />
+	<label value="servletPath:${pageContext.request.servletPath}" />
+	<label value="uri:${pageContext.request.requestURI}" />
+	</vlayout>
 </window>

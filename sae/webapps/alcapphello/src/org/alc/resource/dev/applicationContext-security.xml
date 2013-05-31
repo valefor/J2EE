@@ -11,9 +11,10 @@
 	<http pattern="/styles/**" security="none" />
 
 	<!-- HTTP configuration sample -->
-	<http access-decision-manager-ref="affirmativeBased" auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
+	<http access-decision-manager-ref="affirmativeBased">
 		<!-- ZK AU reqeust -->
 		<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
 		<!-- the login page: ANONYMOUSE ONLY -->		
 		<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/public/registration.zul"
@@ -27,48 +28,26 @@
 		<intercept-url pattern="/**"
 			access="ROLE_USER" />
 
-		<!-- User Customized <form-login> Version
 		<form-login login-page="/public/login.zul"
 			authentication-failure-url="/public/login.zul?login_error=1"
 			login-processing-url="/public/j_spring_security_check"
 			default-target-url="/forum/index.zul" />
-		 
-		-->
-		<custom-filter ref="saeUsernamePasswordAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
-		
+
 		<logout logout-success-url="/index.zul" invalidate-session="true" />
 		<remember-me />
 
 		<!-- <session-management invalid-session-url="/timeout.zul"> <concurrency-control 
 			max-sessions="1" error-if-maximum-exceeded="true" /> </session-management> -->
 
-		<access-denied-handler error-page="/" />		
+		<access-denied-handler error-page="/" />
+		
+
 	</http>
 
 
-	<!-- Customize FORM_LOGIN_FILTER -->
-	<beans:bean id="loginUrlAuthenticationEntryPoint"
-		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
-		<beans:property name="loginFormUrl" value="/public/login.zul"/>
-	</beans:bean>
-	<beans:bean id="saeUsernamePasswordAuthenticationFilter"
-		class="org.alc.sae.ss.web.authentication.SaeUsernamePasswordAuthenticationFilter">
-		<beans:property name="authenticationManager" ref="authenticationManager"/>
-		<beans:property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
-		<beans:property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
-		<beans:property name="filterProcessesUrl" value="/public/j_spring_security_check"/>
-	</beans:bean>
-	<beans:bean id="authenticationFailureHandler"
-		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
-		<beans:property name="defaultFailureUrl" value="/public/login.zul?login_error=1"/>
-	</beans:bean>
-	<beans:bean id="authenticationSuccessHandler"
-		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
-		<beans:property name="defaultTargetUrl" value="/forum/index.zul"/>
-	</beans:bean>
+	<!-- omit inactive configurations -->
 
-	<!-- AuthenticationManager -->
-	<authentication-manager alias="authenticationManager">
+	<authentication-manager>
 		<authentication-provider user-service-ref="myUserDetailsService">
 			<password-encoder hash="md5" />
 		</authentication-provider>

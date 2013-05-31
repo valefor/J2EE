@@ -20,5 +20,6 @@
      
     <!-- for using annotation @Transaction in DAOs -->
     <tx:annotation-driven />
-    
+ 
+<http access-decision-manager-ref="affirmativeBased" auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
 UsernamePasswordAuthenticationFilter
