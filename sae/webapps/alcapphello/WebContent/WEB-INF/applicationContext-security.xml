@@ -27,16 +27,18 @@
 		<intercept-url pattern="/**"
 			access="ROLE_USER" />
 
-		<!-- User Customized <form-login> Version
+		<!-- User Customized <form-login>/<logout> Version
 		<form-login login-page="/public/login.zul"
 			authentication-failure-url="/public/login.zul?login_error=1"
 			login-processing-url="/public/j_spring_security_check"
 			default-target-url="/forum/index.zul" />
+		<logout logout-success-url="/index.zul" invalidate-session="true" />
 		 
 		-->
 		<custom-filter ref="saeUsernamePasswordAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
+		<custom-filter ref="saeLogoutFilter" position="LOGOUT_FILTER"/>
 		
-		<logout logout-success-url="/index.zul" invalidate-session="true" />
+
 		<remember-me />
 
 		<!-- <session-management invalid-session-url="/timeout.zul"> <concurrency-control 
@@ -67,6 +69,22 @@
 		<beans:property name="defaultTargetUrl" value="/forum/index.zul"/>
 	</beans:bean>
 
+	<!-- Customize LOGOUT_FILTER -->
+	<beans:bean id="saeLogoutFilter" class="org.alc.sae.ss.web.authentication.SaeLogoutFilter">
+		<beans:constructor-arg name="logoutSuccessUrl" value="/index.zul"/>
+		<beans:constructor-arg name="handlers">
+			<beans:list>
+				<beans:ref bean="securityContextLogoutHandler"/>
+			</beans:list>
+		</beans:constructor-arg>
+		<beans:property name="filterProcessesUrl" value="/j_spring_security_logout"/>
+	</beans:bean>
+	<beans:bean id="securityContextLogoutHandler"
+		class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler">
+		<beans:property name="invalidateHttpSession" value="true"/>
+	</beans:bean>
+	
+	
 	<!-- AuthenticationManager -->
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="myUserDetailsService">
