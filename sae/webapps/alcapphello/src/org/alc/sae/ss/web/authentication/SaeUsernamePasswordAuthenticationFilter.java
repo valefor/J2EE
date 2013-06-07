@@ -36,7 +36,7 @@ public class SaeUsernamePasswordAuthenticationFilter extends
         if (uri.startsWith(request.getContextPath())) {
         	return uri.endsWith(request.getContextPath() + getFilterProcessesUrl());
         } else {
-        	return uri.endsWith(getFilterProcessesUrl());
+        	return uri.equals(getFilterProcessesUrl());
         }
 
         //return uri.endsWith(request.getContextPath() + getFilterProcessesUrl());

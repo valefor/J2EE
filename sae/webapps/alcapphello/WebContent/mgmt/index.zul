@@ -5,6 +5,5 @@
 	<label value="contextPath:${pageContext.request.contextPath}" />
 	<label value="servletPath:${pageContext.request.servletPath}" />
 	<label value="uri:${pageContext.request.requestURI}" />
-	<label value="${labels.links.uri.login }" />
 	</vlayout>
 </window>

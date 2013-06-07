@@ -42,7 +42,7 @@ public class SaeLogoutFilter extends LogoutFilter {
         if (uri.startsWith(request.getContextPath())) {
         	return uri.endsWith(request.getContextPath() + getFilterProcessesUrl());
         } else {
-        	return uri.endsWith(getFilterProcessesUrl());
+        	return uri.equals(getFilterProcessesUrl());
         }
         
 	}

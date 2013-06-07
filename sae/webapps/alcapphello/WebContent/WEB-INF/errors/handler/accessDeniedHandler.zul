@@ -1,0 +1,5 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<?init class="org.alc.initiator.handler.AlcAccessDeniedHandler"?>
+<zk>
+<!-- Forward a unauthenticated user to login page. -->
+</zk>

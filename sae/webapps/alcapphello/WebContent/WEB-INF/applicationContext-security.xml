@@ -24,6 +24,8 @@
 		<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<!-- secure pages -->
+		<intercept-url pattern="/mgmt/**"
+			access="ROLE_ROOT" />
 		<intercept-url pattern="/**"
 			access="ROLE_USER" />
 
@@ -33,21 +35,23 @@
 			login-processing-url="/public/j_spring_security_check"
 			default-target-url="/forum/index.zul" />
 		<logout logout-success-url="/index.zul" invalidate-session="true" />
-		 
+		<access-denied-handler error-page="/WEB-INF/errors/handler/accessDeniedHandler.zul" /> 
 		-->
 		<custom-filter ref="saeUsernamePasswordAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
 		<custom-filter ref="saeLogoutFilter" position="LOGOUT_FILTER"/>
 		
-
+		<access-denied-handler error-page="/WEB-INF/errors/handler/accessDeniedHandler.zul"/>
 		<remember-me />
-
 		<!-- <session-management invalid-session-url="/timeout.zul"> <concurrency-control 
 			max-sessions="1" error-if-maximum-exceeded="true" /> </session-management> -->
-
-		<access-denied-handler error-page="/" />		
+				
 	</http>
-
-
+	
+	<!-- Error Handler Beans
+	<beans:bean id="zkAccessDeniedHandler" class="org.alc.zk.ZkAccessDeniedHandler">
+		<beans:property name="errorPage" value="/WEB-INF/errors/viewer/accessDenied.zul"/>
+	</beans:bean>
+	 -->
 	<!-- Customize FORM_LOGIN_FILTER -->
 	<beans:bean id="loginUrlAuthenticationEntryPoint"
 		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
@@ -69,6 +73,8 @@
 		<beans:property name="defaultTargetUrl" value="/forum/index.zul"/>
 	</beans:bean>
 
+
+
 	<!-- Customize LOGOUT_FILTER -->
 	<beans:bean id="saeLogoutFilter" class="org.alc.sae.ss.web.authentication.SaeLogoutFilter">
 		<beans:constructor-arg name="logoutSuccessUrl" value="/index.zul"/>
@@ -85,12 +91,15 @@
 	</beans:bean>
 	
 	
+	
 	<!-- AuthenticationManager -->
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="myUserDetailsService">
 			<password-encoder hash="md5" />
 		</authentication-provider>
 	</authentication-manager>
+
+
 
 	<!-- Customize Access Decision Maker(AffirmativeBased is the default one) -->
 	<beans:bean id="affirmativeBased" class="org.springframework.security.access.vote.AffirmativeBased">
@@ -119,7 +128,8 @@
 	</beans:bean>
 	
 	<!-- Authenticated Voter -->
-	<beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter"/>
+	<beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter"/>	
+		
 	
 	<!-- Customize Message Source -->
 	<beans:bean id="messageSource"

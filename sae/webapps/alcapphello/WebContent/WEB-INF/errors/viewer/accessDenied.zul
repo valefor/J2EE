@@ -1,0 +1,35 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window border="normal" mode="modal" closable="true" title="Error"
+		width="500px" onClose='Executions.sendRedirect("/index.zul")'>
+		<grid>
+			<columns>
+				<column width="100px" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					Http Request Url:
+					<label id="httpRequestUrl"
+						value="${requestScope['javax.servlet.forward.request_uri']}" />
+				</row>
+				<row>
+					Http Servlet Url:
+					<label id="httpServletUrl"
+						value="${requestScope['javax.servlet.forward.servlet_path']}" />
+				</row>
+				<row>
+					Http Context Path:
+					<label id="httpCodeLbl"
+						value="${requestScope['javax.servlet.forward.context_path']}" />
+				</row>
+				<row>
+					Error Message:
+					<label
+						value="${requestScope['SPRING_SECURITY_403_EXCEPTION'].message}" />
+				</row>
+			</rows>
+		</grid>
+	</window>
+
+</zk>

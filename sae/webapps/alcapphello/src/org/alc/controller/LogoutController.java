@@ -37,9 +37,9 @@ public class LogoutController extends SelectorComposer<Component> {
 			login.setSclass("logout");
 
 			register.addEventListener(Events.ON_CLICK, 
-	        		ZkEventHandlerUtil.createRedirectActionListener("/public/registration.zul"));
+	        		ZkEventHandlerUtil.createRedirectActionListener(Labels.getLabel("links.uri.register")));
 	        login.addEventListener(Events.ON_CLICK, 
-	        		ZkEventHandlerUtil.createRedirectActionListener("/public/login.zul"));
+	        		ZkEventHandlerUtil.createRedirectActionListener(Labels.getLabel("links.uri.login")));
 			
 			statusBar.appendChild(register);
 			statusBar.appendChild(login);
