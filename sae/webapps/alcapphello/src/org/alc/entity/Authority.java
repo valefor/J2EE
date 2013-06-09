@@ -45,7 +45,12 @@ public class Authority implements GrantedAuthority,Serializable {
 
 	@Override
 	public String getAuthority() {
-//		System.out.println(getRole());
+		System.out.println(getRole());
+		return getRole();
+	}
+	
+	@Override
+	public String toString() {
 		return getRole();
 	}
 

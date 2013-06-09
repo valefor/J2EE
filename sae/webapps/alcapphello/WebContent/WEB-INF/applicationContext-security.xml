@@ -6,29 +6,17 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
      http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-
+	<!-- 
 	<http pattern="/images/**" security="none" />
 	<http pattern="/styles/**" security="none" />
-
+	 -->
+	 
 	<!-- HTTP configuration sample -->
-	<http access-decision-manager-ref="affirmativeBased" auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
-		<!-- ZK AU reqeust -->
-		<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<!-- the login page: ANONYMOUSE ONLY -->		
-		<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS" />
-		<intercept-url pattern="/public/registration.zul"
-			access="ROLE_ANONYMOUS" />
-			<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS" />
-		<!-- the login page:IS_AUTHENTICATED_ANONYMOUSLY -->
-		<!-- pages for anonymous access in an application -->
-		<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		<!-- secure pages -->
-		<intercept-url pattern="/mgmt/**"
-			access="ROLE_ROOT" />
-		<intercept-url pattern="/**"
-			access="ROLE_USER" />
+	<http auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
 
+		<intercept-url pattern="/**"
+			access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
 		<!-- User Customized <form-login>/<logout> Version
 		<form-login login-page="/public/login.zul"
 			authentication-failure-url="/public/login.zul?login_error=1"
@@ -37,15 +25,39 @@
 		<logout logout-success-url="/index.zul" invalidate-session="true" />
 		<access-denied-handler error-page="/WEB-INF/errors/handler/accessDeniedHandler.zul" /> 
 		-->
-		<custom-filter ref="saeUsernamePasswordAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
 		<custom-filter ref="saeLogoutFilter" position="LOGOUT_FILTER"/>
-		
+		<custom-filter ref="saeUsernamePasswordAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
+		<custom-filter ref="saeFilterSecurityInterceptor" position="LAST"/>
 		<access-denied-handler error-page="/WEB-INF/errors/handler/accessDeniedHandler.zul"/>
 		<remember-me />
 		<!-- <session-management invalid-session-url="/timeout.zul"> <concurrency-control 
 			max-sessions="1" error-if-maximum-exceeded="true" /> </session-management> -->
 				
 	</http>
+	
+	<!-- Customize FilterSecurityInterceptor -->
+	<beans:bean id="saeFilterSecurityInterceptor" 
+		class="org.alc.sae.ss.web.filter.SaeFilterSecurityInterceptor">
+		<beans:property name="authenticationManager" ref="authenticationManager"/>
+		<beans:property name="accessDecisionManager" ref="affirmativeBased"/>
+		<beans:property name="securityMetadataSource">
+			<filter-security-metadata-source path-type="ant">
+				<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/styles/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				
+				<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS"/>
+				<intercept-url pattern="/public/registration.zul" access="ROLE_ANONYMOUS"/>
+				<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS"/>
+				
+				<intercept-url pattern="/mgmt/**" access="ROLE_ROOT"/>
+				<intercept-url pattern="/**" access="ROLE_USER"/>
+			</filter-security-metadata-source>
+		</beans:property>
+	</beans:bean>
 	
 	<!-- Error Handler Beans
 	<beans:bean id="zkAccessDeniedHandler" class="org.alc.zk.ZkAccessDeniedHandler">
@@ -58,7 +70,7 @@
 		<beans:property name="loginFormUrl" value="/public/login.zul"/>
 	</beans:bean>
 	<beans:bean id="saeUsernamePasswordAuthenticationFilter"
-		class="org.alc.sae.ss.web.authentication.SaeUsernamePasswordAuthenticationFilter">
+		class="org.alc.sae.ss.web.filter.SaeUsernamePasswordAuthenticationFilter">
 		<beans:property name="authenticationManager" ref="authenticationManager"/>
 		<beans:property name="authenticationFailureHandler" ref="authenticationFailureHandler"/>
 		<beans:property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
@@ -76,7 +88,7 @@
 
 
 	<!-- Customize LOGOUT_FILTER -->
-	<beans:bean id="saeLogoutFilter" class="org.alc.sae.ss.web.authentication.SaeLogoutFilter">
+	<beans:bean id="saeLogoutFilter" class="org.alc.sae.ss.web.filter.SaeLogoutFilter">
 		<beans:constructor-arg name="logoutSuccessUrl" value="/index.zul"/>
 		<beans:constructor-arg name="handlers">
 			<beans:list>
@@ -101,7 +113,7 @@
 
 
 
-	<!-- Customize Access Decision Maker(AffirmativeBased is the default one) -->
+	<!-- Customize Access Decision Manager(AffirmativeBased is the default one) -->
 	<beans:bean id="affirmativeBased" class="org.springframework.security.access.vote.AffirmativeBased">
 		<beans:property name="decisionVoters">
 			<beans:list>

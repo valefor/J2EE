@@ -26,6 +26,10 @@ public class MyUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("cannot found user: "+userName);
 		}
 		
+		if (user.getAuthorities().isEmpty()){
+			
+		}
+		System.out.println("["+getClass().getName()+"]Authorities: " + user.getAuthorities());
 		return new UserWrapper(user.getName(),user.getPassword(),user.getAuthorities());
 	}
 

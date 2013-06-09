@@ -1,6 +1,5 @@
 package org.alc.initiator.handler;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.alc.util.SecurityUtil;
