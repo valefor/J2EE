@@ -10,19 +10,24 @@ import java.util.Set;
  * 
  */
 @Entity
+@Table(name="section")
 public class Section implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false)
 	private int id;
 
 	private int clickCount;
 
+	@Column(nullable=false, length=20)
 	private String name;
 
+	@Column(length=200)
 	private String profile;
 
+	@Column(length=200)
 	private String statement;
 
 	private int topicCount;
@@ -36,10 +41,10 @@ public class Section implements Serializable {
 	@JoinTable(
 		name="section_master"
 		, joinColumns={
-			@JoinColumn(name="sectionId")
+			@JoinColumn(name="sectionId", nullable=false)
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="id")
+			@JoinColumn(name="id", nullable=false)
 			}
 		)
 	private Set<User> users;

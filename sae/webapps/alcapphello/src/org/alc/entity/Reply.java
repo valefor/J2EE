@@ -10,13 +10,16 @@ import java.util.Date;
  * 
  */
 @Entity
+@Table(name="reply")
 public class Reply implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false)
 	private int id;
 
+	@Column(length=1000)
 	private String content;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -24,17 +27,17 @@ public class Reply implements Serializable {
 
 	//bi-directional many-to-one association to Section
 	@ManyToOne
-	@JoinColumn(name="sectionId")
+	@JoinColumn(name="sectionId", nullable=false)
 	private Section section;
 
 	//bi-directional many-to-one association to Topic
 	@ManyToOne
-	@JoinColumn(name="topicId")
+	@JoinColumn(name="topicId", nullable=false)
 	private Topic topic;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="userId")
+	@JoinColumn(name="userId", nullable=false)
 	private User user;
 
 	public Reply() {

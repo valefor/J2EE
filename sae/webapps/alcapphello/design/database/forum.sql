@@ -1,36 +1,36 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2013/5/23 3:24:14                            */
+/* Created on:     6/20/2013 3:04:13 PM                         */
 /*==============================================================*/
 
 
-drop table if exists User_Role;
+drop table if exists user_role;
 
-drop table if exists Authority;
+drop table if exists authority;
 
-drop table if exists Reply;
+drop table if exists reply;
 
-drop table if exists Topic;
+drop table if exists topic;
 
-drop table if exists Section_Master;
+drop table if exists section_master;
 
-drop table if exists Section;
+drop table if exists section;
 
-drop table if exists User;
+drop table if exists user;
 
 /*==============================================================*/
-/* Table: Authority                                             */
+/* Table: authority                                             */
 /*==============================================================*/
-create table Authority
+create table authority
 (
    role                 varchar(50) not null,
    primary key (role)
 );
 
 /*==============================================================*/
-/* Table: Reply                                                 */
+/* Table: reply                                                 */
 /*==============================================================*/
-create table Reply
+create table reply
 (
    id                   int not null,
    userId               int not null,
@@ -42,9 +42,9 @@ create table Reply
 );
 
 /*==============================================================*/
-/* Table: Section                                               */
+/* Table: section                                               */
 /*==============================================================*/
-create table Section
+create table section
 (
    id                   int not null,
    name                 varchar(20) not null,
@@ -56,9 +56,9 @@ create table Section
 );
 
 /*==============================================================*/
-/* Table: Section_Master                                        */
+/* Table: section_master                                        */
 /*==============================================================*/
-create table Section_Master
+create table section_master
 (
    id                   int not null,
    sectionId            int not null,
@@ -66,9 +66,9 @@ create table Section_Master
 );
 
 /*==============================================================*/
-/* Table: Topic                                                 */
+/* Table: topic                                                 */
 /*==============================================================*/
-create table Topic
+create table topic
 (
    id                   int not null,
    sectionId            int not null,
@@ -86,9 +86,9 @@ create table Topic
 );
 
 /*==============================================================*/
-/* Table: User                                                  */
+/* Table: user                                                  */
 /*==============================================================*/
-create table User
+create table user
 (
    id                   int not null,
    name                 varchar(255) not null,
@@ -106,39 +106,39 @@ create table User
 );
 
 /*==============================================================*/
-/* Table: User_Role                                             */
+/* Table: user_role                                             */
 /*==============================================================*/
-create table User_Role
+create table user_role
 (
    id                   int not null,
    role                 varchar(50) not null,
    primary key (id, role)
 );
 
-alter table Reply add constraint FK_Section_Reply foreign key (sectionId)
-      references Section (id) on delete restrict on update restrict;
+alter table reply add constraint FK_section_reply foreign key (sectionId)
+      references section (id) on delete restrict on update restrict;
 
-alter table Reply add constraint FK_Topic_Reply foreign key (topicId)
-      references Topic (id) on delete restrict on update restrict;
+alter table reply add constraint FK_topic_reply foreign key (topicId)
+      references topic (id) on delete restrict on update restrict;
 
-alter table Reply add constraint FK_User_Reply foreign key (userId)
-      references User (id) on delete restrict on update restrict;
+alter table reply add constraint FK_user_reply foreign key (userId)
+      references user (id) on delete restrict on update restrict;
 
-alter table Section_Master add constraint FK_sectionId foreign key (id)
-      references User (id) on delete restrict on update restrict;
+alter table section_master add constraint FK_sectionId foreign key (id)
+      references user (id) on delete restrict on update restrict;
 
-alter table Section_Master add constraint FK_userId foreign key (sectionId)
-      references Section (id) on delete restrict on update restrict;
+alter table section_master add constraint FK_userId foreign key (sectionId)
+      references section (id) on delete restrict on update restrict;
 
-alter table Topic add constraint FK_Section_Topic foreign key (sectionId)
-      references Section (id) on delete restrict on update restrict;
+alter table topic add constraint FK_section_topic foreign key (sectionId)
+      references section (id) on delete restrict on update restrict;
 
-alter table Topic add constraint FK_User_Topic foreign key (userId)
-      references User (id) on delete restrict on update restrict;
+alter table topic add constraint FK_user_topic foreign key (userId)
+      references user (id) on delete restrict on update restrict;
 
-alter table User_Role add constraint FK_role foreign key (id)
-      references User (id) on delete restrict on update restrict;
+alter table user_role add constraint FK_role foreign key (id)
+      references user (id) on delete restrict on update restrict;
 
-alter table User_Role add constraint FK_userId2 foreign key (role)
-      references Authority (role) on delete restrict on update restrict;
+alter table user_role add constraint FK_userId2 foreign key (role)
+      references authority (role) on delete restrict on update restrict;
 

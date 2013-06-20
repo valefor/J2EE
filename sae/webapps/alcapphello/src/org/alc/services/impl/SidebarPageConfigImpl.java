@@ -3,7 +3,6 @@ package org.alc.services.impl;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.alc.services.SidebarPage;
 import org.alc.services.SidebarPageConfig;

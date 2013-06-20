@@ -11,24 +11,30 @@ import java.util.Set;
  * 
  */
 @Entity
+@Table(name="user")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false)
 	private int id;
 
+	@Column(length=255)
 	private String avatar;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date birthday;
 
+	@Column(nullable=false, length=100)
 	private String email;
 
 	private int isSectioner;
 
+	@Column(nullable=false, length=255)
 	private String name;
 
+	@Column(nullable=false, length=100)
 	private String password;
 
 	private int point;
@@ -36,6 +42,7 @@ public class User implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date regDate;
 
+	@Column(length=100)
 	private String remark;
 
 	private int sex;
@@ -59,10 +66,10 @@ public class User implements Serializable {
 	@JoinTable(
 		name="user_role"
 		, joinColumns={
-			@JoinColumn(name="id")
+			@JoinColumn(name="id", nullable=false)
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="role")
+			@JoinColumn(name="role", nullable=false)
 			}
 		)
 	private Set<Authority> authorities;

@@ -41,3 +41,10 @@ UsernamePasswordAuthenticationFilter
 			access="ROLE_ROOT" />
 		<intercept-url pattern="/**"
 			access="ROLE_USER" />
+			
+GrantedAuthority
+	@Override
+	public String getAuthority() {
+		System.out.println(getRole());
+		return getRole();
+	}

@@ -2,9 +2,6 @@ package org.alc.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
-import org.springframework.security.core.GrantedAuthority;
-
 import java.util.Set;
 
 
@@ -13,11 +10,13 @@ import java.util.Set;
  * 
  */
 @Entity
-public class Authority implements GrantedAuthority,Serializable {
+@Table(name="authority")
+public class Authority implements Serializable, org.springframework.security.core.GrantedAuthority {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false, length=50)
 	private String role;
 
 	//bi-directional many-to-many association to User
@@ -46,11 +45,6 @@ public class Authority implements GrantedAuthority,Serializable {
 	@Override
 	public String getAuthority() {
 		System.out.println(getRole());
-		return getRole();
-	}
-	
-	@Override
-	public String toString() {
 		return getRole();
 	}
 

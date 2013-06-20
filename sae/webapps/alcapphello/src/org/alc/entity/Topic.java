@@ -11,17 +11,21 @@ import java.util.Set;
  * 
  */
 @Entity
+@Table(name="topic")
 public class Topic implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true, nullable=false)
 	private int id;
 
 	private int clickCount;
 
+	@Column(length=1000)
 	private String content;
 
+	@Column(length=100)
 	private String face;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -37,6 +41,7 @@ public class Topic implements Serializable {
 
 	private int status;
 
+	@Column(length=100)
 	private String title;
 
 	//bi-directional many-to-one association to Reply
@@ -45,12 +50,12 @@ public class Topic implements Serializable {
 
 	//bi-directional many-to-one association to Section
 	@ManyToOne
-	@JoinColumn(name="sectionId")
+	@JoinColumn(name="sectionId", nullable=false)
 	private Section section;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
-	@JoinColumn(name="userId")
+	@JoinColumn(name="userId", nullable=false)
 	private User user;
 
 	public Topic() {
