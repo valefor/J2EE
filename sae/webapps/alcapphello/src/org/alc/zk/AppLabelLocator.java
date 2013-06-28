@@ -11,6 +11,7 @@ public class AppLabelLocator implements LabelLocator {
 
 	private ServletContext _svlctx;
     private String _name;
+    
     public AppLabelLocator(ServletContext svlctx, String name) {
         _svlctx = svlctx;
         _name = name;
