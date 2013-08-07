@@ -47,8 +47,8 @@
 	    <property name="entityManagerFactory" ref="entityManagerFactory" />  
 	</bean>
 	
-	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />  
-	  
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" /> 
+	
 	<!--  
 	<tx:advice id="txAdvice">  
 	    <tx:attributes>  

@@ -47,4 +47,8 @@
 	<!-- <system-config> <label-location>/WEB-INF/labels/links.properties</label-location> 
 		</system-config> -->
 
+	<system-property>
+		<name>org.zkoss.zel.impl.parser.SKIP_IDENTIFIER_CHECK</name>
+		<value>true</value>
+	</system-property>
 </zk>

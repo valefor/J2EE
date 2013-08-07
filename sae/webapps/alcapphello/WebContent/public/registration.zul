@@ -3,7 +3,7 @@
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template_anonymous.zul"?>
 <zk>
-<window self="@define(content)" title="${labels.app.welcome}!" border="normal" width="400px" apply="org.alc.controller.RegistrationController">
+<window self="@define(content)" title="${labels.app.welcome}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid hflex="1" >
 		<auxhead>
 			<auxheader label="${labels.app.registration}" colspan="2" style="font-size:16px;" image="/images/form.png"/>

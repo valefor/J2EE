@@ -48,3 +48,6 @@ GrantedAuthority
 		System.out.println(getRole());
 		return getRole();
 	}
+	
+
+${cmpClassLoader.classMap['classes.ctrl.logout']}
