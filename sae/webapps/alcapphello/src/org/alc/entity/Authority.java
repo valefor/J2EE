@@ -1,6 +1,5 @@
 package org.alc.entity;
 
-import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Set;
 
@@ -11,8 +10,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name="authority")
-public class Authority implements Serializable, org.springframework.security.core.GrantedAuthority {
-	private static final long serialVersionUID = 1L;
+public class Authority {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -40,12 +38,6 @@ public class Authority implements Serializable, org.springframework.security.cor
 
 	public void setUsers(Set<User> users) {
 		this.users = users;
-	}
-
-	@Override
-	public String getAuthority() {
-		System.out.println(getRole());
-		return getRole();
 	}
 
 }

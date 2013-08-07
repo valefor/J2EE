@@ -21,8 +21,8 @@ public class SaeUsernamePasswordAuthenticationFilter extends
         String uri = request.getRequestURI();
         int pathParamIndex = uri.indexOf(';');
         
-        HttpUtil.printHttpInfo(this.getClass(), request);
-        System.out.println("[SaeUsernamePasswordAuthenticationFilter](filterUrl):"+getFilterProcessesUrl());
+        //HttpUtil.printHttpInfo(this.getClass(), request);
+        //System.out.println("[SaeUsernamePasswordAuthenticationFilter](filterUrl):"+getFilterProcessesUrl());
         if (pathParamIndex > 0) {
             // strip everything after the first semi-colon
             uri = uri.substring(0, pathParamIndex);

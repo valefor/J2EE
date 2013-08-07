@@ -8,7 +8,8 @@ public class MyAppInit implements WebAppInit {
 
 	@Override
 	public void init(WebApp wapp) throws Exception {
-		Labels.register(new AppLabelLocator(wapp.getServletContext(),"appLabelLocator"));
+		Labels.register(new AppLabelLocator(wapp.getServletContext(),"APP_LABEL_LINK"));
+		Labels.register(new AppLabelLocator(wapp.getServletContext(),"APP_LABEL_CLASS"));
 	}
 
 }

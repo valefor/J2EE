@@ -23,8 +23,9 @@ public class SaeFilterSecurityInterceptor extends FilterSecurityInterceptor {
 	
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-		System.out.println("SaeFilterSecurityInterceptor:doFilter");
-		HttpUtil.printHttpInfo(this.getClass(), (HttpServletRequest)request);
+		
+		//System.out.println("SaeFilterSecurityInterceptor:doFilter");
+		//HttpUtil.printHttpInfo(this.getClass(), (HttpServletRequest)request);
 		
 		FilterInvocation fi = new FilterInvocation(request, response, chain);
 		printFiInfo(fi);

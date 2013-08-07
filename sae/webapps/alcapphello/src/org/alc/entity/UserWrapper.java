@@ -14,6 +14,10 @@ import org.springframework.security.core.SpringSecurityCoreVersion;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.Assert;
 
+/*
+ * This class <UserWrapper> is used to wrap customized User class to adapt 
+ * Standard Spring Security API interfaces: UserDetails, CredentialsContainer
+ */
 public class UserWrapper implements UserDetails,
 		CredentialsContainer {
 
@@ -24,7 +28,7 @@ public class UserWrapper implements UserDetails,
 
 	private String password;
     private final String username;
-    private final Set<Authority> authorities;
+    private Set<AuthorityWrapper> authorities;
 	private final boolean accountNonExpired;
     private final boolean accountNonLocked;
     private final boolean credentialsNonExpired;
@@ -44,7 +48,7 @@ public class UserWrapper implements UserDetails,
         }
 		this.password = password;
 		this.username = username;
-		this.authorities = set;
+		this.authorities = initAuthorities(set);
 		this.accountNonExpired = accountNonExpired;
 		this.accountNonLocked = accountNonLocked;
 		this.credentialsNonExpired = credentialsNonExpired;
@@ -53,49 +57,41 @@ public class UserWrapper implements UserDetails,
 
 	@Override
 	public void eraseCredentials() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
 		return username;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
 		return accountNonExpired;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
 		return accountNonLocked;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
 		return credentialsNonExpired;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
 		return enabled;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
 		return Collections.unmodifiableSet(sortAuthorities(authorities));
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
 		return password;
 	}
 	
@@ -159,6 +155,14 @@ public class UserWrapper implements UserDetails,
         }
 
         return sb.toString();
+    }
+    
+    private Set<AuthorityWrapper> initAuthorities(Set<Authority> set){
+    	authorities = new TreeSet<AuthorityWrapper>();
+    	for (Authority auth: set) {
+    		authorities.add(new AuthorityWrapper(auth));
+    	}
+		return authorities;
     }
 
 }

@@ -19,8 +19,8 @@ public class SaeLogoutFilter extends LogoutFilter {
 		String uri = request.getRequestURI();
         int pathParamIndex = uri.indexOf(';');
 
-        HttpUtil.printHttpInfo(this.getClass(), request);
-        System.out.println("[SaeUsernamePasswordAuthenticationFilter](filterUrl):"+getFilterProcessesUrl());
+        //HttpUtil.printHttpInfo(this.getClass(), request);
+        //System.out.println("[SaeUsernamePasswordAuthenticationFilter](filterUrl):"+getFilterProcessesUrl());
         
         if (pathParamIndex > 0) {
             // strip everything from the first semi-colon

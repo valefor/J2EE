@@ -19,7 +19,12 @@ public class AppLabelLocator implements LabelLocator {
     
 	@Override
 	public URL locate(Locale locale) throws Exception {
+		if ( _name.equals("APP_LABEL_LINK"))
 		return _svlctx.getResource("/WEB-INF/labels/links.properties");
+		if ( _name.equals("APP_LABEL_CLASS"))
+			return _svlctx.getResource("/WEB-INF/labels/classes.properties");
+		return null;
 	}
-
+	
+	
 }
