@@ -2,7 +2,7 @@
 	<borderlayout>
 		<north border="none" height="80px">
 			<div align="center">
-				<include src="/layout/banner.zul"/>
+				<include src="${labels.links.fm.layout.n}"/>
 			</div>			
 		</north>
 		<center autoscroll="true" border="2px black" >
@@ -11,7 +11,7 @@
 			</hbox>
 		</center>
 		<south height="50px" border="none">
-			<include src="/layout/footer.zul"/>
+			<include src="${labels.links.fm.layout.s}"/>
 		</south>
 	</borderlayout>
 </zk>

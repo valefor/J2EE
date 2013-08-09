@@ -1,8 +1,8 @@
-<?page title="users" contentType="text/html;charset=UTF-8"?>
+<?page title="${labels.app.userList}" contentType="text/html;charset=UTF-8"?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
-<window title="" border="normal" apply="org.zkoss.bind.BindComposer"
-	viewModel="@id('vm') @init(labels.classes.vm.users)">
+<window title="${labels.app.userList}" border="normal" apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init(labels.classes.vm.user)">
 	<listbox model="@load(vm.users)" selectedItem="@bind(vm.selectedItem)" rows="10">
 		<listhead>
 			<listheader label="${labels.app.username}" sort="auto" />

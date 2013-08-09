@@ -1,11 +1,4 @@
-<?page title="Hello World"?>
+<?page title="${labels.app.hello}"?>
 <window title="${labels.app.hello}" border="normal" width="200px">
-
-	<vlayout>
-	<label value="contextPath:${pageContext.request.contextPath}" />
-	<label value="servletPath:${pageContext.request.servletPath}" />
-	<label value="uri:${pageContext.request.requestURI}" />
-	<label value="url:${pageContext.request.requestURL}" />
-	<label value="${labels.links.uri.login }" />
-	</vlayout>
+	<label value="${labels.app.hello}" />
 </window>

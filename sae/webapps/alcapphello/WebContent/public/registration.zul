@@ -1,7 +1,7 @@
 <?page title="${labels.app.welcome}" contentType="text/html;charset=UTF-8"?>
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
-<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template_anonymous.zul"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.fm.tmp.anony}"?>
 <zk>
 <window self="@define(content)" title="${labels.app.welcome}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid hflex="1" >

@@ -1,0 +1,6 @@
+<?page title="${labels.app.posts}" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="${labels.app.posts}" border="normal">
+New Content Here!
+</window>
+</zk>
