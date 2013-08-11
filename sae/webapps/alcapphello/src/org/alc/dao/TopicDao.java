@@ -19,7 +19,7 @@ public class TopicDao {
 	
 	@Transactional(readOnly=true)
 	public List<Topic> findAll() {
-		Query query = em.createQuery("from User as o");
+		Query query = em.createQuery("from Topic as o");
 		List<Topic> result = query.getResultList();
 		return result;
 	}

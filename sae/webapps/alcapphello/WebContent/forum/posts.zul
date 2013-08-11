@@ -1,6 +1,28 @@
 <?page title="${labels.app.posts}" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="${labels.app.posts}" border="normal">
-New Content Here!
+<window title="${labels.app.posts}" border="normal" apply="org.zkoss.bind.BindComposer"
+	viewModel="@id('vm') @init(labels.classes.vm.topic)">
+	<listbox model="@load(vm.topics)" rows="10">
+		<listhead>
+			<listheader label="${labels.app.post.title}" />
+			<listheader label="${labels.app.post.clicks}" />
+			<listheader label="${labels.app.post.replies}" />
+			<listheader label="${labels.app.post.by}" />
+			<listheader label="${labels.app.post.createdAt}" />
+			<listheader label="${labels.app.post.lastReplied}" />
+		</listhead>
+		<template name="model" var="topic">
+			<listitem>
+				<listcell label="@load(topic.title)" />
+				<listcell label="@load(topic.clickCount)" />
+				<listcell label="@load(topic.replyCount)" />
+				<listcell label="@load(topic.user.name)" />
+				<listcell label="@load(topic.postTime)" />
+				<listcell label="@load(topic.lastReplayTime)" />
+			</listitem>
+		</template>		
+	</listbox>
+	<![CDATA[
+	]]>
 </window>
 </zk>
