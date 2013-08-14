@@ -6,7 +6,7 @@
 <window self="@define(content)" title="${labels.app.welcome}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid hflex="1" >
 		<auxhead>
-			<auxheader label="${labels.app.registration}" colspan="2" style="font-size:16px;" image="/images/form.png"/>
+			<auxheader label="${labels.app.registration}" colspan="2" style="font-size:16px;" image="/images/icons/form.png"/>
 		</auxhead>
 		<columns/>
 		<rows>
@@ -29,8 +29,8 @@
 			<row>
 				<label value="${labels.app.gender}" />
 				<radiogroup>
-					<radio label="${labels.app.male}" image="/images/male.png"/>
-					<radio label="${labels.app.female}" image="/images/female.png"/>
+					<radio label="${labels.app.male}" image="/images/icons/male.png"/>
+					<radio label="${labels.app.female}" image="/images/icons/female.png"/>
 				</radiogroup>
 			</row>
 			<row>

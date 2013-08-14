@@ -67,7 +67,7 @@ public class RegistrationController extends SelectorComposer<Component> {
 	public void changeSubmitStatus(){
 		if (acceptTermBox.isChecked()) {
 			submitButton.setDisabled(false);
-			submitButton.setImage("/images/Allow.png");
+			submitButton.setImage("/images/icons/Allow.png");
 		} else {
 			submitButton.setDisabled(true);
 			submitButton.setImage("");
