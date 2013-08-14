@@ -40,4 +40,16 @@ public class ZkEventHandlerUtil {
             }
         };
 	}
+	
+	public static EventListener<Event> onCloseListener() {
+		return 
+		new EventListener<Event>(){
+
+			@Override
+			public void onEvent(Event event) throws Exception {
+				event.getTarget().detach();		
+			}
+
+        };
+	}
 }

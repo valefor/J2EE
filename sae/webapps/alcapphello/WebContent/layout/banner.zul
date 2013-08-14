@@ -9,7 +9,8 @@
 			<div width="400px" align="center">
 				<label value="${labels.app.welcomeForum}" sclass="banner-head" />
 			</div>
-			<hbox id="statusBar" hflex="1" vflex="1" pack="end" align="end" height="22px">		
+			<hbox id="statusBar" hflex="1" vflex="1" pack="end" align="end" height="22px">
+				<window id="messageBar" border="no"/>
 			</hbox>
 		</hbox>
 	</div>

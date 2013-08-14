@@ -5,9 +5,9 @@
 <zk>
 
 	<!-- clustering environment Config -->
-	<!-- Disable event thread, that you may not be able to user zk modal window -->
+	<!-- Disable event thread, that you may not be able to use zk modal window -->
 	<system-config>
-		<disable-event-thread />
+<!-- 		<disable-event-thread /> -->
 		<ui-factory-class>org.zkoss.zk.ui.http.SerializableUiFactory
 		</ui-factory-class>
 	</system-config>

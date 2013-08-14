@@ -1,4 +1,4 @@
 <?page title="${labels.app.hello}"?>
-<window title="${labels.app.hello}" border="normal" width="200px">
+<window id="mainWin" title="${labels.app.hello}" border="normal" width="200px">
 	<label value="${labels.app.hello}" />
 </window>

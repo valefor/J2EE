@@ -5,9 +5,9 @@
 				<include src="${labels.links.fm.layout.n}"/>
 			</div>			
 		</north>
-		<center autoscroll="true" border="2px black" >
+		<center id="mainContentAnony" autoscroll="true" border="2px black" >
 			<hbox  hflex="1" vflex="1" align="center" pack="center">
-					<div id="mainContentAnony" self="@insert(content)"></div>
+					<div id="mainDiv" self="@insert(content)"></div>
 			</hbox>
 		</center>
 		<south height="50px" border="none">
