@@ -3,10 +3,11 @@ package org.alc.util;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zk.ui.event.KeyEvent;
 import org.zkoss.zk.ui.event.SerializableEventListener;
 import org.zkoss.zul.Messagebox.ClickEvent;
 
-public class ZkEventHandlerUtil {
+public class ZkEventUtil {
 
 	public static EventListener<Event> createRedirectActionListener(final String redirectUrl) {
 		return 
@@ -48,6 +49,18 @@ public class ZkEventHandlerUtil {
 			@Override
 			public void onEvent(Event event) throws Exception {
 				event.getTarget().detach();		
+			}
+
+        };
+	}
+
+	public static EventListener<KeyEvent> onCtrlKeyListener() {
+		return 
+		new EventListener<KeyEvent>(){
+
+			@Override
+			public void onEvent(KeyEvent event) throws Exception {
+//				event.getKeyCode()  				
 			}
 
         };

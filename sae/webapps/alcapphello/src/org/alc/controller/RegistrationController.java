@@ -2,7 +2,7 @@ package org.alc.controller;
 
 import org.alc.dao.UserDao;
 import org.alc.util.SecurityUtil;
-import org.alc.util.ZkEventHandlerUtil;
+import org.alc.util.ZkEventUtil;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;

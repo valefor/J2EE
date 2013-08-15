@@ -1,18 +1,16 @@
 package org.alc.controller;
 
 import org.alc.util.SecurityUtil;
-import org.alc.util.ZkEventHandlerUtil;
+import org.alc.util.ZkEventUtil;
 import org.alc.webui.window.InputMessageWin;
 import org.springframework.util.StringUtils;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.Path;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.EventQueues;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.select.SelectorComposer;
-import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Hbox;
@@ -61,9 +59,9 @@ public class BannerController extends SelectorComposer<Component> {
 			login.setSclass("logout");
 
 			register.addEventListener(Events.ON_CLICK, 
-	        		ZkEventHandlerUtil.createRedirectActionListener(Labels.getLabel("links.uri.register")));
+	        		ZkEventUtil.createRedirectActionListener(Labels.getLabel("links.uri.register")));
 	        login.addEventListener(Events.ON_CLICK, 
-	        		ZkEventHandlerUtil.createRedirectActionListener(Labels.getLabel("links.uri.login")));
+	        		ZkEventUtil.createRedirectActionListener(Labels.getLabel("links.uri.login")));
 			
 			statusBar.appendChild(register);
 			statusBar.appendChild(login);
@@ -83,7 +81,7 @@ public class BannerController extends SelectorComposer<Component> {
 				logout.setValue(Labels.getLabel("app.logout"));
 				logout.setSclass("logout");							
 		        logout.addEventListener(Events.ON_CLICK, 
-		        		ZkEventHandlerUtil.createRedirectActionListener("/j_spring_security_logout"));
+		        		ZkEventUtil.createRedirectActionListener("/j_spring_security_logout"));
 		        
 		        statusBar.appendChild(username);
 		        statusBar.appendChild(logout);
@@ -154,7 +152,7 @@ public class BannerController extends SelectorComposer<Component> {
 				// Open input box
 //				Window win = Path.getComponent(path);
 //				Textbox t = (Textbox)win.getFellow("textbox");
-				final String str = InputMessageWin.show(messageBar);			
+				InputMessageWin.show(messageBar);			
 			}			
 			
 		});

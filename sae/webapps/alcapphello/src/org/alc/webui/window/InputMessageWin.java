@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.alc.util.SecurityUtil;
 import org.alc.util.ZkDateFormat;
-import org.alc.util.ZkEventHandlerUtil;
+import org.alc.util.ZkEventUtil;
 import org.apache.log4j.Logger;
 import org.springframework.util.StringUtils;
 import org.zkoss.util.resource.Labels;
@@ -14,6 +14,7 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.EventQueues;
 import org.zkoss.zk.ui.event.Events;
+import org.zkoss.zk.ui.event.KeyEvent;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Separator;
 import org.zkoss.zul.Textbox;
@@ -49,18 +50,13 @@ public class InputMessageWin extends Window {
 
 
 	private void createWin() {
-		setWidth("350px");
-		setHeight("150px");
+		setWidth("450px");
+		setHeight("160px");
 		setTitle(Labels.getLabel("app.message.info.pleaseInsertText"));
 		setId("confBox");
 		setVisible(true);
 		setClosable(true);
-		/* 
-		 * default action as 'ON_CLOSE'
-		 * 'enter' key pressed when finished typing text,close window 
-		 * 
-		 */ 
-		addEventListener(Events.ON_OK,ZkEventHandlerUtil.onCloseListener());
+		this.setCtrlKeys("^s@c");
 		
 		Separator sp = new Separator();
 		sp.setParent(this);
@@ -78,26 +74,16 @@ public class InputMessageWin extends Window {
 		Button btnSend = new Button();
 		btnSend.setLabel(Labels.getLabel("app.message.info.send"));
 		btnSend.setParent(this);
-		btnSend.addEventListener(Events.ON_CLICK, new EventListener<Event>() {
-
-			@Override
-			public void onEvent(Event event) throws Exception {
-				// Check if empty, than do not send
-				if (StringUtils.isEmpty(StringUtils.trimAllWhitespace(textbox.getText()))) {
-				onClose();
-				return;
-				}
-				
-				msg.append(ZkDateFormat.getDateTimeLongFormater().format(new Date()) + 
-						"/" + Labels.getLabel("app.message.info.from") + 
-						" " + userName + "\n");
-				msg.append(textbox.getText());
-				msg.append("\n" + "_____________________________________________________" + "\n");
-				EventQueues.lookup("quickMessageEQ", EventQueues.APPLICATION, true).publish(new Event("aMessage", null, msg.toString()));
-				onClose();
-			}
-			
-		});
+		
+		/* 
+		 * @Event Listener
+		 * default action as 'ON_CLOSE'
+		 * 'enter' key pressed when finished typing text,close window 
+		 * 
+		 */ 		
+		addEventListener(Events.ON_CANCEL, ZkEventUtil.onCloseListener());
+		addEventListener(Events.ON_CTRL_KEY, new OnSendMsgListener());
+		btnSend.addEventListener(Events.ON_CLICK, new OnSendMsgListener());
 		
 		try {
 			doModal();
@@ -105,6 +91,30 @@ public class InputMessageWin extends Window {
 			logger.fatal("", e);
 		} 
 		
+	}
+	
+	private final class OnSendMsgListener implements EventListener<Event> {
+
+		@Override
+		public void onEvent(Event event) throws Exception {
+			if (StringUtils.isEmpty(StringUtils.trimAllWhitespace(textbox.getText()))) {
+				onClose();
+				return;
+			}
+				
+			sendMsg(textbox.getText());
+			onClose();			
+		}
+		
+	}
+	
+	private void sendMsg(String aMsg) {
+		this.msg.append(ZkDateFormat.getDateTimeLongFormater().format(new Date()) + 
+				"/ " + Labels.getLabel("app.message.info.from") + 
+				" [" + userName + "]:\n");
+		this.msg.append(aMsg);
+		this.msg.append("\n" + "_____________________________________________________" + "\n");
+		EventQueues.lookup("quickMessageEQ", EventQueues.APPLICATION, true).publish(new Event("aMessage", null, this.msg.toString()));
 	}
 
 	public String getMsg() {
