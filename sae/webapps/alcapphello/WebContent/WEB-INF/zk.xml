@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- Created by ZK Studio -->
-
 <zk>
 
-	<!-- clustering environment Config -->
-	<!-- Disable event thread, that you may not be able to use zk modal window -->
+	<!-- ========================================================== -->
+	<!--            Disable event thread for modal windows          -->
+	<!--       that you may not be able to use zk modal window      -->
+	<!-- ========================================================== -->
 	<system-config>
-<!-- 		<disable-event-thread /> -->
+		<disable-event-thread>true</disable-event-thread>
+	</system-config>
+
+	<!-- ====================================================== -->
+	<!--    	clustering environment configuration  		 	-->
+	<!-- ====================================================== -->
+	<system-config>
 		<ui-factory-class>org.zkoss.zk.ui.http.SerializableUiFactory
 		</ui-factory-class>
 	</system-config>
-	<!-- clustering environment (available since ZK 5.0.8) -->
 	<listener>
 		<listener-class>org.zkoss.zkplus.cluster.ClusterSessionPatch
 		</listener-class>
 	</listener>
-	<!-- [Required if ZK 5] disable the use of LogManager (prohibited by SAE). -->
+	
+	<!-- ====================================================== -->
+	<!--    [Required if ZK 5] disable the use of LogManager	-->
+	<!-- 	(prohibited by SAE?).   							-->
+	<!-- ====================================================== -->
 	<library-property>
 		<name>org.zkoss.util.logging.hierarchy.disabled</name>
 		<value>true</value>
 	</library-property>
 
-	<!-- Customized web app initiator -->
+	<!-- ====================================================== -->
+	<!--    Customized web application initiator:  				-->
+	<!--    	Load self-defined labels   						-->
+	<!-- ====================================================== -->
 	<listener>
 		<listener-class>org.alc.zk.MyAppInit</listener-class>
 	</listener>
@@ -34,20 +45,21 @@
 
 	<device-config>
 		<device-type>ajax</device-type>
-		<server-push-class>org.zkoss.zk.ui.impl.PollingServerPush</server-push-class>
-		<timeout-uri>/timeout.zul</timeout-uri><!-- An empty URL can cause the 
-			browser to reload the same URL -->
+<!-- 		<server-push-class>org.zkoss.zk.ui.impl.PollingServerPush</server-push-class> -->
+		<timeout-uri>/timeout.zul</timeout-uri><!-- An empty URL can cause the browser to reload the same URL -->
 	</device-config>
 
-
-	<!-- Error Pages -->
+	<!-- ====================================================== -->
+	<!--    			Error Handling Page   					-->
+	<!-- ====================================================== -->
 	<error-page>
 		<exception-type>org.springframework.security.access.AccessDeniedException</exception-type>
 		<location>/WEB-INF/errors/handler/accessDeniedHandler.zul</location>
 	</error-page>
-	<!-- <system-config> <label-location>/WEB-INF/labels/links.properties</label-location> 
-		</system-config> -->
 
+	<!-- ====================================================== -->
+	<!--    			Other Configuration   					-->
+	<!-- ====================================================== -->
 	<system-property>
 		<name>org.zkoss.zel.impl.parser.SKIP_IDENTIFIER_CHECK</name>
 		<value>true</value>
