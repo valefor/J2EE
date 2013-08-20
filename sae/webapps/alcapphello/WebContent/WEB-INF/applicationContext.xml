@@ -66,8 +66,12 @@
 	-->  
 	  
 	<tx:annotation-driven/> 
+
+	<!-- Other beans, you'd better put it here since security beans have dependency with the beans in this context-->
+<!-- 	<import resource="applicationContext-other.xml"/> -->
 	
 	<!-- Spring Security -->
 	<import resource="applicationContext-security.xml"/>
+
 
 </beans>

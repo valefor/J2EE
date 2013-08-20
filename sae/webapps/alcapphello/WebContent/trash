@@ -64,3 +64,25 @@ ${cmpClassLoader.classMap['classes.ctrl.logout']}
 	<label value="${labels.links.uri.login }" />
 	</vlayout>
 </window>
+
+Accout: hufei1986818@gmail.com
+
+Domain Name:	sinaapp.com
+reCAPTCHA will only work on this domain and subdomains. If you have more than one domain (or a staging server), you can create a new set of keys.
+
+Public Key:	6LdtUuYSAAAAAOoQit2rrvruUS49_oTtbWLiqplu
+Use this in the JavaScript code that is served to your users
+
+Private Key:	6LdtUuYSAAAAAF1qozbsOWAJ0btvR_Kf0jnGG1ol
+Use this when communicating between your server and our server. Be sure to keep it a secret.
+
+ 	<!-- Recaptcha bean -->
+ 	<bean id="reCaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl"> <!-- ***.sinaapp.com -->
+		<property name="privateKey" value="6LdtUuYSAAAAAF1qozbsOWAJ0btvR_Kf0jnGG1ol" /> <!-- private -->
+		<property name="publicKey" value="6LdtUuYSAAAAAOoQit2rrvruUS49_oTtbWLiqplu" />	<!-- public -->
+		<property name="includeNoscript" value="false" />
+	</bean>
+
+							<vlayout>
+								<image src="/jcaptcha.jpg"/>
+							</vlayout>

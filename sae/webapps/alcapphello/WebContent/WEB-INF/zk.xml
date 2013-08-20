@@ -29,6 +29,11 @@
 		<name>org.zkoss.util.logging.hierarchy.disabled</name>
 		<value>true</value>
 	</library-property>
+	<library-property>
+        <name>org.zkoss.zul.captcha.engine.class</name>
+        <value>org.alc.zk.ZkCaptchaEngine</value>
+    </library-property>
+	
 
 	<!-- ====================================================== -->
 	<!--    Customized web application initiator:  				-->

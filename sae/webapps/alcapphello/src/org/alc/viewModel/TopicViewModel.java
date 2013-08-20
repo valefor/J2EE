@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.alc.dao.TopicDao;
 import org.alc.entity.Topic;
+import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
@@ -27,5 +28,10 @@ public class TopicViewModel {
 	@Init
 	public void Init() {
 		topics = topicDao.findAll();
+	}
+	
+	@Command
+	public void viewTopic(int topicId) {
+		
 	}
 }

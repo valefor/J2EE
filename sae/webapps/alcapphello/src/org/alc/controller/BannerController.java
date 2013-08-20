@@ -2,7 +2,7 @@ package org.alc.controller;
 
 import org.alc.util.SecurityUtil;
 import org.alc.util.ZkEventUtil;
-import org.alc.webui.window.InputMessageWin;
+import org.alc.web.ui.window.InputMessageWin;
 import org.springframework.util.StringUtils;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
@@ -91,6 +91,9 @@ public class BannerController extends SelectorComposer<Component> {
 		}
 	}
 	
+	/*
+	 * For zk-ee version, you can use '@Subscribe' instead, it's more graceful
+	 */
 	private void subscribeToMessageQ(String name) {
 
 		EventQueues.lookup("quickMessageEQ", EventQueues.APPLICATION, true).subscribe(new EventListener<Event>() {

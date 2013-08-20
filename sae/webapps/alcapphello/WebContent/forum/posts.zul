@@ -13,7 +13,7 @@
 		</listhead>
 		<template name="model" var="topic">
 			<listitem>
-				<listcell label="@load(topic.title)" />
+				<listcell><a label="@load(topic.title)"/></listcell>
 				<listcell label="@load(topic.clickCount)" />
 				<listcell label="@load(topic.replyCount)" />
 				<listcell label="@load(topic.user.name)" />

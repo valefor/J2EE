@@ -17,6 +17,10 @@
 					<rows>
 						<row>${labels.app.username}: <textbox id="u" name="j_username" constraint="no empty"/></row>
 						<row>${labels.app.password}: <textbox id="p" type="password" name="j_password" constraint="no empty"/></row>
+						<row>
+							Validation:
+							<vbox><captcha id="cpa" length="5" width="120px" height="30px"/></vbox>
+						</row>
 						<row spans="2" align="center">
 							<hlayout>
 								<checkbox id="r" name="_spring_security_remember_me"/>${labels.app.rememberme}

@@ -11,6 +11,10 @@ public class SaeUsernamePasswordAuthenticationFilter extends
 		UsernamePasswordAuthenticationFilter {
 
 	protected final Logger logger = Logger.getLogger(getClass());
+	
+	public static final String DEFAULT_CAPTCHA_SERVICE_ID = "captchaService";  
+    public static final String DEFAULT_CAPTCHA_PARAMTER_NAME = "j_captcha"; 
+    
 	/*
 	 * (non-Javadoc)
 	 * @see org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter#requiresAuthentication(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)

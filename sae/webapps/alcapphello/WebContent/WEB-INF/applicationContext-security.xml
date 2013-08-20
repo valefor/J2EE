@@ -10,14 +10,16 @@
 	<http pattern="/images/**" security="none" />
 	<http pattern="/styles/**" security="none" />
 	 -->
-	 
-	<!-- HTTP configuration sample -->
+	
+	<!-- ********************************** --> 
+	<!-- HTTP configuration sample:disabled	-->
+	<!-- ********************************** -->
 	<http auto-config="false" entry-point-ref="loginUrlAuthenticationEntryPoint">
 
 		<intercept-url pattern="/**"
 			access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		
-		<!-- User Customized <form-login>/<logout> Version
+			
+		<!--
 		<form-login login-page="/public/login.zul"
 			authentication-failure-url="/public/login.zul?login_error=1"
 			login-processing-url="/public/j_spring_security_check"
@@ -25,9 +27,36 @@
 		<logout logout-success-url="/index.zul" invalidate-session="true" />
 		<access-denied-handler error-page="/WEB-INF/errors/handler/accessDeniedHandler.zul" /> 
 		-->
+		<!-- ******************************************	-->
+		<!-- App Customized(marked with "*") Filters:	-->
+		<!-- *FIRST (Integer.MIN_VALUE),				-->
+	    <!-- CHANNEL_FILTER,							-->
+	    <!-- SECURITY_CONTEXT_FILTER,					-->
+	    <!-- CONCURRENT_SESSION_FILTER,					-->
+	    <!-- *LOGOUT_FILTER,							-->
+	    <!-- X509_FILTER,								-->
+	    <!-- PRE_AUTH_FILTER,							-->
+	    <!-- CAS_FILTER,								-->
+	    <!-- *FORM_LOGIN_FILTER,						-->
+	    <!-- OPENID_FILTER,								-->
+	    <!-- LOGIN_PAGE_FILTER,							-->
+	    <!-- DIGEST_AUTH_FILTER,						-->
+	    <!-- BASIC_AUTH_FILTER,							-->
+	    <!-- REQUEST_CACHE_FILTER,						-->
+	    <!-- SERVLET_API_SUPPORT_FILTER,				-->
+	    <!-- JAAS_API_SUPPORT_FILTER,					-->
+	    <!-- REMEMBER_ME_FILTER,						-->
+	    <!-- ANONYMOUS_FILTER,							-->
+	    <!-- SESSION_MANAGEMENT_FILTER,					-->
+	    <!-- EXCEPTION_TRANSLATION_FILTER,				-->
+	    <!-- FILTER_SECURITY_INTERCEPTOR,				-->
+	    <!-- SWITCH_USER_FILTER,						-->
+	    <!-- *LAST (Integer.MAX_VALUE);					-->
+		<!-- ********************************** 		-->
+<!-- 		<custom-filter ref="jCaptchaFilter" after="LAST"/> -->
 		<custom-filter ref="saeLogoutFilter" position="LOGOUT_FILTER"/>
 		<custom-filter ref="saeUsernamePasswordAuthenticationFilter" position="FORM_LOGIN_FILTER"/>
-		<custom-filter ref="saeFilterSecurityInterceptor" position="LAST"/>
+		<custom-filter ref="saeFilterSecurityInterceptor" before="LAST"/>
 		<access-denied-handler error-page="/WEB-INF/errors/handler/accessDeniedHandler.zul"/>
 		<remember-me />
 		<!-- <session-management invalid-session-url="/timeout.zul"> <concurrency-control 
@@ -35,13 +64,16 @@
 				
 	</http>
 	
+	<!-- *********************************** -->
 	<!-- Customize FilterSecurityInterceptor -->
+	<!-- *********************************** -->
 	<beans:bean id="saeFilterSecurityInterceptor" 
 		class="org.alc.sae.ss.web.filter.SaeFilterSecurityInterceptor">
 		<beans:property name="authenticationManager" ref="authenticationManager"/>
 		<beans:property name="accessDecisionManager" ref="affirmativeBased"/>
 		<beans:property name="securityMetadataSource">
 			<filter-security-metadata-source path-type="ant">
+				<intercept-url pattern="/jcaptcha.jpg" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 				<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 				<intercept-url pattern="/styles/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
@@ -64,7 +96,18 @@
 		<beans:property name="errorPage" value="/WEB-INF/errors/viewer/accessDenied.zul"/>
 	</beans:bean>
 	 -->
-	<!-- Customize FORM_LOGIN_FILTER -->
+	 
+	<!-- **********************************	-->
+	<!-- 	Customize FORM_LOGIN_FILTER 	-->
+	<!-- ********************************** -->
+<!-- 	<beans:bean id="jCaptchaFilter" class="org.alc.web.filter.JCaptchaFilter"> -->
+<!-- 		<beans:property name="filterProcessesUrl" value="/jcaptcha.jpg"/> -->
+<!-- 		<beans:property name="captchaService" ref="captchaService"/> -->
+<!-- 	</beans:bean> -->
+	 
+	<!-- **********************************	-->
+	<!-- 	Customize FORM_LOGIN_FILTER 	-->
+	<!-- ********************************** -->
 	<beans:bean id="loginUrlAuthenticationEntryPoint"
 		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
 		<beans:property name="loginFormUrl" value="/public/login.zul"/>
@@ -86,8 +129,9 @@
 	</beans:bean>
 
 
-
-	<!-- Customize LOGOUT_FILTER -->
+	<!-- ********************************** -->
+	<!-- 		Customize LOGOUT_FILTER 	-->
+	<!-- ********************************** -->
 	<beans:bean id="saeLogoutFilter" class="org.alc.sae.ss.web.filter.SaeLogoutFilter">
 		<beans:constructor-arg name="logoutSuccessUrl" value="/index.zul"/>
 		<beans:constructor-arg name="handlers">
@@ -103,8 +147,9 @@
 	</beans:bean>
 	
 	
-	
-	<!-- AuthenticationManager -->
+	<!-- ********************************** -->
+	<!-- 		AuthenticationManager 		-->
+	<!-- ********************************** -->
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="myUserDetailsService">
 			<password-encoder hash="md5" />
@@ -143,8 +188,9 @@
 	<!-- Authenticated Voter -->
 	<beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter"/>	
 		
-	
-	<!-- Customize Message Source -->
+	<!-- ********************************** -->
+	<!-- 		Customize Message Source 	-->
+	<!-- ********************************** -->
 	<beans:bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<beans:property name="basename" value="org/springframework/security/messages" />
