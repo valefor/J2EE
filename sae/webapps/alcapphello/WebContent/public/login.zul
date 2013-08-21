@@ -3,7 +3,7 @@
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.fm.tmp.anony}"?>
 <zk>
 <hbox self="@define(content)" spacing="20px">
-	<window id="loginwin" title="${labels.app.login}" border="normal" width="400px">
+	<window id="loginwin" title="${labels.app.login}" border="normal" width="400px" apply="org.alc.controller.LoginController">
 		<html style="color:red" if="${not empty param.login_error}">
 			<![CDATA[
 			${labels.err.loginFailed}<br/><br/>
@@ -19,7 +19,10 @@
 						<row>${labels.app.password}: <textbox id="p" type="password" name="j_password" constraint="no empty"/></row>
 						<row>
 							${labels.app.validation}:
-							<vbox><captcha id="cpa" length="5" width="120px" height="30px"/></vbox>
+							<vbox>
+								<captcha id="captcha" length="5" width="130px" height="30px" tooltiptext="${labels.app.ttt.cReCaptcha}"/>								
+								<textbox id="captchaText" name="j_captcha" constraint="no empty"/>
+							</vbox>
 						</row>
 						<row spans="2" align="center">
 							<hlayout>
@@ -28,8 +31,8 @@
 						</row>
 						<row spans="2" align="center">
 							<hlayout>
-								<button type="reset" label="${labels.app.reset}"/>
-								<button type="submit" label="${labels.app.submit}"/>
+								<button id="reset" type="reset" label="${labels.app.reset}" />
+								<button id="submit" type="submit" label="${labels.app.submit}"  disabled="true"/>
 							</hlayout>
 						</row>
 					</rows>
