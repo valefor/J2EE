@@ -31,7 +31,7 @@
 						</row>
 						<row spans="2" align="center">
 							<hlayout>
-								<button id="reset" type="reset" label="${labels.app.reset}" />
+								<!-- <button id="reset" type="reset" label="${labels.app.reset}" />  -->
 								<button id="submit" type="submit" label="${labels.app.submit}"  disabled="true"/>
 							</hlayout>
 						</row>
