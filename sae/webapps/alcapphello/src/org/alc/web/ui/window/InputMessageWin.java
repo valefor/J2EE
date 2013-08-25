@@ -56,7 +56,7 @@ public class InputMessageWin extends Window {
 		setId("confBox");
 		setVisible(true);
 		setClosable(true);
-		this.setCtrlKeys("^s@c");
+		this.setCtrlKeys("^s@c"); //Listen at 'ctrl+s' and 'alt+c'
 		
 		Separator sp = new Separator();
 		sp.setParent(this);
@@ -73,6 +73,7 @@ public class InputMessageWin extends Window {
 		
 		Button btnSend = new Button();
 		btnSend.setLabel(Labels.getLabel("app.message.info.send"));
+		btnSend.setAutodisable("self"); // void being repeatedly clicked
 		btnSend.setParent(this);
 		
 		/* 
