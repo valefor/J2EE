@@ -73,7 +73,7 @@ public class InputMessageWin extends Window {
 		
 		Button btnSend = new Button();
 		btnSend.setLabel(Labels.getLabel("app.message.info.send"));
-		btnSend.setAutodisable("self"); // void being repeatedly clicked
+		btnSend.setAutodisable("self"); // avoid being repeatedly clicked
 		btnSend.setParent(this);
 		
 		/* 
