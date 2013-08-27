@@ -77,9 +77,9 @@
 				<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 				<intercept-url pattern="/styles/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/public/**" access="ROLE_ANONYMOUS"/>
 				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/index.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 				
 				<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS"/>
 				<intercept-url pattern="/public/registration.zul" access="ROLE_ANONYMOUS"/>
