@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+
+    <rule match-type="regex">
+        <note>
+            The rule means that requests to /*.html will be redirected to /*.zul
+            the url will be rewritten.
+        </note>
+        <from>^(.*)\.html</from>
+        <to>/$1.zul</to>
+    </rule>
+
+</urlrewrite>
+

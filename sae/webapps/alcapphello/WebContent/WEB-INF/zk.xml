@@ -63,6 +63,14 @@
 	</error-page>
 
 	<!-- ====================================================== -->
+	<!--    			Language Mapping 	  					-->
+	<!-- ====================================================== -->
+	<language-mapping>
+		<language-name>zul</language-name>
+		<extension>html</extension>
+	</language-mapping>
+
+	<!-- ====================================================== -->
 	<!--    			Other Configuration   					-->
 	<!-- ====================================================== -->
 	<system-property>
