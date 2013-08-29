@@ -73,20 +73,16 @@
 		<beans:property name="accessDecisionManager" ref="affirmativeBased"/>
 		<beans:property name="securityMetadataSource">
 			<filter-security-metadata-source path-type="ant">
-				<intercept-url pattern="/jcaptcha.jpg" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/styles/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/public/**" access="ROLE_ANONYMOUS"/>
-				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				<intercept-url pattern="/index.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-				
+								
 				<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS"/>
 				<intercept-url pattern="/public/registration.zul" access="ROLE_ANONYMOUS"/>
 				<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS"/>
-				
+								
 				<intercept-url pattern="/mgmt/**" access="ROLE_ROOT"/>
-				<intercept-url pattern="/**" access="ROLE_USER"/>
+				<intercept-url pattern="/forum/**" access="ROLE_USER"/>
+				
+				<!-- This rule must be put in the end since we use blacklist security strategy -->
+				<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 			</filter-security-metadata-source>
 		</beans:property>
 	</beans:bean>

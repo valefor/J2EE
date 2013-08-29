@@ -1,0 +1,41 @@
+<?page title="${labels.app.fileAnalyzer}" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>.z-menubar-hor, .z-menubar-ver { border: 1px solid #D8D8D8; } 
+    .content {overflow-x: hidden;overflow-y: scroll;}</style>
+    
+	<panel id="fa" title="${labels.app.fileAnalyzer}" border="normal" 
+	framable="true" maximizable="true" collapsible="true" apply="org.alc.controller.FileAnalyzerController">
+		<panelchildren>
+			<menubar id="menubar" width="100%">
+				<menu label="File">
+					<menupopup>
+						<menuitem label="New" />
+						<menuseparator />
+						<menuitem label="Open" upload="true,maxsize=-1,native"/>
+					</menupopup>
+				</menu>
+				<menuitem label="About" />
+			</menubar>
+			<div height="600px" sclass="content">
+				<hbox spacing="20" width="100%" height="100%">
+					<vbox  spacing="5" width="100%" hflex="1" vflex="1">
+						<groupbox vflex="1">
+							<caption label="${labels.app.fa.fileHeader}">
+							</caption>
+						</groupbox>					
+						<splitter id="s1" collapse="before"/>
+						<groupbox vflex="1">
+							<caption label="${labels.app.fa.fileTail}">
+							</caption>
+						</groupbox>	
+					</vbox>
+					<splitter id="s2" collapse="before"/>
+					<groupbox hflex="4" vflex="1">
+						<caption label="${labels.app.fa.transactionData}">
+						</caption>
+					</groupbox>	
+				</hbox>			
+			</div>
+		</panelchildren>
+	</panel>
+</zk>

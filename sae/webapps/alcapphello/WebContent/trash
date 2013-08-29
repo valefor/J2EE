@@ -41,6 +41,13 @@ UsernamePasswordAuthenticationFilter
 			access="ROLE_ROOT" />
 		<intercept-url pattern="/**"
 			access="ROLE_USER" />
+				<intercept-url pattern="/jcaptcha.jpg" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/images/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/styles/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/public/**" access="ROLE_ANONYMOUS"/>
+				<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+				<intercept-url pattern="/index.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 			
 GrantedAuthority
 	@Override

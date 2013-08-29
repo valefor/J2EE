@@ -1,0 +1,11 @@
+<?page title="${labels.err.std.pageNotFound}" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<hbox pack="center" align="center" vflex="1" hflex="1">
+		<window title="${labels.err.prompt}" border="normal" height="100px" width="200px">
+			<vlayout>
+				<label value="${labels.err.std.pageNotFound}"/>
+				<a label="${labels.app.return}" href="/"/>
+			</vlayout>
+	 	</window>
+	</hbox>
+</zk>
