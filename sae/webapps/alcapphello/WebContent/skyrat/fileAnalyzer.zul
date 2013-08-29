@@ -2,16 +2,29 @@
 <zk>
 	<style>.z-menubar-hor, .z-menubar-ver { border: 1px solid #D8D8D8; } 
     .content {overflow-x: hidden;overflow-y: scroll;}</style>
-    
-	<panel id="fa" title="${labels.app.fileAnalyzer}" border="normal" 
+    <zscript>
+    void upload(UploadEvent event) {
+        org.zkoss.util.media.Media media = event.getMedia();
+        if (media instanceof org.zkoss.image.Image) {
+            org.zkoss.zul.Image image = new org.zkoss.zul.Image();
+            image.setContent( (org.zkoss.image.Image) media);
+            image.setParent(pics);
+        } else {
+            Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+        }
+    }
+    </zscript>
+
+	<!-- Here we need a window to hold the id space -->
+	<panel id="mainPanel" title="${labels.app.fileAnalyzer}" border="normal" 
 	framable="true" maximizable="true" collapsible="true" apply="org.alc.controller.FileAnalyzerController">
 		<panelchildren>
 			<menubar id="menubar" width="100%">
 				<menu label="File">
 					<menupopup>
-						<menuitem label="New" />
+						<menuitem id="newbee"  label="New" image="/images/icons/NewFile_16x16.png"/>
 						<menuseparator />
-						<menuitem label="Open" upload="true,maxsize=-1,native"/>
+						<menuitem id="open"  label="Open"  image="/images/icons/OpenFile_16x16.png" upload="true,maxsize=-1,native"/>
 					</menupopup>
 				</menu>
 				<menuitem label="About" />
@@ -34,7 +47,7 @@
 						<caption label="${labels.app.fa.transactionData}">
 						</caption>
 					</groupbox>	
-				</hbox>			
+				</hbox>
 			</div>
 		</panelchildren>
 	</panel>

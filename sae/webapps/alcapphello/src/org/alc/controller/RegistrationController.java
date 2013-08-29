@@ -95,6 +95,11 @@ public class RegistrationController extends SelectorComposer<Component> {
 	
 	@Listen("onClick = #submitButton")
 	public void submit() {
-		
+		System.out.println("Submitting...");
+	}
+	
+	@Listen("onClick = #resetButton")
+	public void reset() {
+		System.out.println("Resetting...");
 	}
 }
