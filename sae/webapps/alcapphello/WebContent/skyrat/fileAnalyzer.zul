@@ -2,18 +2,6 @@
 <zk>
 	<style>.z-menubar-hor, .z-menubar-ver { border: 1px solid #D8D8D8; } 
     .content {overflow-x: hidden;overflow-y: scroll;}</style>
-    <zscript>
-    void upload(UploadEvent event) {
-        org.zkoss.util.media.Media media = event.getMedia();
-        if (media instanceof org.zkoss.image.Image) {
-            org.zkoss.zul.Image image = new org.zkoss.zul.Image();
-            image.setContent( (org.zkoss.image.Image) media);
-            image.setParent(pics);
-        } else {
-            Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
-        }
-    }
-    </zscript>
 
 	<!-- Here we need a window to hold the id space -->
 	<panel id="mainPanel" title="${labels.app.fileAnalyzer}" border="normal" 
@@ -33,19 +21,54 @@
 				<hbox spacing="20" width="100%" height="100%">
 					<vbox  spacing="5" width="100%" hflex="1" vflex="1">
 						<groupbox vflex="1">
-							<caption label="${labels.app.fa.fileHeader}">
-							</caption>
+							<caption label="${labels.app.fa.fileHeader}"/>
 						</groupbox>					
 						<splitter id="s1" collapse="before"/>
 						<groupbox vflex="1">
-							<caption label="${labels.app.fa.fileTail}">
-							</caption>
+							<caption label="${labels.app.fa.fileTail}"/>
 						</groupbox>	
 					</vbox>
 					<splitter id="s2" collapse="before"/>
 					<groupbox hflex="4" vflex="1">
-						<caption label="${labels.app.fa.transactionData}">
-						</caption>
+						<caption label="${labels.app.fa.transactionData}"/>					
+						<listbox id="tdList" model="${$composer.trans_list}" >
+							<listhead>
+								<listheader label="报文长度" hflex="min" />
+								<listheader label="因子1：受卡机终端标识码" hflex="min" />
+								<listheader label="因子2：受卡方标识码" hflex="min" />
+								<listheader label="因子3：受卡方系统跟踪号" hflex="min" />
+								<listheader label="因子4：受卡方所在地时间" hflex="min" />
+								<listheader label="因子5：受卡方所在地日期" hflex="min" />
+								<listheader label="报文头" hflex="min" />
+								<listheader label="消息类型" hflex="min" />
+								<listheader label="位元表" width="500px" />
+								<listheader label="F2：主账号" width="150px"/>
+								<listheader label="F3：交易处理码" hflex="min" />
+								<listheader label="F4：交易金额" hflex="min" />
+								<listheader label="F14：卡有效期" hflex="min" />
+								<listheader label="F22：服务点输入方式码" hflex="min" />
+								<listheader label="F23：卡片序列号" hflex="min" />
+							</listhead>
+							<template name="model">
+								<listitem>
+									<listcell label="${each.len}" />
+									<listcell label="${each.term_id}" />
+									<listcell label="${each.mercht_id}" />
+									<listcell label="${each.sys_tra_no}" />
+									<listcell label="${each.local_trans_time}" />
+									<listcell label="${each.local_trans_date}" />
+									<listcell label="${each.trans_header}" />
+									<listcell label="${each.trans_tp}" />
+									<listcell label="${each.trans_bitmapStr}" />
+									<listcell label="${each.card_no_len}${each.card_no}" />
+									<listcell label="${each.trans_proc_cd}" />
+									<listcell label="${each.trans_at}" />
+									<listcell label="${each.card_exp_date}" />
+									<listcell label="${each.service_entry_md_cd}" />
+									<listcell label="${each.card_seq_no}" />
+								</listitem>
+							</template>
+						</listbox>
 					</groupbox>	
 				</hbox>
 			</div>

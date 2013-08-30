@@ -33,6 +33,11 @@ public class BinaryReadWrite {
         init();
     }
     
+    public BinaryReadWrite(InputStream is){
+        this.dis = new DataInputStream(is);
+        this.trans_list = new ArrayList();
+    }
+    
     private void init(){  
         try{  
             if(!new File(s_FilePath).exists()){  
@@ -47,6 +52,7 @@ public class BinaryReadWrite {
     public void readFileBody() {  
         byte[] file_tail_bytes = new byte[32];
         
+        System.out.println("Reading bytes");
         try{  
             if(dis != null){  
                 //解析每个交易
@@ -54,8 +60,10 @@ public class BinaryReadWrite {
                     TransBody tb = new TransBody();
                     //报文长度
                     byte[] trans_len_bytes = new byte[2];
-                    dis.read(trans_len_bytes);
+                    dis.read(trans_len_bytes);                   
                     tb.len = Hex2Integer(trans_len_bytes);
+                    System.out.println(tot_trans);
+                    System.out.println(tb.len);
                     //终端号
                     byte[] term_id_bytes = new byte[8];
                     dis.read(term_id_bytes);

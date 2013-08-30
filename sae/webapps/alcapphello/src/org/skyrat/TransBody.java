@@ -20,6 +20,7 @@ public class TransBody {
     String trans_header;
     String trans_tp;
     byte[] trans_bitmap;
+    String trans_bitmapStr;
     int card_no_len;
     String card_no;
     String trans_proc_cd;
@@ -71,4 +72,248 @@ public class TransBody {
         this.F55.put("9F74", new TLV("9F74",6,"",2));
         this.F55.put("8A", new TLV("8A",2,"",2));
     }
+
+	public int getLen() {
+		return len;
+	}
+
+	public void setLen(int len) {
+		this.len = len;
+	}
+
+	public String getTerm_id() {
+		return term_id;
+	}
+
+	public void setTerm_id(String term_id) {
+		this.term_id = term_id;
+	}
+
+	public String getMercht_id() {
+		return mercht_id;
+	}
+
+	public void setMercht_id(String mercht_id) {
+		this.mercht_id = mercht_id;
+	}
+
+	public String getSys_tra_no() {
+		return sys_tra_no;
+	}
+
+	public void setSys_tra_no(String sys_tra_no) {
+		this.sys_tra_no = sys_tra_no;
+	}
+
+	public String getLocal_trans_time() {
+		return local_trans_time;
+	}
+
+	public void setLocal_trans_time(String local_trans_time) {
+		this.local_trans_time = local_trans_time;
+	}
+
+	public String getLocal_trans_date() {
+		return local_trans_date;
+	}
+
+	public void setLocal_trans_date(String local_trans_date) {
+		this.local_trans_date = local_trans_date;
+	}
+
+	public String getTrans_header() {
+		return trans_header;
+	}
+
+	public void setTrans_header(String trans_header) {
+		this.trans_header = trans_header;
+	}
+
+	public String getTrans_tp() {
+		return trans_tp;
+	}
+
+	public void setTrans_tp(String trans_tp) {
+		this.trans_tp = trans_tp;
+	}
+
+	public byte[] getTrans_bitmap() {
+		return trans_bitmap;
+	}
+
+	public void setTrans_bitmap(byte[] trans_bitmap) {
+		this.trans_bitmap = trans_bitmap;
+	}
+
+	public int getCard_no_len() {
+		return card_no_len;
+	}
+
+	public void setCard_no_len(int card_no_len) {
+		this.card_no_len = card_no_len;
+	}
+
+	public String getCard_no() {
+		return card_no;
+	}
+
+	public void setCard_no(String card_no) {
+		this.card_no = card_no;
+	}
+
+	public String getTrans_proc_cd() {
+		return trans_proc_cd;
+	}
+
+	public void setTrans_proc_cd(String trans_proc_cd) {
+		this.trans_proc_cd = trans_proc_cd;
+	}
+
+	public double getTrans_at() {
+		return trans_at;
+	}
+
+	public void setTrans_at(double trans_at) {
+		this.trans_at = trans_at;
+	}
+
+	public String getCard_exp_date() {
+		return card_exp_date;
+	}
+
+	public void setCard_exp_date(String card_exp_date) {
+		this.card_exp_date = card_exp_date;
+	}
+
+	public String getService_entry_md_cd() {
+		return service_entry_md_cd;
+	}
+
+	public void setService_entry_md_cd(String service_entry_md_cd) {
+		this.service_entry_md_cd = service_entry_md_cd;
+	}
+
+	public String getCard_seq_no() {
+		return card_seq_no;
+	}
+
+	public void setCard_seq_no(String card_seq_no) {
+		this.card_seq_no = card_seq_no;
+	}
+
+	public String getService_cond_cd() {
+		return service_cond_cd;
+	}
+
+	public void setService_cond_cd(String service_cond_cd) {
+		this.service_cond_cd = service_cond_cd;
+	}
+
+	public String getPos_pin_capt_cd() {
+		return pos_pin_capt_cd;
+	}
+
+	public void setPos_pin_capt_cd(String pos_pin_capt_cd) {
+		this.pos_pin_capt_cd = pos_pin_capt_cd;
+	}
+
+	public String getTrans_currency_cd() {
+		return trans_currency_cd;
+	}
+
+	public void setTrans_currency_cd(String trans_currency_cd) {
+		this.trans_currency_cd = trans_currency_cd;
+	}
+
+	public int getIc_data_len() {
+		return ic_data_len;
+	}
+
+	public void setIc_data_len(int ic_data_len) {
+		this.ic_data_len = ic_data_len;
+	}
+
+	public HashMap<String, TLV> getF55() {
+		return F55;
+	}
+
+	public void setF55(HashMap<String, TLV> f55) {
+		F55 = f55;
+	}
+
+	public int getF60_len() {
+		return F60_len;
+	}
+
+	public void setF60_len(int f60_len) {
+		F60_len = f60_len;
+	}
+
+	public String getF60_1() {
+		return F60_1;
+	}
+
+	public void setF60_1(String f60_1) {
+		F60_1 = f60_1;
+	}
+
+	public String getF60_2() {
+		return F60_2;
+	}
+
+	public void setF60_2(String f60_2) {
+		F60_2 = f60_2;
+	}
+
+	public String getF60_3() {
+		return F60_3;
+	}
+
+	public void setF60_3(String f60_3) {
+		F60_3 = f60_3;
+	}
+
+	public String getF60_4() {
+		return F60_4;
+	}
+
+	public void setF60_4(String f60_4) {
+		F60_4 = f60_4;
+	}
+
+	public String getF60_5() {
+		return F60_5;
+	}
+
+	public void setF60_5(String f60_5) {
+		F60_5 = f60_5;
+	}
+
+	public int getF63_len() {
+		return F63_len;
+	}
+
+	public void setF63_len(int f63_len) {
+		F63_len = f63_len;
+	}
+
+	public String getF63_1() {
+		return F63_1;
+	}
+
+	public void setF63_1(String f63_1) {
+		F63_1 = f63_1;
+	}
+
+	public String getMAC() {
+		return MAC;
+	}
+
+	public void setMAC(String mAC) {
+		MAC = mAC;
+	}
+
+	public String getTrans_bitmapStr() {
+		return new String(trans_bitmap);
+	}
 }
