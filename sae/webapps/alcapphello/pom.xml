@@ -157,9 +157,14 @@
     	<artifactId>urlrewritefilter</artifactId>
     	<version>4.0.4</version>
     </dependency>
+    <dependency>
+    	<groupId>org.zkoss.common</groupId>
+    	<artifactId>zel</artifactId>
+    	<version>${zk.version}</version>
+    </dependency>
   </dependencies>
   <properties>
-  	<zk.version>6.5.2</zk.version>
+  	<zk.version>7.0.0-Preview</zk.version>
   	<springsecurity.version>3.1.4.RELEASE</springsecurity.version>
   	<springcommon.version>3.2.2.RELEASE</springcommon.version>
   	<webAppRoot>WebContent</webAppRoot>
