@@ -20,7 +20,7 @@
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
  
- 	<!-- Url rewrite filter -->
+ 	<!-- Url rewrite filter
 	<filter>
 	    <filter-name>UrlRewriteFilter</filter-name>
 	    <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
@@ -31,7 +31,8 @@
 	    <dispatcher>REQUEST</dispatcher>
 	    <dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
-	   
+	 -->
+	    
     <!-- spring security -->
     <filter>
     	<filter-name>springSecurityFilterChain</filter-name>
