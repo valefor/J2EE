@@ -18,14 +18,10 @@ Copyright (C) 2006 Potix Corporation. All Rights Reserved.
 */
 package org.alc.zk;
 
+import org.zkoss.zk.ui.UiException;
 import org.zkoss.zul.*;
 import org.zkoss.zul.impl.CaptchaEngine;
-import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.UiException;
-import org.zkoss.image.AImage;
-import org.zkoss.util.TimeZones;
-import org.zkoss.lang.Strings;
-import org.zkoss.lang.Objects;
+
 
 import com.jhlabs.image.RippleFilter;
 import com.jhlabs.image.ShadowFilter;
