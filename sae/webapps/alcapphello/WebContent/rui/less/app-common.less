@@ -1,0 +1,34 @@
+// Common variables and functions
+// This file should not be compiled to css, it should be included as a part in other LESS file
+// Please keep this file in good style, also always please it correct!
+
+@color: #4D926F;
+@the-border: 1px;
+@base-color: #111;
+@nice-blue: #BBD8E9;
+@very-light-blue: #DCEAF4;
+@light-blue: @nice-blue + @base-color;
+@red: #842210;
+
+// Functions 
+.rounded-corner (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: rgba(0,0,0,.065)) {
+	box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+}
+
+// CLasses
+.bordered {
+	border-top: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+	border-bottom: solid 1px black;
+}

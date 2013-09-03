@@ -1,0 +1,38 @@
+// Let's begin LESS
+
+// global LESS
+
+@import "app-common.less";
+
+#header {
+    color: @color;
+    .rounded-corner;
+    h1 {
+    	font-size: 26px;
+    	font-weight: bold; 
+    }
+    p {
+    	font-size: 12px;
+    	a {
+    		text-decoration: none;
+    		&:hover {
+    			border-width: 1px;
+    		}
+    	}
+    }
+    
+}
+#footer {
+	.rounded-corner(10px);
+}
+
+#sidebar {
+    .rounded-corner(10px);
+    .bordered;
+}
+
+#content {
+    .rounded-corner;
+    .bordered;
+}
+
