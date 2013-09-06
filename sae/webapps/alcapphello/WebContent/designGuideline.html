@@ -14,7 +14,7 @@
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div id="sidebar" class="span2 alc-docs-sidebar offset2">
-					<ul class="nav nav-list alc-docs-sidenav affix">
+					<ul id="navList" class="nav nav-list alc-docs-sidenav affix">
 						<li><a href="#aboutThisApp"><i class="icon-chevron-right"></i> About</a></li>
 						<li><a href="#directoryStructure"><i class="icon-chevron-right"></i> Directory</a></li>
 					</ul>
@@ -78,5 +78,22 @@
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/javascript">
+		$("li").each( function(index, element) {
+			console.log( $(this).text() );
+		});
+		
+		$("p").on( "click", function() {
+			console.log("<p> was clicked!");
+		});
+		
+		// Event propagation
+		$( "#navList" ).on("click", "a" ,function(event){
+			event.preventDefault();
+			console.log("Something in a <ul> was clicked");
+			$("#navList").append("<li><a href=\"#\"><i class=\"icon-chevron-right\"></i>New</a></li>");
+		});
+		</script>
 	</body>
 </html>
