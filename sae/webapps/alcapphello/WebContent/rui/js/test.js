@@ -1,4 +1,5 @@
 // zk client test js
+/*
 zk.load("zul.inp, zul.layout",function(){alert("package loaded!")});
 
 zk.Widget.$('bZ8Po').mainWin.setTitle("Hello");
@@ -20,3 +21,24 @@ zk.Widget.$(jq('@window')[1]).appendChild(new zul.wnd.Window({
         })
     ]
 }));
+*/
+
+var a = {
+	x: 10,
+	calculate: function(z) {
+		console.log(this);
+		return this.x + this.y +z;
+	}
+};
+
+var b = {
+	y: 20,
+	__proto__: a
+};
+
+var c = {
+	y: 20,
+	__proto__: a
+};
+
+var Foo = function() {};
