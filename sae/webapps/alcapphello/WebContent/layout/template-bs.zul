@@ -17,10 +17,17 @@
 	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
 	<!-- Just for test -->
 	<script type="text/javascript" src="/rui/js/test.js"></script>
+	<h:body style="position: relative;padding-top: 50px;">
+	
 	
 	<!-- Nav bar -->
 	<include src="navbar.zul"/>
 	
+	<!-- Content -->
+	<div id="mainContent"></div>
+	
 	<!-- Footer -->
 	<include src="footer.zul"/>
+	
+	</h:body>
 </zk>
