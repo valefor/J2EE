@@ -1,0 +1,19 @@
+<zk xmlns:h="native">
+	<h:div class="navbar navbar-inverse navbar-fixed-top">
+		<h:div class="navbar-inner">
+			<h:div class="container">
+				<h:button type="button" class="btn btn-navbar">
+					<h:span class="icon-bar"></h:span>
+					<h:span class="icon-bar"></h:span>
+					<h:span class="icon-bar"></h:span>
+				</h:button>
+				<h:a class="brand" href="#">ALC</h:a>
+				<h:ul class="nav">
+					<h:li><h:a href="/alcapphello">Home</h:a></h:li>
+					<h:li><h:a href="#">Support</h:a></h:li>
+					<h:li><h:a href="/alcapphello/designGuideline.html">About</h:a></h:li>
+				</h:ul>
+			</h:div>
+		</h:div>
+	</h:div>
+</zk>

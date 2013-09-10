@@ -74,10 +74,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>zkLoader</servlet-name>
-		<url-pattern>*.html</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>zkLoader</servlet-name>
 		<url-pattern>*.zhtml</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>

@@ -1,0 +1,26 @@
+<?page <?page title="" contentType="text/html;charset=UTF-8"?>
+<!-- UTF8 charset -->
+<?meta http-equiv="Content-Type" Content="text/html;Charset=UTF8;"?>
+<!-- Enable responsive layout -->
+<?meta name="viewport" content="width=device-width, initial-scale=1.0"?>
+<!-- Bootstrap style sheet -->
+<?link rel="stylesheet" type="text/css"	href="/rui/css/bootstrap.min.css" ?>
+<!-- Responsive style sheet -->
+<?link rel="stylesheet" type="text/css"	href="/rui/css/bootstrap-responsive.min.css" ?>
+<!-- App style sheet : Doc -->
+<?link rel="stylesheet" type="text/css"	href="/rui/css/app-docs.css" ?>
+
+<zk xmlns:h="native">
+	<!-- jQuery mast be included as a prerequisite -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<!-- Bootstrap javascript -->
+	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
+	<!-- Just for test -->
+	<script type="text/javascript" src="/rui/js/test.js"></script>
+	
+	<!-- Nav bar -->
+	<include src="navbar.zul"/>
+	
+	<!-- Footer -->
+	<include src="footer.zul"/>
+</zk>
