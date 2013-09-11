@@ -13,6 +13,10 @@
 					<li><a href="#">Support</a></li>
 					<li><a href="/alcapphello/designGuideline.html">About</a></li>
 				</ul>
+				<div style="float: right;">
+				<button class="btn btn-link">${labels.app.login}</button>
+				<button class="btn btn-link">${labels.app.register}</button>
+				</div>
 			</div>
 		</div>
 	</div>

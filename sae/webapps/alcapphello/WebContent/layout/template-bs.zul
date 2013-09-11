@@ -1,4 +1,4 @@
-<?page <?page title="" contentType="text/html;charset=UTF-8"?>
+<?page title="" contentType="text/html;charset=UTF-8"?>
 <!-- UTF8 charset -->
 <?meta http-equiv="Content-Type" Content="text/html;Charset=UTF8;"?>
 <!-- Enable responsive layout -->
@@ -21,13 +21,13 @@
 	
 	
 	<!-- Nav bar -->
-	<include src="navbar.zul"/>
+	<include src="/layout/navbar.zul"/>
 	
 	<!-- Content -->
-	<div id="mainContent"></div>
+	<div id="mainContent" self="@insert(content)"></div>
 	
 	<!-- Footer -->
-	<include src="footer.zul"/>
+	<include src="/layout/footer.zul"/>
 	
 	</h:body>
 </zk>

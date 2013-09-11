@@ -37,12 +37,15 @@
 
 	<!-- ====================================================== -->
 	<!--    Customized web application initiator:  				-->
-	<!--    	Load self-defined labels   						-->
+	<!--    	Load customized labels   						-->
+	<!--    	Set system level page initiator   				-->
 	<!-- ====================================================== -->
 	<listener>
 		<listener-class>org.alc.zk.MyAppInit</listener-class>
 	</listener>
-
+	<listener>
+	    <listener-class>org.alc.zk.PageInitiator</listener-class>
+	</listener>
 	<!-- GAE doesn't allow user's thread -->
 	<client-config>
 		<resend-delay>-1</resend-delay>
@@ -77,4 +80,5 @@
 		<name>org.zkoss.zel.impl.parser.SKIP_IDENTIFIER_CHECK</name>
 		<value>true</value>
 	</system-property>
+	
 </zk>
