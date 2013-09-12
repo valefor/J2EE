@@ -1,0 +1,6 @@
+<?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template-bs.zul"?>
+<?init class="org.alc.zk.PageInitiator"?>
+<zk>
+	<include self="@define(content)" src="/public/login.zul" mode="defer"/>
+</zk>

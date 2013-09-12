@@ -17,17 +17,23 @@
 	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
 	<!-- Just for test -->
 	<script type="text/javascript" src="/rui/js/test.js"></script>
-	<h:body style="position: relative;padding-top: 50px;">
-	
 	
 	<!-- Nav bar -->
-	<include src="/layout/navbar.zul"/>
+	<h:div>
+		<include src="/layout/navbar.zul"/>
+	</h:div>
 	
 	<!-- Content -->
-	<div id="mainContent" self="@insert(content)"></div>
+	<h:div class="container" style="min-height:100%">
+		<hbox  hflex="1" vflex="1" align="center" pack="center">
+					<div id="mainDiv" self="@insert(content)"></div>
+			</hbox>
+	</h:div>
+
 	
 	<!-- Footer -->
-	<include src="/layout/footer.zul"/>
-	
-	</h:body>
+	<h:div class="navbar navbar-fixed-bottom">
+		<include src="/layout/footer.zul"/>
+	</h:div>
+
 </zk>

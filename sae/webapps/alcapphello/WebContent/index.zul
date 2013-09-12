@@ -1,4 +1,3 @@
-<?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template-bs.zul"?>
 <zk>
 	<include id="mainInclude" self="@define(content)" src="${labels.links.uri.index}"/>

@@ -1,8 +1,4 @@
-<?page title="${labels.app.login}" contentType="text/html;charset=UTF-8"?>
-<?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
-<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template-bs.zul"?>
 <zk>
-<hbox self="@define(content)" spacing="20px">
 	<window id="loginwin" title="${labels.app.login}" border="normal" width="400px" apply="org.alc.controller.LoginController">
 		<html style="color:red" if="${not empty param.login_error}">
 			<![CDATA[
@@ -40,5 +36,4 @@
 			</html:form>
 		</groupbox>
 	</window>
-</hbox>
 </zk>

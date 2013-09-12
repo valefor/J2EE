@@ -32,7 +32,11 @@
 	<library-property>
         <name>org.zkoss.zul.captcha.engine.class</name>
         <value>org.alc.zk.ZkCaptchaEngine</value>
-    </library-property>
+	</library-property>
+	<library-property>
+    <name>org.zkoss.zk.ui.metainfo.page.Loader.class</name>
+    <value>org.alc.zk.PageDefinitionLoader</value>
+	</library-property>
 	
 
 	<!-- ====================================================== -->
@@ -43,9 +47,7 @@
 	<listener>
 		<listener-class>org.alc.zk.MyAppInit</listener-class>
 	</listener>
-	<listener>
-	    <listener-class>org.alc.zk.PageInitiator</listener-class>
-	</listener>
+	
 	<!-- GAE doesn't allow user's thread -->
 	<client-config>
 		<resend-delay>-1</resend-delay>
