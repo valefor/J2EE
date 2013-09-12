@@ -11,7 +11,7 @@
 				<ul class="nav">
 					<li><a href="/alcapphello">Home</a></li>
 					<li><a href="#">Support</a></li>
-					<li><a href="/alcapphello/designGuideline.html">About</a></li>
+					<li><a href="/alcapphello/public/about.zul">About</a></li>
 				</ul>
 				<div style="float: right;">
 				<button class="btn btn-link">${labels.app.login}</button>

@@ -1,0 +1,39 @@
+<zk>
+	<window id="loginwin" title="${labels.app.login}" border="normal" width="400px" apply="org.alc.controller.LoginController">
+		<html style="color:red" if="${not empty param.login_error}">
+			<![CDATA[
+			${labels.err.loginFailed}<br/><br/>
+			Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+			]]>
+		</html>
+		<groupbox>
+			<caption>${labels.app.login}</caption>
+			<html:form action="${pageContext.request.contextPath}/public/j_spring_security_check" method="POST" xmlns:html="native">
+				<grid>
+					<rows>
+						<row>${labels.app.username}: <textbox id="u" name="j_username" constraint="no empty"/></row>
+						<row>${labels.app.password}: <textbox id="p" type="password" name="j_password" constraint="no empty"/></row>
+						<row>
+							${labels.app.validation}:
+							<vbox>
+								<captcha id="captcha" length="5" width="130px" height="30px" tooltiptext="${labels.app.ttt.cReCaptcha}"/>								
+								<textbox id="captchaText" name="j_captcha" constraint="no empty"/>
+							</vbox>
+						</row>
+						<row spans="2" align="center">
+							<hlayout>
+								<checkbox id="r" name="_spring_security_remember_me"/>${labels.app.rememberme}
+							</hlayout>
+						</row>
+						<row spans="2" align="center">
+							<hlayout>
+								<!-- <button id="reset" type="reset" label="${labels.app.reset}" />  -->
+								<button id="submit" type="submit" label="${labels.app.login}"  disabled="true"/>
+							</hlayout>
+						</row>
+					</rows>
+				</grid>
+			</html:form>
+		</groupbox>
+	</window>
+</zk>

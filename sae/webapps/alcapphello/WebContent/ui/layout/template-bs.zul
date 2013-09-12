@@ -1,14 +1,4 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
-<!-- UTF8 charset -->
-<?meta http-equiv="Content-Type" Content="text/html;Charset=UTF8;"?>
-<!-- Enable responsive layout -->
-<?meta name="viewport" content="width=device-width, initial-scale=1.0"?>
-<!-- Bootstrap style sheet -->
-<?link rel="stylesheet" type="text/css"	href="/rui/css/bootstrap.min.css" ?>
-<!-- Responsive style sheet -->
-<?link rel="stylesheet" type="text/css"	href="/rui/css/bootstrap-responsive.min.css" ?>
-<!-- App style sheet : Doc -->
-<?link rel="stylesheet" type="text/css"	href="/rui/css/app-docs.css" ?>
 
 <zk xmlns:h="native">
 	<!-- jQuery mast be included as a prerequisite -->
@@ -20,7 +10,7 @@
 	
 	<!-- Nav bar -->
 	<h:div>
-		<include src="/layout/navbar.zul"/>
+		<include src="${labels.links.ui.wgt.navbar}"/>
 	</h:div>
 	
 	<!-- Content -->
@@ -33,7 +23,7 @@
 	
 	<!-- Footer -->
 	<h:div class="navbar navbar-fixed-bottom">
-		<include src="/layout/footer.zul"/>
+		<include src="${labels.links.ui.layout.s}"/>
 	</h:div>
 
 </zk>

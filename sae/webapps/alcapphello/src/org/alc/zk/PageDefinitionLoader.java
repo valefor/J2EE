@@ -31,7 +31,12 @@ public class PageDefinitionLoader extends ResourceLoader<PageDefinition> {
 		final Locator locator =
 			extra != null ? (Locator)extra: getLocator(_wapp, path);
 		PageDefinition pd = new Parser(_wapp, locator).parse(file, path);
-		System.out.println("file pd" + pd);
+//		System.out.println("file pd" + pd);
+//		System.out.println("path" + path);
+//		System.out.println("META:");
+//		System.out.println(pd.getBeforeHeadTags(null));
+//		System.out.println("LINK:");
+//		System.out.println(pd.getAfterHeadTags(null));
 		return pd;
 	}
 	@Override

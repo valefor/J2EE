@@ -33,10 +33,10 @@
         <name>org.zkoss.zul.captcha.engine.class</name>
         <value>org.alc.zk.ZkCaptchaEngine</value>
 	</library-property>
-	<library-property>
-    <name>org.zkoss.zk.ui.metainfo.page.Loader.class</name>
-    <value>org.alc.zk.PageDefinitionLoader</value>
-	</library-property>
+<!-- 	<library-property> -->
+<!--     <name>org.zkoss.zk.ui.metainfo.page.Loader.class</name> -->
+<!--     <value>org.alc.zk.PageDefinitionLoader</value> -->
+<!-- 	</library-property> -->
 	
 
 	<!-- ====================================================== -->

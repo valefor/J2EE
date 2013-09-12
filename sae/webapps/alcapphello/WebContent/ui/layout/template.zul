@@ -2,18 +2,18 @@
 	<borderlayout>
 		<north height="80px" border="none">
 			<div align="center">
-				<include src="${labels.links.fm.layout.n}"/>
+				<include src="${labels.links.ui.layout.n}"/>
 			</div>
 		</north>
 		<center id="mainContent" autoscroll="true" border="none" self="@insert(content)">
 		</center>
 		<west border="none" width="200px" flex="true" maxsize="200" splittable="true" collapsible="true" title="${labels.app.sidebarTitle}">
-			<include src="${labels.links.fm.layout.w}"/>
+			<include src="${labels.links.ui.layout.w}"/>
 		</west>
 		<east border="normal" width="100px"  flex="true" splittable="false" collapsible="true" title="${labels.app.toolbarTitle}">
 		</east>
 		<south height="50px" border="none">
-			<include src="${labels.links.fm.layout.s}"/>		
+			<include src="${labels.links.ui.layout.s}"/>		
 		</south>
 	</borderlayout>
 </zk>

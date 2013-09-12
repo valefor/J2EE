@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<html class="not-ie" lang="en">
+<!--<![endif]-->
+<html lang="zn">
+	<head>
+		<title>Design Guideline</title>
+		<!-- UTF8 charset -->
+		<meta http-equiv="Content-Type" Content="text/html;Charset=UTF8;">
+		<!-- Enable responsive layout -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap style sheet -->
+		<link href="rui/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Responsive style sheet -->
+		<link href="rui/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<!-- App style sheet -->
+		<link href="rui/css/app-docs.css" rel="stylesheet">
+	</head>
+	<body style="position: relative;padding-top: 50px;">
+		<header class="jumbotron subhead">
+			<div class="container">
+				<h1>About</h1>
+			</div>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div id="sidebar" class="span3 alc-docs-sidebar">
+					<ul id="navList" class="nav nav-list alc-docs-sidenav affix-top">
+						<li><a href="#aboutThisApp"><i class="icon-chevron-right"></i> About</a></li>
+						<li><a href="#directoryStructure"><i class="icon-chevron-right"></i> Directory</a></li>
+					</ul>
+				</div>
+				<div id="content" class="span9">
+					<section id="aboutThisApp">
+						<div class="page-header">
+							<h1>About This Application</h1>
+						</div>
+						<h2 id="author">Author</h2>
+						<p>Adrian(adrian.f.tepes@hotmail.com)</p>
+						<dl class="dl-horizontal">
+							<dt>Who am I?</dt>
+							<dd>Hi,I'm Adrian, a software engineer(攻城狮), a coder(程序猿)!</dd>
+							<dt>Skills</dt>
+							<dd>Good at Java, C++</dd>
+						</dl>
+						<h2>Contributor</h2>
+						<p>Come and join me!</p>
+						<h2>Github</h2>
+						<p>https://github.com/valefor/J2EE/</p>
+					</section>
+					<hr class="alc-docs-separator"/>
+					<section id="directoryStructure">
+						<div class="page-header">
+							<h1>Directory Structure</h1>
+							<table class="table table-striped table-bordered">
+								<caption>Figure1-1</caption>
+								<thead>
+									<tr>
+										<th>Directory</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>/errors</td>
+										<td>The folder you can put pages that handle errors in.</td>
+									</tr>
+									<tr>
+										<td>/images</td>
+										<td>Custom image files should be put in this folder.<strong>Notice:</strong>there is another fold named <a title="/rui/img">'img'</a> which is bootstrap dedicated fold
+										</td>
+									</tr>
+									<tr>
+										<td>/forum</td>
+										<td>The folder which contains forum pages.</td>
+									</tr>
+									<tr>
+										<td>/rui</td>
+										<td>Rich-User-Interface folder, used for Bootstrap, there are some bootstrap dedicated folders under it.</td>
+									</tr>
+									<tr>
+										<td>/skyrat</td>
+										<td>The folder for skyrat program: a online file analyze application.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+		/*
+		$("li").each( function(index, element) {
+			console.log( $(this).text() );
+		});
+		
+		$("p").on( "click", function() {
+			console.log("<p> was clicked!");
+		});
+		
+		// Event propagation
+		$( "#navList" ).on("click", "a" ,function(event){
+			event.preventDefault();
+			console.log("Something in a <ul> was clicked");
+			$("#navList").append("<li><a href=\"#\"><i class=\"icon-chevron-right\"></i>New</a></li>");
+		});
+		*/
+		</script>
+	</body>
+</html>

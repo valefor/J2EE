@@ -1,6 +1,6 @@
 <?page title="${labels.app.welcome}" contentType="text/html;charset=UTF-8"?>
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
-<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.fm.tmp.anony}"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.anony}"?>
 <zk>
 <window self="@define(content)" title="${labels.app.regInfo}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid vflex="min">

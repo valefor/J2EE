@@ -1,4 +1,5 @@
-<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template-bs.zul"?>
+<?import src="/ui/directives.zul" directives="*"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/ui/layout/template-bs.zul"?>
 <zk>
 	<include id="mainInclude" self="@define(content)" src="${labels.links.uri.index}"/>
 </zk>
