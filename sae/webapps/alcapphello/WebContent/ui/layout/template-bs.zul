@@ -2,7 +2,7 @@
 
 <zk xmlns:h="native">
 	<!-- jQuery mast be included as a prerequisite -->
-	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!-- Bootstrap javascript -->
 	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
 	<!-- Just for test -->

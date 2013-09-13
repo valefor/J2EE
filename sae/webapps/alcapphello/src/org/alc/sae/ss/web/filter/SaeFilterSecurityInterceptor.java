@@ -28,7 +28,7 @@ public class SaeFilterSecurityInterceptor extends FilterSecurityInterceptor {
 		//HttpUtil.printHttpInfo(this.getClass(), (HttpServletRequest)request);
 		
 		FilterInvocation fi = new FilterInvocation(request, response, chain);
-		printFiInfo(fi);
+		//printFiInfo(fi);
         invoke(fi);
     }
 	

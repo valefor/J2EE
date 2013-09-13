@@ -1,6 +1,6 @@
+<?import src="/ui/directives.zul" directives="*"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
+
 <zk>
-<window id="mainWin" title="${labels.app.hello}" border="normal" width="200px">
-	<label value="${labels.app.hello}" />
-</window>
-Hello
+	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.helloWin}" mode="defer"/>
 </zk>

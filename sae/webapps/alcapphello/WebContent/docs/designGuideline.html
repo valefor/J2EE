@@ -20,7 +20,34 @@
 		<!-- App style sheet -->
 		<link href="rui/css/app-docs.css" rel="stylesheet">
 	</head>
-	<body style="position: relative;padding-top: 50px;">
+	<body style="position: relative;padding-top: 50px;" data-spy="scroll" data-target=".alc-docs-sidebar">
+		<!-- jQuery mast be included as a prerequisite -->
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap javascript -->
+		<script type="text/javascript" src="rui/js/bootstrap.min.js"></script>
+		<!-- Just for test -->
+		<script type="text/javascript" src="rui/js/test.js"></script>
+		<div class="navbar navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="#">ALC</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li><a href="/alcapphello">Home</a></li>
+							<li><a href="support.html">Support</a></li>
+							<li><a href="designGuideline.html">About</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
 		<header class="jumbotron subhead">
 			<div class="container">
 				<h1>About</h1>
@@ -29,7 +56,7 @@
 		<div class="container">
 			<div class="row">
 				<div id="sidebar" class="span3 alc-docs-sidebar">
-					<ul id="navList" class="nav nav-list alc-docs-sidenav affix-top">
+					<ul id="navList" class="nav nav-list alc-docs-sidenav" data-spy="affix" data-offset-top="40">
 						<li><a href="#aboutThisApp"><i class="icon-chevron-right"></i> About</a></li>
 						<li><a href="#directoryStructure"><i class="icon-chevron-right"></i> Directory</a></li>
 					</ul>

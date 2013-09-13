@@ -10,7 +10,7 @@
 				<a class="brand" href="#">ALC</a>
 				<ul class="nav">
 					<li><a href="/alcapphello">Home</a></li>
-					<li><a href="#">Support</a></li>
+					<li><a href="/alcapphello/public/about.zul">Support</a></li>
 					<li><a href="/alcapphello/public/about.zul">About</a></li>
 				</ul>
 				<div style="float: right;">

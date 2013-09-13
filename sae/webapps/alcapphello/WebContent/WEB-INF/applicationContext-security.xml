@@ -81,6 +81,10 @@
 				<intercept-url pattern="/mgmt/**" access="ROLE_ROOT"/>
 				<intercept-url pattern="/forum/**" access="ROLE_USER"/>
 				
+				<!-- INVISABLE FOR ANYONE -->
+				<intercept-url pattern="/ui/**" access="ROLE_NOBODY"/>
+				<intercept-url pattern="/errors/**" access="ROLE_NOBODY"/>
+				
 				<!-- This rule must be put in the end since we use blacklist security strategy -->
 				<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 			</filter-security-metadata-source>

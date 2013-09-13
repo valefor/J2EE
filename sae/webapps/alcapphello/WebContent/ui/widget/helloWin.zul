@@ -1,0 +1,5 @@
+<zk>
+<window id="helloWin" title="${labels.app.hello}" border="normal" width="200px">
+	<label value="${labels.app.hello}" />
+</window>
+</zk>
