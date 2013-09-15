@@ -2,5 +2,5 @@
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
 
 <zk>
-	<include id="mainInclude" self="@define(content)" src="/docs/designGuideline.html" mode="defer"/>
+	<include id="mainInclude" self="@define(content)" src="/docs/about.html" mode="defer"/>
 </zk>
