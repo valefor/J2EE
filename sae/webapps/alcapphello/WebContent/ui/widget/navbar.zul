@@ -1,18 +1,20 @@
 <zk xmlns="native">
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<button type="button" class="btn btn-navbar">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 				<a class="brand" href="#">ALC</a>
-				<ul class="nav">
-					<li><a href="/alcapphello">Home</a></li>
-					<li><a href="/alcapphello/public/about.zul">Support</a></li>
-					<li><a href="/alcapphello/public/about.zul">About</a></li>
-				</ul>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li id="home"><a href="/alcapphello">Home</a></li>
+						<li id="support"><a href="/alcapphello/public/support.zul">Support</a></li>
+						<li id="about"><a href="/alcapphello/public/about.zul">About</a></li>
+					</ul>
+				</div>
 				<div style="float: right;">
 				<button class="btn btn-link">${labels.app.login}</button>
 				<button class="btn btn-link">${labels.app.register}</button>

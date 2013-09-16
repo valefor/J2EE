@@ -3,4 +3,7 @@
 
 <zk>
 	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.helloWin}" mode="defer"/>
+	<n:script xmlns:n="native">
+    $('#home').addClass("active");
+	</n:script>
 </zk>

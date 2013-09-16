@@ -5,8 +5,8 @@
 	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!-- Bootstrap javascript -->
 	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
-	<!-- Just for test -->
-	<script type="text/javascript" src="/rui/js/test.js"></script>
+	<!-- Adjust zk component style for bootstrap -->
+	<script type="text/javascript" src="/rui/js/zk-bootstrap-adjust.js"></script>
 	
 	<!-- Nav bar -->
 	<h:div>
@@ -16,8 +16,8 @@
 	<!-- Content -->
 	<h:div class="container" style="min-height:100%">
 		<hbox  hflex="1" vflex="1" align="center" pack="center">
-					<div id="mainDiv" self="@insert(content)"></div>
-			</hbox>
+			<div id="mainDiv" self="@insert(content)"></div>
+		</hbox>
 	</h:div>
 
 	
