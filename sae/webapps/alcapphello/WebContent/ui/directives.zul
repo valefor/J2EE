@@ -10,5 +10,7 @@
 <?link rel="stylesheet" type="text/css"	href="/rui/css/app-docs.css" ?>
 <!-- App style sheet : Default -->
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
+
 <zk>
+	<!-- zk tag is need here, to make it as a complete zul file-->
 </zk>

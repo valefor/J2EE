@@ -47,6 +47,9 @@
 	<listener>
 		<listener-class>org.alc.zk.MyAppInit</listener-class>
 	</listener>
+	<listener>
+		<listener-class>org.alc.zk.PageInitiator</listener-class>
+	</listener>
 	
 	<!-- GAE doesn't allow user's thread -->
 	<client-config>

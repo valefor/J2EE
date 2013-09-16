@@ -1,6 +1,5 @@
 <?import src="/ui/directives.zul" directives="*"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
 <zk>
-	<body></body>
-	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.loginWin}"/>
+	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.loginWin}" mode="defer"/>
 </zk>
