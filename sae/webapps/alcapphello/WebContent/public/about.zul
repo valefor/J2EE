@@ -4,6 +4,10 @@
 <zk>
 	<include id="mainInclude" self="@define(content)" src="/docs/about.zul" mode="defer"/>
 	<n:script xmlns:n="native">
-    $('#about').addClass("active");
+	$('body').css({
+		position	: "relative",
+		paddingTop	: "50px"
+	});
+  $('#about').addClass("active");
 	</n:script>
 </zk>

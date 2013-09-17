@@ -71,15 +71,15 @@ public class SidebarController extends SelectorComposer<Component> {
                     Executions.getCurrent().sendRedirect(locationUri);
                 }else{
                     //use iterable to find the first include only
-//                    Include include = (Include)Selectors.iterable(fnList.getPage(), "#mainInclude")
-//                    		.iterator().next();
-//                    include.setSrc(locationUri);
+                    Include include = (Include)Selectors.iterable(fnList.getPage(), "#mainInclude")
+                    		.iterator().next();
+                    include.setSrc(locationUri);
                     
                     //advance bookmark control, 
 					//bookmark with a prefix
-//					if(name!=null){
-//						getPage().getDesktop().setBookmark("p_"+name);
-//					}
+					if(name!=null){
+						getPage().getDesktop().setBookmark("p_"+name);
+					}
                 }
             }
         };      

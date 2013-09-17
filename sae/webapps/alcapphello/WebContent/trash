@@ -93,3 +93,21 @@ Use this when communicating between your server and our server. Be sure to keep 
 							<vlayout>
 								<image src="/jcaptcha.jpg"/>
 							</vlayout>
+							
+							
+	Load a ZUL page with an Ajax request
+As described above, if a ZUL page is requested by the browser directly, it will, by default, generate a complete HTML structure, including HTML, HEAD and BODY tags. To disable it, you could specify a special parameter called zk.redrawCtrl=page. For example, you might have a HTML page that loads a ZUL page at the client with jQuery as follows.
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Mash-up of ZUML apges</title>
+        <script src="http://code.jquery.com/jquery-1.4.2.min.js">
+        </script>
+    </head>
+    <body>
+        <div id="anchor"></div>
+        <button onclick="$('#anchor').load('foo.zul?zk.redrawCtrl=page')">Load the fragment</button>
+    </body>
+</html>
+The zk.redrawCtrl parameter is used to control how a ZUL page is specified. In this case, since page is specified, the generation of HTML, HEAD and BODY tags are disabled.
