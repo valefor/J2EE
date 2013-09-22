@@ -45,3 +45,41 @@ var c = {
 };
 
 var Foo = function() {};
+
+
+zk.$package('org.alc');
+org.alc.navbar = zk.$extends(zk.Object,{title:'Navbar'});
+console.log(window['org']['alc']);
+org.alc.navbar; // function
+org.alc.navbar.title; // undefined
+org.alc.navbar.prototype; // !! Object prototype of function org.alc.navbar
+navbar = new org.alc.navbar;
+navbar.title; // 'Navbar'
+zk.define(org.alc.navbar,{disable:false}); // define a new attribute in org.alc.navbar
+navbar.setDisable(true);
+navbar.isDisable(); // true
+
+// create a sub Objec of org.alc.navbar
+org.alc.niceNavBar = zk.$extends(org.alc.navbar,{
+	title : 'Nice Navbar',
+	cool : true,
+	$define: {
+		width: 0,
+		height: 0
+	}
+},
+{
+	saySomethingTo: function(name) {
+		alert("Hello:"+name+"!\nI'm a navbar!");
+	}
+});
+niceNavbar = new org.alc.niceNavBar;
+niceNavbar.title; // "Nice navbar"
+org.alc.niceNavBar.saySomethingTo("adrian");
+niceNavbar.$class.saySomethingTo("piggy");
+
+org.alc.helloBar = zk.$extends(org.alc.niceNavBar,{},{
+	hello:function (name) {
+		alert("Hello:" +name+ "again!");
+	}
+});
