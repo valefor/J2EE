@@ -85,4 +85,4 @@ org.alc.helloBar = zk.$extends(org.alc.niceNavBar,{},{
 });
 
 org.alc.helloBar.prototype.constructor === org.alc.helloBar; //true
-navbar.$class === org.alc.navbar // true
+navbar.$class === org.alc.navbar; // true
