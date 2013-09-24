@@ -25,7 +25,8 @@ zk.Widget.$(jq('@window')[1]).appendChild(new zul.wnd.Window({
 zk("@window").$("helloWin").id
 $("#rZHQ9").load('public?redrawCtrl=page')
 
-jq('$mainInclude').zk
+jq('$mainInclude').zk;
+zk.Widget.$('$mainInclude') === jq('$mainInclude').zk.$() === zk.Widget.$(jq('$mainInclude'))// true
 */
 
 var a = {
