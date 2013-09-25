@@ -162,6 +162,11 @@
     	<artifactId>zel</artifactId>
     	<version>${zk.version}</version>
     </dependency>
+    <dependency>
+    	<groupId>org.alc.zk.ext</groupId>
+    	<artifactId>components</artifactId>
+    	<version>0.0.1</version>
+    </dependency>
   </dependencies>
   <properties>
   	<zk.version>7.0.0-Preview</zk.version>

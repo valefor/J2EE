@@ -1,0 +1,32 @@
+<language-addon>
+    <addon-name>components</addon-name>
+  	<version>
+		<version-class>org.alc.zk.ext.components.Version</version-class>
+		<version-uid>0.0.1-SNAPSHOT</version-uid>
+		<zk-version>6.0.1</zk-version><!-- or later -->
+	</version>
+    
+	<language-name>xul/html</language-name>
+	<component>
+		<component-name>navbar</component-name> <!-- required -->
+		<component-class>org.alc.zk.ext.components.navbar</component-class> <!-- required -->
+		<widget-class>components.navbar</widget-class> <!-- required -->
+		<mold>
+			<mold-name>default</mold-name>
+			<mold-uri>mold/navbar.js</mold-uri>
+
+			<!--
+			== Tip in advance ==
+				You don't have to specify a css.dsp if you need not ,
+				but usually you need it.
+
+				You could assign a .css file ,too.
+
+				The css.dsp is almost as same as CSS file ,
+				but have more powerful enhancement.	(like EL support.)
+			====
+			-->
+			<css-uri>css/navbar.css.dsp</css-uri>
+		</mold>
+	</component>
+</language-addon>

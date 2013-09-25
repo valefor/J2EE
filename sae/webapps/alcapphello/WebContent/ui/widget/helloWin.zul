@@ -1,5 +1,6 @@
 <zk>
 <window id="helloWin" title="${labels.app.hello}" border="normal" width="200px">
+	<navbar id="myComp" text="foo"/>
 	<label value="${labels.app.hello}" />
 </window>
 </zk>
