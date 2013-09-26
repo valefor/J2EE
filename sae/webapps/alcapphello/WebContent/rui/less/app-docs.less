@@ -36,8 +36,10 @@
 			margin: 0 0 0;
 			padding: 8px 14px;
 			border: 1px solid #e5e5e5;
-			&:hover {
-				background-color: #f5f5f5;
+			&:hover, &:focus {
+				text-decoration: none;
+  				background-color: #e5e3e9;
+  				border-right: 1px solid #dbd8e0;
 			}
 		}
 		&:first-child {
@@ -101,6 +103,7 @@
 .alc-docs-sidebar {
 	&.affix {
 		position: fixed;
+		top: 80px;
 	}
 }
 

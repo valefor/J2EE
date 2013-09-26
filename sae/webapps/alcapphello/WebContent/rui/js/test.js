@@ -91,10 +91,12 @@ org.alc.helloBar.prototype.constructor === org.alc.helloBar; //true
 navbar.$class === org.alc.navbar; // true
 */
 
-$('#sidebar').affix({
+var $sideBar = $('.alc-docs-sidebar')
+
+$sideBar.affix({
 	offset: {
         top: function () {
-          var offsetTop      = $('#sidebar').offset().top;
+          var offsetTop      = $sideBar.offset().top;
           var sideBarMargin  = parseInt($('#sidebar').children(0).css('margin-top'), 10);
           var navOuterHeight = $('.alc-docs-nav').height();
 
