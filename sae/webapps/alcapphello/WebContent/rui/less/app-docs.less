@@ -7,6 +7,21 @@
 @import "app-common.less";
 
 // classes
+.alc-docs-nav {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .15);
+	background-color: #563D7C;
+	border-color: #463265;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .1);
+}
+
+.alc-docs-header {
+	padding: 30px 15px 40px;
+	font-size: 16px;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .15);
+
+}
+
 .alc-docs-sidenav {
 	width: @sidenav-width;
 	margin: 20px 0 0;
@@ -17,8 +32,8 @@
 	> li {
 		> a {
 			display: block;
-			width: 170px;
-			margin: 0 0 -1px;
+			//width: 200px;
+			margin: 0 0 0;
 			padding: 8px 14px;
 			border: 1px solid #e5e5e5;
 			&:hover {
@@ -39,18 +54,32 @@
 
 	// .active
 	> .active {
-		> a {
-			position: relative;
-			z-index: 2;
-			padding: 9px 15px;
-			border: 0;
-			text-shadow: 0 1px 0 rgba(0,0,0,.15);
-			.box-shadow(inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1));
+		&:hover, &:focus {
+			> a {
+				font-weight: bold;
+				color: #563d7c;
+				background-color: transparent;
+				border-right: 1px solid #563d7c;
+			}
 		}
+		a {
+			font-weight: bold;
+			color: #563d7c;
+			background-color: transparent;
+			border-right: 1px solid #563d7c;
+		}
+		// > a {
+		// 	position: relative;
+		// 	z-index: 2;
+		// 	padding: 9px 15px;
+		// 	border: 0;
+		// 	text-shadow: 0 1px 0 rgba(0,0,0,.15);
+		// 	.box-shadow(inset 1px 0 0 rgba(0, 0, 0, .1), inset -1px 0 0 rgba(0, 0, 0, .1));
+		// }
 	}
 
 	// chevrons
-	.icon-chevron-right {
+	.glyphicon-chevron-right {
 		float: right;
 		margin-top: 2px;
 		margin-right: -6px;
@@ -59,7 +88,7 @@
 
 	// centralize text content on your screen
 	&.affix {
-		top: 40px;
+		position: static;
 	}
 	&.affix-bottom {
 		position: absolute;
@@ -68,7 +97,16 @@
 	}
 }
 
+// side bar
+.alc-docs-sidebar {
+	&.affix {
+		position: fixed;
+	}
+}
+
 // hrs
 .alc-docs-separator {
 	margin: 40px 0 39px;
 }
+
+

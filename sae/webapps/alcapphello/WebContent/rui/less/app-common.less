@@ -1,6 +1,6 @@
 // Common variables and functions
 // This file should not be compiled to css, it should be included as a part in other LESS file
-// Please keep this file in good style, also always please make it correct!
+// Please keep this file in good shape, also always please make it correct!
 
 // Variables
 @color: #4D926F;
@@ -20,16 +20,16 @@
 	border-radius: @radius;
 }
 
-.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: rgba(0,0,0,.065)) {
-	box-shadow: @arguments;
-	-moz-box-shadow: @arguments;
-	-webkit-box-shadow: @arguments;
+.box-shadow (@a: 0 , @b: 0) {
+	box-shadow: @a,@b;
+	-moz-box-shadow: @a,@b;
+	-webkit-box-shadow: @a,@b;
 }
 
 // Classes
 .bordered {
 	border-top: solid 1px black;
-    border-left: solid 1px black;
-    border-right: solid 1px black;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
 	border-bottom: solid 1px black;
 }

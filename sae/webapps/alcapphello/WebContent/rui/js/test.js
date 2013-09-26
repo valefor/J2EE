@@ -49,7 +49,7 @@ var c = {
 
 var Foo = function() {};
 
-
+/*
 zk.$package('org.alc');
 org.alc.navbar = zk.$extends(zk.Object,{title:'Navbar'});
 console.log(window['org']['alc']);
@@ -89,3 +89,19 @@ org.alc.helloBar = zk.$extends(org.alc.niceNavBar,{},{
 
 org.alc.helloBar.prototype.constructor === org.alc.helloBar; //true
 navbar.$class === org.alc.navbar; // true
+*/
+
+$('#sidebar').affix({
+	offset: {
+        top: function () {
+          var offsetTop      = $('#sidebar').offset().top;
+          var sideBarMargin  = parseInt($('#sidebar').children(0).css('margin-top'), 10);
+          var navOuterHeight = $('.alc-docs-nav').height();
+
+          return (this.top = offsetTop - navOuterHeight - sideBarMargin);
+        }
+      , bottom: function () {
+    	  return (this.bottom = $('.bs-footer').outerHeight(true));
+      }
+      }
+    });
