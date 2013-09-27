@@ -91,7 +91,7 @@ org.alc.helloBar.prototype.constructor === org.alc.helloBar; //true
 navbar.$class === org.alc.navbar; // true
 */
 
-var $sideBar = $('.alc-docs-sidebar')
+var $sideBar = $('.alc-docs-sidebar');
 
 $sideBar.affix({
 	offset: {
@@ -106,4 +106,4 @@ $sideBar.affix({
     	  return (this.bottom = $('.bs-footer').outerHeight(true));
       }
       }
-    });
+});

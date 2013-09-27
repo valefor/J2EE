@@ -4,8 +4,7 @@
 <?meta name="viewport" content="width=device-width, initial-scale=1.0"?>
 <!-- Bootstrap style sheet -->
 <?link rel="stylesheet" type="text/css"	href="/rui/css/bootstrap.min.css" ?>
-<!-- Responsive style sheet -->
-<?link rel="stylesheet" type="text/css"	href="/rui/css/bootstrap-responsive.min.css" ?>
+<!-- Responsive style sheet: Already enabled by default -->
 <!-- App style sheet : Doc -->
 <?link rel="stylesheet" type="text/css"	href="/rui/css/app-docs.css" ?>
 <!-- App style sheet : Default -->

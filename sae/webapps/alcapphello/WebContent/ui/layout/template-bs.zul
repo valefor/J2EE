@@ -1,29 +1,32 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
 
 <zk xmlns:h="native">
-	<!-- jQuery mast be included as a prerequisite -->
-	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<!-- Bootstrap javascript -->
-	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
-	<!-- Adjust zk component style for bootstrap -->
-	<script type="text/javascript" src="/rui/js/zk-bootstrap-adjust.js"></script>
-	
 	<!-- Nav bar -->
 	<h:div>
 		<include src="${labels.links.ui.wgt.navbar}"/>
 	</h:div>
 	
 	<!-- Content -->
+	<!-- 
 	<h:div class="container" style="min-height:100%">
 		<hbox  hflex="1" vflex="1" align="center" pack="center">
 			<div id="mainDiv" self="@insert(content)"></div>
 		</hbox>
 	</h:div>
+	 -->
+	<div id="mainDiv" self="@insert(content)" style="min-height:100%"></div>
 
 	
 	<!-- Footer -->
-	<h:div class="navbar navbar-fixed-bottom">
+	<h:div class="navbar navbar-default navbar-static-bottom">
 		<include src="${labels.links.ui.layout.s}"/>
 	</h:div>
+	
+	<!-- jQuery mast be included as a prerequisite -->
+	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- Bootstrap javascript -->
+	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
+	<!-- Adjust zk component style for bootstrap -->
+	<script type="text/javascript" src="/rui/js/zk-bootstrap-adjust.js"></script>
 
 </zk>

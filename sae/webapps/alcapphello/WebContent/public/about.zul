@@ -2,12 +2,13 @@
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
 
 <zk>
-	<include id="mainInclude" self="@define(content)" src="/docs/about.zul" mode="defer"/>
+	<include id="mainInclude" self="@define(content)" src="/docs/about.zul"/>
 	<n:script xmlns:n="native">
 	$('body').css({
 		position	: "relative",
 		paddingTop	: "50px"
 	});
   $('#about').addClass("active");
+  console.log( document);
 	</n:script>
 </zk>
