@@ -1,4 +1,4 @@
-// zk bootstrap adjust javascript
+// bootstrap adjust javascript for documentation
 
 //$('head').append('<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->')
 //	.append('<!--[if lt IE 9]>')
@@ -6,25 +6,25 @@
 //	.append('<script src="../../assets/js/respond.min.js"></script>')
 //	.append('<![endif]-->');
 
-// add attribute 'data-spy' & 'data-target' to <body> to enable bootstrap affix navbar
-!function($) {
-	
+
+// add padding to top so navbar won't cover main content of web
+$('body').css({
+		position	: "relative",
+		paddingTop	: "50px"
+});
+
+!function($) {	
 	// When DOM is ready, execute customized codes
 	$(function() {
-		console.log("ready!");
-		console.log($(".alc-docs-sidebar").length);
-		console.log( document);
-		console.log($('div.navbar'));
-		var $sideBar = $('.alc-docs-sidebar');
-		console.log($sideBar);
-		console.log($('.alc-docs-sidebar'));
 
+		// add attribute 'data-spy' & 'data-target' to <body> to enable bootstrap af fix navbar
 		$('body').attr({
 			"data-spy" : "scroll",
 			"data-target" : ".alc-docs-sidebar"
 		});
 		console.log($('body'));
 
+		$sideBar = $('.alc-docs-sidebar');
 		$sideBar.affix({
 			offset : {
 				top : function() {

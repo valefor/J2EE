@@ -1,4 +1,5 @@
-<zk xmlns="native">
+<zk xmlns="native" xmlns:z="zk">
+
 	<header class="alc-docs-header">
 		<div class="container">
 			<h1>About</h1>

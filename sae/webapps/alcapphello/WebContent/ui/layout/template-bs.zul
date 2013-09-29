@@ -26,7 +26,4 @@
 	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!-- Bootstrap javascript -->
 	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
-	<!-- Adjust zk component style for bootstrap -->
-	<script type="text/javascript" src="/rui/js/zk-bootstrap-adjust.js"></script>
-
 </zk>

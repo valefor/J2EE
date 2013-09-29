@@ -1,14 +1,10 @@
 <?import src="/ui/directives.zul" directives="*"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
-
 <zk>
-	<include id="mainInclude" self="@define(content)" src="/docs/about.zul"/>
-	<n:script xmlns:n="native">
-	$('body').css({
-		position	: "relative",
-		paddingTop	: "50px"
-	});
-  $('#about').addClass("active");
-  console.log( document);
-	</n:script>
+	<include id="mainInclude" self="@define(content)" src="/docs/about.zul" mode="defer"/>
+	<!-- Adjust zk component style for bootstrap, NOTE:Pls defer zk component operating javascript! -->
+	<script type="text/javascript" src="/rui/js/docs-bootstrap-adjust.js" defer="true"></script>
+	<script defer="true">
+	$('#about').addClass("active");
+	</script>
 </zk>
