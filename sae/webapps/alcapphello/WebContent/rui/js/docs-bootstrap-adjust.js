@@ -17,7 +17,7 @@ $('body').css({
 	// When DOM is ready, execute customized codes
 	$(function() {
 
-		// add attribute 'data-spy' & 'data-target' to <body> to enable bootstrap af fix navbar
+		// add attribute 'data-spy' & 'data-target' to <body> to enable bootstrap affix navbar
 		$('body').attr({
 			"data-spy" : "scroll",
 			"data-target" : ".alc-docs-sidebar"
@@ -29,14 +29,21 @@ $('body').css({
 			offset : {
 				top : function() {
 					var offsetTop = $sideBar.offset().top;
-					var sideBarMargin = parseInt($('#sidebar').children(0).css(
+					var sideBarMargin = parseInt($sideBar.children(0).css(
 							'margin-top'), 10);
 					var navOuterHeight = $('.alc-docs-nav').height();
 
+					console.log('offset top');
+					console.log(offsetTop);
+					console.log(sideBarMargin);
+					console.log(navOuterHeight);
+					
 					return (this.top = offsetTop - navOuterHeight - sideBarMargin);
 				},
 				bottom : function() {
-					return (this.bottom = $('.bs-footer').outerHeight(true));
+					console.log('offset bottom');
+					console.log($('.alc-docs-footer').outerHeight(true));
+					return (this.bottom = $('.alc-docs-footer').outerHeight(true));
 				}
 			}
 		});	

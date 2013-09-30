@@ -21,6 +21,12 @@ public class PageInitiator implements Initiator {
 //		pageImpl.addAfterHeadTags("<link rel=\"stylesheet\" type=\"text/css\" href=\"/alcapphello/rui/css/bootstrap-responsive.min.css\"/>");
 //	
 		System.out.println("Page owner:"+ pageImpl.getOwner());
+		System.out.println("user principal:"+ Executions.getCurrent());
+		System.out.println(Executions.getCurrent().getUserPrincipal()==null);
+		if (Executions.getCurrent().getUserPrincipal() != null)
+		{
+			System.out.println("user name:"+ Executions.getCurrent().getUserPrincipal().getName());
+		}
 //		System.out.println(pageImpl.getBeforeHeadTags());
 //		System.out.println(pageImpl.getAfterHeadTags());
 	}

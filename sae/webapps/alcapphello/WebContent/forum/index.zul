@@ -1,5 +1,9 @@
-<?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
-<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.fm.tmp.certi}"?>
+<?import src="/ui/directives.zul" directives="*"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
+
 <zk>
-	<include id="mainInclude" self="@define(content)" src="${labels.links.uri.index}"/>
+	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.helloWin}" mode="defer"/>
+	<n:script xmlns:n="native">
+    $('#home').addClass("active");
+	</n:script>
 </zk>

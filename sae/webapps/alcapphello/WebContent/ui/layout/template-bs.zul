@@ -18,7 +18,7 @@
 
 	
 	<!-- Footer -->
-	<h:div class="navbar navbar-default navbar-static-bottom">
+	<h:div class="alc-docs-footer navbar navbar-default navbar-static-bottom">
 		<include src="${labels.links.ui.layout.s}"/>
 	</h:div>
 	
@@ -26,4 +26,4 @@
 	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<!-- Bootstrap javascript -->
 	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
-</zk>
+</zk> 
