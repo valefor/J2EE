@@ -5,6 +5,9 @@
 @deep-purple: #7C3D65;
 @light-purple: #563D7C;
 @gray-purple: #E2CECE;
+@deep-blue:	#102D35;
+@dark-blue: #0A1518;
+@gray-blue: #E7F1FF;
 
 // imports
 @import "app-common.less";
@@ -12,16 +15,35 @@
 // classes
 .alc-docs-nav {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, .15);
-	background-color: @deep-purple;
-	border-color: #463265;
+	background-color: @deep-blue;
+	border-color: @deep-blue;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, .1);
+
+	.navbar-nav {
+		> .active {
+			> a {
+				&, &:hover{
+					color: #fff;
+  					background-color: @dark-blue;
+				}
+			}
+		}
+		> li {
+			> a {
+				&:hover {
+					background-color: @deep-blue;
+					color: #fff;
+				}
+			}
+		}
+	}
 }
 
 .alc-docs-header {
 	padding: 30px 15px 40px;
 	font-size: 16px;
 	text-align: center;
-	background-color: @deep-purple;
+	background-color: @deep-blue;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, .15);
 
 }
@@ -30,7 +52,7 @@
 	width: @sidenav-width;
 	margin: 20px 0 0;
 	padding: 0;
-	background-color: @gray-purple;
+	background-color: @gray-blue;
 	.rounded-corner;
 	.box-shadow;
 	> li {
@@ -116,4 +138,20 @@
 	margin: 40px 0 39px;
 }
 
+// Wrap
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by its height */
+	margin: 0 auto -60px;
+	padding: 0 0 60px 0;
 
+	#mainContent {
+		padding-top: 50px;
+	}
+} 
+
+#footer {
+	height: 50px;
+}

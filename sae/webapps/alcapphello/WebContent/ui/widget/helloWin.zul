@@ -2,5 +2,6 @@
 <window id="helloWin" title="${labels.app.hello}" border="normal" width="200px">
 	<navbar id="myComp" text="foo"/>
 	<label value="${labels.app.hello}" />
+	<button label="click" onClick="" sclass="btn btn-primary"/>
 </window>
 </zk>

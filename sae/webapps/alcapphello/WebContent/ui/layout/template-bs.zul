@@ -1,6 +1,9 @@
 <?page title="" contentType="text/html;charset=UTF-8"?>
 
 <zk xmlns:h="native">
+
+<h:div id="wrap">
+
 	<!-- Nav bar -->
 	<h:div>
 		<include src="${labels.links.ui.wgt.navbar}"/>
@@ -14,16 +17,22 @@
 		</hbox>
 	</h:div>
 	 -->
-	<div id="mainDiv" self="@insert(content)" style="min-height:100%"></div>
-
+	<h:div id="mainContent" style="height:100%">
+	<div id="mainDiv" self="@insert(content)"></div>
+	</h:div>
+</h:div>
 	
 	<!-- Footer -->
-	<h:div class="alc-docs-footer navbar navbar-default navbar-static-bottom">
+	<h:div id="footer" class="alc-docs-footer navbar navbar-default navbar-static-bottom">
 		<include src="${labels.links.ui.layout.s}"/>
 	</h:div>
 	
 	<!-- jQuery mast be included as a prerequisite -->
-	<script src="http://cdnjs.bootcss.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="${ labels.links.js.jQuery }"></script>
 	<!-- Bootstrap javascript -->
-	<script type="text/javascript" src="/rui/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="${ labels.links.js.bootstrap }"></script>
+	<!-- bootstrap zk adaption -->
+	<script type="text/javascript" src="/rui/js/bs-adapt.js" />
+	<!-- Preprocess javascript -->
+	<script type="text/javascript" src="${ labels.links.js.tmp.pre }" defer="true"></script>
 </zk> 

@@ -1,5 +1,5 @@
 <zk xmlns="native">
-	<header class="navbar navbar-inverse navbar-fixed-top alc-docs-nav"
+	<header class="navbar navbar-fixed-top alc-docs-nav"
 		role="banner">
 		<div class="container">
 			<nav class="collapse navbar-collapse navbar-ex1-collapse"
