@@ -27,6 +27,14 @@ $("#rZHQ9").load('public?redrawCtrl=page')
 
 jq('$mainInclude').zk;
 zk.Widget.$('$mainInclude') === jq('$mainInclude').zk.$() === zk.Widget.$(jq('$mainInclude'))// true
+
+zk('$menubar').$() // return ZK Widget Object
+zk('$menubar').jq // return jQuery Object
+
+ZK Widget Hierarchy
+
+zk.Object --> zk.Widget --> zul.Widget --> zul.menu.Menubar
+
 */
 
 var a = {

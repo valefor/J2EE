@@ -1,5 +1,5 @@
 <zk>
-	<window id="loginwin" title="${labels.app.login}" border="normal" width="400px" apply="org.alc.controller.LoginController">
+	<window id="loginwin" title="${labels.app.login}" border="normal" mode="highlighted" width="400px" apply="org.alc.controller.LoginController" closable="true">
 		<html style="color:red" if="${not empty param.login_error}">
 			<![CDATA[
 			${labels.err.loginFailed}<br/><br/>
