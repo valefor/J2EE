@@ -19,7 +19,7 @@
  * If this.desktop exist , means it's after mold rendering.
  *
  */
-components.navbar = zk.$extends(zul.Widget, {
+azul.nav.Navbar = zk.$extends(zul.Widget, {
 	_text:'', //default value for text attribute
 	
 	/**
@@ -70,7 +70,7 @@ components.navbar = zk.$extends(zul.Widget, {
 		 * as FIRST STATEMENT in the function.
 		 * DONT'T forget to call supers in bind_ , or you will get error.
 		 */
-		this.$supers(components.navbar,'bind_', arguments);
+		this.$supers(azul.nav.Navbar,'bind_', arguments);
 	
 		//A example for domListen_ , REMEMBER to do domUnlisten in unbind_.
 		//this.domListen_(this.$n("cave"), "onClick", "_doItemsClick");
@@ -92,7 +92,7 @@ components.navbar = zk.$extends(zul.Widget, {
 		* For widget lifecycle , the super unbind_ should be called
 		* as LAST STATEMENT in the function.
 		*/
-		this.$supers(components.navbar,'unbind_', arguments);
+		this.$supers(azul.nav.Navbar,'unbind_', arguments);
 	},
 	/*
 		widget event, more detail 

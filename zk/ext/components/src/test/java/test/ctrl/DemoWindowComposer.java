@@ -1,6 +1,6 @@
 package test.ctrl;
 
-import org.alc.zk.ext.components.navbar;
+import org.alc.zkext.zul.Navbar;
 
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.Event;
@@ -9,7 +9,7 @@ import org.zkoss.zk.ui.util.GenericForwardComposer;
 
 public class DemoWindowComposer extends GenericForwardComposer {
 	
-	private navbar myComp;
+	private Navbar myComp;
 	
 	public void doAfterCompose(Component comp) throws Exception {
 		super.doAfterCompose(comp);

@@ -1,4 +1,4 @@
-package org.alc.zk.ext.components;
+package org.alc.zkext.zul;
 
 import java.util.Map;
 
@@ -8,10 +8,10 @@ import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zul.impl.XulElement;
 
-public class navbar extends XulElement {
+public class Navbar extends XulElement {
 
 	static {
-		addClientEvent(navbar.class, "onFoo", 0);
+		addClientEvent(Navbar.class, "onFoo", 0);
 	}
 	
 	/* Here's a simple example for how to implements a member field */

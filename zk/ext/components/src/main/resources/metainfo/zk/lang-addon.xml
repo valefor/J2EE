@@ -1,7 +1,7 @@
 <language-addon>
     <addon-name>components</addon-name>
   	<version>
-		<version-class>org.alc.zk.ext.components.Version</version-class>
+		<version-class>org.alc.zkext.zul.Version</version-class>
 		<version-uid>0.0.1-SNAPSHOT</version-uid>
 		<zk-version>6.0.1</zk-version><!-- or later -->
 	</version>
@@ -9,8 +9,8 @@
 	<language-name>xul/html</language-name>
 	<component>
 		<component-name>navbar</component-name> <!-- required -->
-		<component-class>org.alc.zk.ext.components.navbar</component-class> <!-- required -->
-		<widget-class>components.navbar</widget-class> <!-- required -->
+		<component-class>org.alc.zkext.zul.Navbar</component-class> <!-- required -->
+		<widget-class>alc.zul.nav.Navbar</widget-class> <!-- required -->
 		<mold>
 			<mold-name>default</mold-name>
 			<mold-uri>mold/navbar.js</mold-uri>

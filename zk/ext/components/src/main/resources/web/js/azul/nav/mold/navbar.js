@@ -4,7 +4,7 @@
 */
 function (out) {
 
-	//Here you call the "this" means the widget instance. (@see navbar.js)
+	//Here you call the "this" means the widget instance. (@see Navbar.js)
 
 	var zcls = this.getZclass(),
 		uuid = this.uuid;
@@ -14,8 +14,11 @@ function (out) {
 	/*
 		class="${zcls} ${this.getSclass()}" id="${uuid}"
 	*/
-	out.push('<span ', this.domAttrs_(), '>');
-	out.push(this._text);
-	out.push('</span>');
+	out.push('<div', this.domAttrs_(), '>');
+	out.push('<ul id="', uuid, '-cave">');
+	for (var w = this.firstChild; w; w = w.nextSibling)
+		w.redraw(out);
+	out.push('</ul>');
+	out.push('</div>');
 
 }

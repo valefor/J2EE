@@ -1,4 +1,4 @@
-package org.alc.zk.ext.components;
+package org.alc.zkext.zul;
 
 public class Version {
 	/** Returns the version UID.

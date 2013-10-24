@@ -163,7 +163,7 @@
     	<version>${zk.version}</version>
     </dependency>
     <dependency>
-    	<groupId>org.alc.zk.ext</groupId>
+    	<groupId>org.alc.zkext</groupId>
     	<artifactId>components</artifactId>
     	<version>0.0.1</version>
     </dependency>
