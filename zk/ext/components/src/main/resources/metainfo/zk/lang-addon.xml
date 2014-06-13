@@ -10,7 +10,7 @@
 	<component>
 		<component-name>navbar</component-name> <!-- required -->
 		<component-class>org.alc.zkext.zul.Navbar</component-class> <!-- required -->
-		<widget-class>alc.zul.nav.Navbar</widget-class> <!-- required -->
+		<widget-class>azul.nav.Navbar</widget-class> <!-- required -->
 		<mold>
 			<mold-name>default</mold-name>
 			<mold-uri>mold/navbar.js</mold-uri>

@@ -21,6 +21,7 @@
  */
 azul.nav.Navbar = zk.$extends(zul.Widget, {
 	_text:'', //default value for text attribute
+	_orient: 'horizontal',
 	
 	/**
 	 * Don't use array/object as a member field, it's a restriction for ZK object,
@@ -47,6 +48,10 @@ azul.nav.Navbar = zk.$extends(zul.Widget, {
 			if(this.desktop) {
 				//updated UI here.
 			}
+		},
+		
+		orient: function() {
+			this.rerender();
 		}
 	},
 	/**

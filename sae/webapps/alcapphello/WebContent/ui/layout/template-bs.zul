@@ -18,7 +18,7 @@
 	</h:div>
 	 -->
 	<h:div id="mainContent" style="height:100%">
-	<div id="mainDiv" self="@insert(content)"></div>
+	<div id="mainDiv" self="@insert(content)" align="center"></div>
 	</h:div>
 </h:div>
 	
