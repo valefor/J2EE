@@ -4,3 +4,6 @@
 *.jar
 *.war
 *.ear
+
+sae/webapps/alcapphello/target/*
+zk/ext/components/target/*
