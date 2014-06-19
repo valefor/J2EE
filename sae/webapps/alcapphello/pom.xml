@@ -172,6 +172,11 @@
     	<artifactId>spring-aop</artifactId>
     	<version>${springcommon.version}</version>
     </dependency>
+    <dependency>
+    	<groupId>org.aspectj</groupId>
+    	<artifactId>aspectjweaver</artifactId>
+    	<version>1.8.0</version>
+    </dependency>
   </dependencies>
   <properties>
   	<zk.version>7.0.0-Preview</zk.version>
