@@ -2,7 +2,7 @@ package org.alc.controller;
 
 import java.util.List;
 
-import org.alc.dao.UserDao;
+import org.alc.dao.impl.UserDao;
 import org.alc.entity.User;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;

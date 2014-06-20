@@ -2,7 +2,7 @@ package org.alc.viewModel;
 
 import java.util.List;
 
-import org.alc.dao.UserDao;
+import org.alc.dao.impl.UserDao;
 import org.alc.entity.User;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
@@ -35,7 +35,7 @@ public class UserViewModel {
 	
 	public User getSelectedItem() {
 		if (selectedItem!=null) {
-			selectedItem = userDao.reload(selectedItem);
+			selectedItem = userDao.findById(selectedItem.getId());
 		}
 		return selectedItem;
 	}

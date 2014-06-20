@@ -1,4 +1,4 @@
-package org.alc.dao;
+package org.alc.dao.impl;
 
 import java.util.List;
 
@@ -12,28 +12,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public class TopicDao {
-	
-	@PersistenceContext
-	public EntityManager em;
+public class TopicDao extends JpaGenericDao< Topic, Integer > {
 	
 	@Transactional(readOnly=true)
 	public List<Topic> findAll() {
-		Query query = em.createQuery("from Topic as o");
+		Query query = entityManager.createQuery("from Topic as o");
 		List<Topic> result = query.getResultList();
 		return result;
 	}
 	
-	@Transactional
-	public Topic save(Topic newTopic) {
-		em.persist(newTopic);
-		em.flush();
-		return newTopic;
-	}
-	
-	@Transactional
-	public Topic reload(Topic topic) {
-		return em.find(Topic.class, topic.getId());
-	}
-
 }

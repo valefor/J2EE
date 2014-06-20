@@ -1,4 +1,4 @@
-package org.alc.dao;
+package org.alc.dao.impl;
 
 import java.util.List;
 
@@ -13,38 +13,24 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Repository
-public class UserDao {
-	
-	@PersistenceContext
-	public EntityManager em;
+public class UserDao extends JpaGenericDao< User, Integer > {
+
 	
 	@Transactional(readOnly=true)
 	public List<User> findAll() {
-		Query query = em.createQuery("from User as o");
+		Query query = entityManager.createQuery("from User as o");
 		List<User> result = query.getResultList();
 		return result;
 	}
 	
 	@Transactional(readOnly=true)
 	public User findByName(String userName) {
-		Query query = em.createQuery("select x from User x where x.name = '" +userName+ "' ");
+		Query query = entityManager.createQuery("select x from User x where x.name = '" +userName+ "' ");
 		List<User> result = query.getResultList();
 		if (!result.isEmpty()) {
 			return result.get(0);
 		}
 		return null;
-	}
-
-	@Transactional
-	public User save(User newUser) {
-		em.persist(newUser);
-		em.flush();
-		return newUser;
-	}
-	
-	@Transactional
-	public User reload(User user) {
-		return em.find(User.class, user.getId());
 	}
 	
 	@Transactional

@@ -2,7 +2,7 @@ package org.alc.viewModel;
 
 import java.util.List;
 
-import org.alc.dao.TopicDao;
+import org.alc.dao.impl.TopicDao;
 import org.alc.entity.Topic;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;

@@ -1,6 +1,6 @@
 package org.alc.controller;
 
-import org.alc.dao.UserDao;
+import org.alc.dao.impl.UserDao;
 import org.alc.util.SecurityUtil;
 import org.alc.util.ZkEventUtil;
 import org.zkoss.util.resource.Labels;

@@ -1,6 +1,6 @@
 package org.alc.services.impl;
 
-import org.alc.dao.UserDao;
+import org.alc.dao.impl.UserDao;
 import org.alc.entity.User;
 import org.alc.entity.UserWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
