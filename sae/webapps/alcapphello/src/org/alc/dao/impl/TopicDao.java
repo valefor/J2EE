@@ -14,11 +14,4 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public class TopicDao extends JpaGenericDao< Topic, Integer > {
 	
-	@Transactional(readOnly=true)
-	public List<Topic> findAll() {
-		Query query = entityManager.createQuery("from Topic as o");
-		List<Topic> result = query.getResultList();
-		return result;
-	}
-	
 }

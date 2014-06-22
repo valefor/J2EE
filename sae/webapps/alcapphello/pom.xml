@@ -20,6 +20,11 @@
         <configuration>
           <source>1.6</source>
           <target>1.6</target>
+          <encoding>UTF-8</encoding>
+          <compilerArguments>
+          	<!-- This configure allows to use web library with Maven -->
+          	<extdirs>WebContent\WEB-INF\lib</extdirs>
+          </compilerArguments>
         </configuration>
       </plugin>
       <plugin>

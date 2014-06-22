@@ -38,7 +38,7 @@
 			</row>
 			<row spans="2" align="right">
 				<hlayout>
-					<button label="${labels.app.reset}" onClick="" id="resetButton" type="reset"/>
+					<button label="${labels.app.reset}" onClick='alert("Hello"+self.getAction()+":"+event.getName())' id="resetButton" />
 					<button label="${labels.app.submit}" onClick="" id="submitButton" disabled="true" type="submit"/>
 				</hlayout>
 			</row>

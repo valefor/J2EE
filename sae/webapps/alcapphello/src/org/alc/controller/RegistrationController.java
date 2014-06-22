@@ -98,8 +98,10 @@ public class RegistrationController extends SelectorComposer<Component> {
 		System.out.println("Submitting...");
 	}
 	
+	/*
 	@Listen("onClick = #resetButton")
 	public void reset() {
 		System.out.println("Resetting...");
 	}
+	*/
 }

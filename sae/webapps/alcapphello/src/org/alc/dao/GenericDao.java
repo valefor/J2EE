@@ -1,6 +1,9 @@
 package org.alc.dao;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.szczytowski.genericdao.criteria.Criteria;
 
 public interface GenericDao<E, I extends Serializable> {
 
@@ -21,4 +24,23 @@ public interface GenericDao<E, I extends Serializable> {
 	
 	/** Save changes made to a persistent object.  */
     E save(E entity);
+    
+    /**
+     * Find object by criteria
+     * @param criteria
+     * @return
+     */
+    List<E> findByCriteria(Criteria criteria);
+    
+    /**
+     * Find all objects in the repository
+     * @return
+     */
+    List<E> findAll();
+    
+    /**
+     * Find all objects in the repository by Example
+     * @return
+     */
+    List<E> findByExample(E entity);
 }

@@ -26,7 +26,7 @@ public class MyUserDetailsService implements UserDetailsService {
 		}
 		
 		if (user.getAuthorities().isEmpty()){
-			
+			System.out.println(">>> User has no authorities: "+userName);
 		}
 		System.out.println("["+getClass().getName()+"]Authorities: " + user.getAuthorities());
 		return new UserWrapper(user.getName(),user.getPassword(),user.getAuthorities());

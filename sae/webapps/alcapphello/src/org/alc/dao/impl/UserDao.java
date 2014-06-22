@@ -4,36 +4,33 @@ import java.util.List;
 
 import org.alc.entity.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.szczytowski.genericdao.criteria.Criteria;
+import com.szczytowski.genericdao.criteria.restriction.Restrictions;
 
 
 @Repository
 public class UserDao extends JpaGenericDao< User, Integer > {
 
-	
-	@Transactional(readOnly=true)
-	public List<User> findAll() {
-		Query query = entityManager.createQuery("from User as o");
-		List<User> result = query.getResultList();
-		return result;
-	}
-	
 	@Transactional(readOnly=true)
 	public User findByName(String userName) {
-		Query query = entityManager.createQuery("select x from User x where x.name = '" +userName+ "' ");
-		List<User> result = query.getResultList();
+		//Query query = entityManager.createQuery("select x from User x where x.name = '" +userName+ "' ");
+		Criteria criteria = Criteria.forClass(User.class);
+		criteria.add(Restrictions.eq("name", userName));
+		List<User> result = findByCriteria(criteria);
 		if (!result.isEmpty()) {
 			return result.get(0);
 		}
 		return null;
 	}
 	
-	@Transactional
+	/**
+	 * Should cache query result to elevate capacity
+	 * @param name
+	 * @return
+	 */
 	public boolean isUserExist(String name) {
 		return (findByName(name) == null)?false:true;
 	}
