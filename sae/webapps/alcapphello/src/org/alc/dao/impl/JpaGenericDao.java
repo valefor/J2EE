@@ -78,7 +78,6 @@ public class JpaGenericDao<E, I extends Serializable> implements GenericDao<E, I
 		return (E) entityManager.find(entityClass, id);
 	}
 
-	@SuppressWarnings(value = "unchecked")
 	@Override
 	@Transactional(readOnly=true)
 	public List<E> findAll() {
