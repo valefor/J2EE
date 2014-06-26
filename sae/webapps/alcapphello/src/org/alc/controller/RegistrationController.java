@@ -12,6 +12,7 @@ import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Checkbox;
 import org.zkoss.zul.Textbox;
+import org.zkoss.zul.Timer;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class RegistrationController extends SelectorComposer<Component> {
@@ -89,7 +90,9 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Listen("onClick = #submitButton")
 	public void submit() {
 		System.out.println("Submitting...");
+		//Timer t;
 	}
+	
 	
 	/*
 	@Listen("onClick = #resetButton")

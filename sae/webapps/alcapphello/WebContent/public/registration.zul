@@ -1,48 +1,5 @@
 <?import src="/ui/directives.zul" directives="*"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
 <zk>
-<window self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
-	<grid vflex="min">
-		<rows>
-			<row>
-				<label value="${labels.app.username}" />
-				<textbox id="nameBox" constraint="no empty:${labels.err.noEmpty}"/>	
-			</row>
-			<row>
-				<label value="${labels.app.password}" />
-				<textbox id="pwdBox" constraint="no empty:${labels.err.noEmpty}" type="password"/>	
-			</row>
-			<row>
-				<label value="${labels.app.confirmPassword}" />
-				<textbox id="cfmPwdBox" constraint="no empty:${labels.err.noEmpty}" type="password"/>	
-			</row>
-			<row>
-				<label value="${labels.app.email}" />
-				<textbox id="emailBox" constraint="no empty;/.+@.+\.[a-z]+/: ${labels.err.invalidEmail}"/>	
-			</row>
-			<row>
-				<label value="${labels.app.gender}" />
-				<radiogroup>
-					<radio label="${labels.app.male}" image="/images/icons/male.png"/>
-					<radio label="${labels.app.female}" image="/images/icons/female.png"/>
-				</radiogroup>
-			</row>
-			<row>
-				<label value="${labels.app.birthday}"/>
-				<datebox constraint="no empty, no today, no future" id="birthdayBox"/>
-			</row>
-			<row spans="2" align="center">
-				<hlayout>
-					<checkbox id="acceptTermBox" label="${labels.app.acceptTerm}"/>
-				</hlayout>
-			</row>
-			<row spans="2" align="right">
-				<hlayout>
-					<button label="${labels.app.reset}" onClick='alert("Hello"+self.getAction()+":"+event.getName())' id="resetButton" />
-					<button label="${labels.app.submit}" onClick="" id="submitButton" disabled="true" type="submit"/>
-				</hlayout>
-			</row>
-		</rows>
-	</grid>
-</window>
+	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.regWin}" mode="defer"/>
 </zk>

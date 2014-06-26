@@ -1,0 +1,19 @@
+<?page title="Disclaimer" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
+	<grid vflex="min">
+		<rows>
+			<row spans="2" align="center">
+				<hlayout>
+					<checkbox id="acceptTermBox" label="${labels.app.acceptTerm}"/>
+				</hlayout>
+			</row>
+			<row spans="2" align="right">
+				<hlayout>
+					<button label="${labels.app.ok}" id="submitButton" disabled="true" href=""/>
+				</hlayout>
+			</row>
+		</rows>
+	</grid>
+</window>
+</zk>

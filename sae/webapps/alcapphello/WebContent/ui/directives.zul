@@ -11,5 +11,5 @@
 <?link rel="stylesheet" type="text/css" href="/styles/default.css"?>
 
 <zk>
-	<!-- zk tag is need here, to make it as a complete zul file-->
+	<!-- zk tag is needed here, to make it as a complete zul file-->
 </zk>
