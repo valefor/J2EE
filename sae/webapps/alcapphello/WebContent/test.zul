@@ -1,32 +1,6 @@
-<?page title="Test" contentType="text/html;charset=UTF-8"?>
+<?import src="/ui/directives.zul" directives="*"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
+<?component name="timedJump" inline="true" macroURI="/ui/macro/timedJump.zul"?>
 <zk>
-<window title="Test" border="normal" xmlns:c="client">
-	<label id ="countdown" value="10" />
-	<button id="tmRestart" label="Start Timer" />
-	<button label="click" href="about.zul" />
-	<timer id="timer" delay="1000" repeats="true" c:countVal="10">
-	</timer>
-	<script defer="true">
-		this.$f('tmRestart').listen({
-			onClick: function () {
-				var tm = this.$f('timer');
-				tm.stop();
-				tm.countVal = 10;
-				tm.play();
-			}
-		});
-		this.$f('timer').listen({
-				onTimer: function (evt) {
-				if (this.countVal == 0) {
-					this.stop();
-					// redirect to 
-					window.location = "${pageContext.request.contextPath}";
-					return;
-				}
-				this.countVal = this.countVal - 1;
-				this.$f('countdown').setValue(this.countVal);
-			}
-		});
-	</script>
-</window>
+	<timedJump title="jump" preMsg="恭喜，注册成功！" cd="5" postMsg="秒后将跳转到" jumpTo="登陆页面" jumpToUrl="${pageContext.request.contextPath}/public/login.zul"/>
 </zk>

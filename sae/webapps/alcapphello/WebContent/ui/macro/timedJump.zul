@@ -1,0 +1,37 @@
+<zk>
+<window self="@define(content)" title="${arg.title}" border="normal" xmlns:c="client" height="100px" width="500px" position="center">
+	${arg.preMsg}<label id ="countdown" value="${arg.cd}"/>${arg.postMsg}
+	<a id="jumpTo"><label value="${arg.jumpTo}" /></a>
+	<timer id="timer" delay="1000" repeats="true" c:countVal="${arg.cd}">
+	</timer>
+	<script defer="true">
+		/*
+		this.$f('tmRestart').listen({
+			onClick: function () {
+				var tm = this.$f('timer');
+				tm.stop();
+				tm.countVal = 10;
+				tm.play();
+			}
+		});
+		*/
+		this.$f('jumpTo').listen({
+			onClick: function () {
+				window.location = "${arg.jumpToUrl}";
+			}
+		});
+		this.$f('timer').listen({
+				onTimer: function (evt) {
+				if (this.countVal == 0) {
+					this.stop();
+					// redirect to 
+					window.location = "${arg.jumpToUrl}";
+					return;
+				}
+				this.countVal = this.countVal - 1;
+				this.$f('countdown').setValue(this.countVal);
+			}
+		});
+	</script>
+</window>
+</zk>
