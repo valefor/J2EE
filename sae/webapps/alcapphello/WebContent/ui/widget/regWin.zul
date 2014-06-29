@@ -1,5 +1,5 @@
 <zk>
-<window self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
+<window id="regWin" self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid vflex="min">
 		<rows>
 			<row>

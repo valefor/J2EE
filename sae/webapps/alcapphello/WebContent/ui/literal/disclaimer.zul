@@ -1,8 +1,26 @@
 <?page title="Disclaimer" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
+<window self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px">
+	<zscript>
+		
+	</zscript>
 	<grid vflex="min">
 		<rows>
+			
+			<row spans="2" align="center">
+				<div>
+				blahlblahblahlblahblahlblah
+				blahlblahblahlblahblahlblah
+				blahlblahblahlblahblahlblah
+				blahlblahblahlblahblahlblah
+				blahlblahblahlblahblahlblah
+				blahlblahblahlblah
+				</div>
+				<!-- 
+				zk.Widget.$('$mainInclude').replaceWidget(zk.Widget.$('$btnOk'))
+				<textbox disabled="true" multiline="true" value="" type="text" tabbable="false" height="200px" width="350px"/>
+				 -->
+			</row>
 			<row spans="2" align="center">
 				<hlayout>
 					<checkbox id="acceptTermBox" label="${labels.app.acceptTerm}"/>
@@ -10,10 +28,21 @@
 			</row>
 			<row spans="2" align="right">
 				<hlayout>
-					<button label="${labels.app.ok}" id="submitButton" disabled="true" href=""/>
+					<button id="btnOk" label="${labels.app.ok}" disabled="true" onClick='mainInclude.src = "/ui/widget/regWin.zul"'/>
 				</hlayout>
 			</row>
 		</rows>
 	</grid>
+	<script defer="true">
+		this.$f('acceptTermBox').listen({
+			onClick: function () {
+				if(this.isChecked()) {
+					this.$f('btnOk').setDisabled(false);
+				} else {
+					this.$f('btnOk').setDisabled(true);
+				}
+			}
+		});
+	</script>
 </window>
 </zk>

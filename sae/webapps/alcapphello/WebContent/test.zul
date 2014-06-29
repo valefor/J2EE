@@ -2,5 +2,10 @@
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
 <?component name="timedJump" inline="true" macroURI="/ui/macro/timedJump.zul"?>
 <zk>
-	<timedJump title="jump" preMsg="恭喜，注册成功！" cd="5" postMsg="秒后将跳转到" jumpTo="登陆页面" jumpToUrl="${pageContext.request.contextPath}/public/login.zul"/>
+	<timedJump title="跳转" 
+		preMsg="恭喜，注册成功！" 
+		cd="5" 
+		postMsg="秒后将跳转到" 
+		jumpTo="登陆页面" 
+		jumpToUrl="${pageContext.request.contextPath}/public/login.zul"/>
 </zk>
