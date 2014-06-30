@@ -33,8 +33,6 @@ public class RegistrationController extends SelectorComposer<Component> {
 	
 	@Wire
 	private Button submitButton;
-	@Wire
-	private Checkbox acceptTermBox;
 	
 /*	@Override
 	public void doBeforeComposeChildren(Component comp) throws Exception {
@@ -56,17 +54,6 @@ public class RegistrationController extends SelectorComposer<Component> {
 		}
 		return super.doBeforeCompose(page, parent, compInfo);
 	}*/
-	
-	@Listen("onCheck = #acceptTermBox")
-	public void changeSubmitStatus(){
-		if (acceptTermBox.isChecked()) {
-			submitButton.setDisabled(false);
-			submitButton.setImage("/images/icons/Allow.png");
-		} else {
-			submitButton.setDisabled(true);
-			submitButton.setImage("");
-		}
-	}
 	
 	@Listen("onBlur = #nameBox")
 	public void userNameCheck() {

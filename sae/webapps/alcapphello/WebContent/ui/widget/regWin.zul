@@ -29,11 +29,6 @@
 				<label value="${labels.app.birthday}"/>
 				<datebox constraint="no empty, no today, no future" id="birthdayBox"/>
 			</row>
-			<row spans="2" align="center">
-				<hlayout>
-					<checkbox id="acceptTermBox" label="${labels.app.acceptTerm}"/>
-				</hlayout>
-			</row>
 			<row spans="2" align="right">
 				<hlayout>
 					<button label="${labels.app.reset}" onClick='alert("Hello"+self.getAction()+":"+event.getName())' id="resetButton" />

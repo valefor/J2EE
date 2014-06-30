@@ -1,8 +1,10 @@
 <?import src="/ui/directives.zul" directives="*"?>
 <?init class="org.zkoss.zk.ui.util.Composition" arg0="${labels.links.ui.tmp.bs}"?>
 <zk>
-	<!-- 
+	<!--
 	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.regWin}" mode="defer"/>
-	 -->
+	  
 	<include id="mainInclude" self="@define(content)" src="/ui/literal/disclaimer.zul"/>
+	-->
+	<include id="mainInclude" self="@define(content)" src="/ui/widget/regWin.zul"/>
 </zk>
