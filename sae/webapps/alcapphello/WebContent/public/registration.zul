@@ -4,7 +4,10 @@
 	<!--
 	<include id="mainInclude" self="@define(content)" src="${labels.links.ui.wgt.regWin}" mode="defer"/>
 	  
+	
 	<include id="mainInclude" self="@define(content)" src="/ui/literal/disclaimer.zul"/>
-	-->
 	<include id="mainInclude" self="@define(content)" src="/ui/widget/regWin.zul"/>
+	-->
+	
+	<include id="mainInclude" self="@define(content)" src="/ui/widget/regWin.zul" mode="defer"/>
 </zk>
