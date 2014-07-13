@@ -64,6 +64,7 @@ public class RegistrationController extends SelectorComposer<Component> {
 		}
 	}
 	
+	/*
 	@Listen("onBlur = #cfmPwdBox")
 	public void confirmPassword() {
 		cfmPassword.clearErrorMessage();
@@ -73,6 +74,7 @@ public class RegistrationController extends SelectorComposer<Component> {
 			throw new WrongValueException(cfmPassword,Labels.getLabel("err.passwordMismatch"));
 		}
 	}
+	*/
 	
 	@Listen("onClick = #submitButton")
 	public void submit() {

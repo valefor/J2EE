@@ -1,5 +1,5 @@
 <zk>
-<window id="regWin" self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
+<window id="regWin" self="@define(content)" title="${labels.app.registration}!" xmlns:c="client" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid vflex="min">
 		<rows>
 			<row>
@@ -37,5 +37,15 @@
 			</row>
 		</rows>
 	</grid>
+	<script defer="true">
+		zk.Widget.$('$cfmPwdBox').listen({
+			onBlur: function () {
+				this.clearErrorMessage(0,0);
+				if (this.getValue() != this.$f('pwdBox').getValue()) {
+					this.setErrorMessage("${labels.err.passwordMismatch}");
+				}
+			}
+		});
+	</script>
 </window>
 </zk>
