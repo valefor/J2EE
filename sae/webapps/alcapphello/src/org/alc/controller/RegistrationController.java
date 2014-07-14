@@ -31,6 +31,9 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Wire("#cfmPwdBox")
 	private Textbox cfmPassword;
 	
+	@Wire("#emailBox")
+	private Textbox email;
+	
 	@Wire
 	private Button submitButton;
 	
@@ -55,12 +58,25 @@ public class RegistrationController extends SelectorComposer<Component> {
 		return super.doBeforeCompose(page, parent, compInfo);
 	}*/
 	
+	private boolean isValidReq() {
+		if ( !userName.getText().trim().isEmpty() && 
+			userDao.isUserExist(userName.getText()) && 
+			!password.getValue().equals(cfmPassword.getValue())) 
+			return false;
+		
+		return true;
+	}
+	
 	@Listen("onBlur = #nameBox")
 	public void userNameCheck() {
-		userName.clearErrorMessage();
-		if ( !userName.getText().trim().isEmpty() && userDao.isUserExist(userName.getText()) ) {
-			System.out.println(userName.getText());
-			throw new WrongValueException(userName,Labels.getLabel("err.userAlreadyExist"));
+		if (!userName.getText().trim().isEmpty()) {
+			if ( userDao.isUserExist(userName.getText()) ) {
+				System.out.println(userName.getText());
+				submitButton.setDisabled(true);
+				throw new WrongValueException(userName,Labels.getLabel("err.userAlreadyExist"));
+			} else {
+				userName.clearErrorMessage();
+			}
 		}
 	}
 	
@@ -79,14 +95,5 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Listen("onClick = #submitButton")
 	public void submit() {
 		System.out.println("Submitting...");
-		//Timer t;
 	}
-	
-	
-	/*
-	@Listen("onClick = #resetButton")
-	public void reset() {
-		System.out.println("Resetting...");
-	}
-	*/
 }
