@@ -57,7 +57,7 @@
 		}
 		
 		zk.Widget.$('$pwdBox').listen({
-			onChange: function () {
+			onBlur: function () {
 				if (this.getErrorMessage() != null) {
 					console.log("invalid password");
 					devote(0);
@@ -68,7 +68,7 @@
 			}
 		});
 		zk.Widget.$('$cfmPwdBox').listen({
-			onChange: function () {
+			onBlur: function () {
 				this.clearErrorMessage(0,0);
 				if (this.getValue() != this.$f('pwdBox').getValue()) {
 					this.setErrorMessage("${labels.err.passwordMismatch}");
@@ -80,10 +80,10 @@
 			}
 		});
 		zk.Widget.$('$emailBox').listen({
-			onChange: function () {
+			onBlur: function () {
 				if (this.getErrorMessage() != null) {
 					console.log("invalid email");
-					devote(0);
+					devote(2);
 					//if (bitIsset(btn.verdict,1))
 				} else {
 					vote(2);
@@ -91,11 +91,11 @@
 			}
 		});
 		zk.Widget.$('$birthdayBox').listen({
-			onChange: function () {
+			onBlur: function () {
 				if (this.getErrorMessage() != null) {
 					console.log("invalid birthday");
 					console.log(this.getErrorMessage());
-					devote(0);
+					devote(3);
 					//if (bitIsset(btn.verdict,1))
 				} else {
 					vote(3);

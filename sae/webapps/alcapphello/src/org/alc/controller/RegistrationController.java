@@ -75,6 +75,7 @@ public class RegistrationController extends SelectorComposer<Component> {
 				submitButton.setDisabled(true);
 				throw new WrongValueException(userName,Labels.getLabel("err.userAlreadyExist"));
 			} else {
+				submitButton.setDisabled(false);
 				userName.clearErrorMessage();
 			}
 		}
