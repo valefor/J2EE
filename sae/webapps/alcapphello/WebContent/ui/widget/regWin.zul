@@ -1,5 +1,5 @@
 <zk>
-<window id="regWin" self="@define(content)" title="${labels.app.registration}!" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
+<window id="regWin" self="@define(content)" title="${labels.app.registration}!" xmlns:c="client" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid vflex="min">
 		<rows>
 			<row>
@@ -32,20 +32,82 @@
 			<row spans="2" align="right">
 				<hlayout>
 					<button label="${labels.app.reset}" onClick='alert("Hello"+self.getAction()+":"+event.getName())' id="resetButton" />
-					<button label="${labels.app.submit}" onClick="" id="submitButton" c:verdict="0" disabled="true" type="submit"/>
+					<button label="${labels.app.submit}" onClick="" id="submitButton" c:verdict="{bits: 0}" disabled="true" type="submit"/>
 				</hlayout>
 			</row>
 		</rows>
 	</grid>
 	<script defer="true">
+		function vote(n) {
+			var btn = zk.Widget.$('$submitButton');
+			btn.verdict = bitSet(btn.verdict,n);
+			console.log(btn.verdict);
+			if (btn.verdict == 15) {
+				if (zk.Widget.$('$nameBox').getErrorMessage() == null) {
+					btn.setDisabled(false);
+				}
+			}
+		}
+		
+		function devote(n) {
+			var btn = zk.Widget.$('$submitButton');
+			btn.verdict = bitReset(btn.verdict,n);
+			console.log(btn.verdict);
+			btn.setDisabled(true);
+		}
+		
+		zk.Widget.$('$pwdBox').listen({
+			onChange: function () {
+				if (this.getErrorMessage() != null) {
+					console.log("invalid password");
+					devote(0);
+					//if (bitIsset(btn.verdict,1))
+				} else {
+					vote(0);
+				}
+			}
+		});
 		zk.Widget.$('$cfmPwdBox').listen({
-			onBlur: function () {
+			onChange: function () {
 				this.clearErrorMessage(0,0);
 				if (this.getValue() != this.$f('pwdBox').getValue()) {
 					this.setErrorMessage("${labels.err.passwordMismatch}");
-					var btn = this.$f('submitButton');
+					devote(1);
+					//if (bitIsset(btn.verdict,1))
+				} else {
+					vote(1);
+				}
+			}
+		});
+		zk.Widget.$('$emailBox').listen({
+			onChange: function () {
+				if (this.getErrorMessage() != null) {
+					console.log("invalid email");
+					devote(0);
+					//if (bitIsset(btn.verdict,1))
+				} else {
+					vote(2);
+				}
+			}
+		});
+		zk.Widget.$('$birthdayBox').listen({
+			onChange: function () {
+				if (this.getErrorMessage() != null) {
+					console.log("invalid birthday");
+					console.log(this.getErrorMessage());
+					devote(0);
+					//if (bitIsset(btn.verdict,1))
+				} else {
+					vote(3);
+				}
+			}
+		});
+		zk.Widget.$('$nameBox').listen({
+			onError: function () {
+				if (this.getErrorMessage() != null) {
+					console.log("invalid name");
+					console.log(this.getErrorMessage());
 					btn.setDisabled(true);
-					btn.verdict = btn.verdict - 1;
 				}
 			}
 		});
