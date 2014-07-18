@@ -1,9 +1,13 @@
 package org.alc.controller;
 
 import org.alc.dao.impl.UserDao;
+import org.alc.entity.User;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.HtmlMacroComponent;
 import org.zkoss.zk.ui.WrongValueException;
+import org.zkoss.zk.ui.metainfo.ComponentDefinitionMap;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
@@ -13,6 +17,7 @@ import org.zkoss.zul.Button;
 import org.zkoss.zul.Checkbox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Timer;
+import org.zkoss.zul.Window;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
 public class RegistrationController extends SelectorComposer<Component> {
@@ -21,6 +26,9 @@ public class RegistrationController extends SelectorComposer<Component> {
 
 	@WireVariable
 	private UserDao userDao;
+	
+	@Wire("#regWin")
+	private Window regWin;
 	
 	@Wire("#nameBox")
 	private Textbox userName;
@@ -96,5 +104,28 @@ public class RegistrationController extends SelectorComposer<Component> {
 	@Listen("onClick = #submitButton")
 	public void submit() {
 		System.out.println("Submitting...");
+		if (!isValidReq()) {
+			throw new WrongValueException("Invalid register info");
+		} else {
+			User user = new User();
+			user.setName(userName.getValue());
+			user.setPassword(password.getValue());
+			user.setEmail(email.getValue());
+			//user.setBirthday(birthday)
+			System.out.println(user.toString());
+			// Redirect
+			regWin.detach();
+			
+			ComponentDefinitionMap map = getPage().getComponentDefinitionMap();
+			HtmlMacroComponent tj = (HtmlMacroComponent)getPage().getComponentDefinition("timedJump", false).newInstance(getPage(), null);
+			tj.applyProperties();
+			tj.setDynamicProperty("title", "跳转");
+			tj.setDynamicProperty("preMsg", "恭喜，注册成功！");
+			tj.setDynamicProperty("cd", "5");
+			tj.setDynamicProperty("postMsg", "秒后将跳转到");
+			tj.setDynamicProperty("jumpTo", "登陆页面");
+			tj.setDynamicProperty("jumpToUrl", "${pageContext.request.contextPath}/public/login.zul转");
+			tj.afterCompose();
+		}
 	}
 }
