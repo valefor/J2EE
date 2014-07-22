@@ -17,7 +17,7 @@
 		*/
 		this.$f('jumpTo').listen({
 			onClick: function () {
-				window.location = "${arg.jumpToUrl}";
+				window.location = "${pageContext.request.contextPath}${arg.jumpToUrl}";
 			}
 		});
 		this.$f('timer').listen({
@@ -25,7 +25,7 @@
 				if (this.countVal == 0) {
 					this.stop();
 					// redirect to 
-					window.location = "${arg.jumpToUrl}";
+					window.location = "${pageContext.request.contextPath}${arg.jumpToUrl}";
 					return;
 				}
 				this.countVal = this.countVal - 1;

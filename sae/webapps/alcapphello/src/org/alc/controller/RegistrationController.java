@@ -112,11 +112,13 @@ public class RegistrationController extends SelectorComposer<Component> {
 			user.setPassword(password.getValue());
 			user.setEmail(email.getValue());
 			//user.setBirthday(birthday)
-			System.out.println(user.toString());
+			System.out.println(">>>>Debug:"+user.toString());
 			// Redirect
 			regWin.detach();
 			
 			ComponentDefinitionMap map = getPage().getComponentDefinitionMap();
+			System.out.println(">>>>Debug:"+map);
+			System.out.println(">>>>Debug:"+this.getPage().getRequestPath());
 			HtmlMacroComponent tj = (HtmlMacroComponent)getPage().getComponentDefinition("timedJump", false).newInstance(getPage(), null);
 			tj.applyProperties();
 			tj.setDynamicProperty("title", "跳转");
@@ -124,8 +126,9 @@ public class RegistrationController extends SelectorComposer<Component> {
 			tj.setDynamicProperty("cd", "5");
 			tj.setDynamicProperty("postMsg", "秒后将跳转到");
 			tj.setDynamicProperty("jumpTo", "登陆页面");
-			tj.setDynamicProperty("jumpToUrl", "${pageContext.request.contextPath}/public/login.zul转");
+			tj.setDynamicProperty("jumpToUrl", "/public/login.zul");
 			tj.afterCompose();
+			tj.setPage(getPage());
 		}
 	}
 }
