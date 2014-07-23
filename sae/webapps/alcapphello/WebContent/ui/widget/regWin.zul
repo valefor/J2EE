@@ -1,4 +1,3 @@
-<?component name="timedJump" inline="true" macroURI="/ui/macro/timedJump.zul"?>
 <zk>
 <window id="regWin" self="@define(content)" title="${labels.app.registration}!" xmlns:c="client" border="normal" width="400px" apply="${labels.classes.ctrl.register}">
 	<grid vflex="min">

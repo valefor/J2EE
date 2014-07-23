@@ -89,9 +89,16 @@
     	<version>${springsecurity.version}</version>
     </dependency>
     <dependency>
+    	<!-- Since the zkcomposite has dependency with asm-all, exclude asm-core now -->
     	<groupId>cglib</groupId>
     	<artifactId>cglib</artifactId>
     	<version>3.0</version>
+    	<exclusions>
+    		<exclusion>
+    			<groupId>asm</groupId>
+    			<artifactId>asm</artifactId>
+    		</exclusion>
+    	</exclusions>
     </dependency>
     <dependency>
     	<groupId>org.hibernate</groupId>

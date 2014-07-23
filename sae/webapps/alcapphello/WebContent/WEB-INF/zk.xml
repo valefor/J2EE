@@ -51,6 +51,15 @@
 		<listener-class>org.alc.zk.PageInitiator</listener-class>
 	</listener>
 	
+	<!-- ====================================================== -->
+	<!--    Composite Component:  								-->
+	<!--    	Auto scan component definitions 				-->
+	<!-- ====================================================== -->
+	<library-property>
+    	<name>org.zkoss.composite.packageScan</name>
+    	<value>org.alc.zk.component</value>
+	</library-property>
+	
 	<!-- GAE/SAE doesn't allow user's thread -->
 	<client-config>
 		<resend-delay>-1</resend-delay>

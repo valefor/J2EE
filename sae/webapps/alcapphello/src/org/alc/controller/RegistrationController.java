@@ -2,6 +2,7 @@ package org.alc.controller;
 
 import org.alc.dao.impl.UserDao;
 import org.alc.entity.User;
+import org.alc.zk.component.TimedJump;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
@@ -119,7 +120,8 @@ public class RegistrationController extends SelectorComposer<Component> {
 			ComponentDefinitionMap map = getPage().getComponentDefinitionMap();
 			System.out.println(">>>>Debug:"+map);
 			System.out.println(">>>>Debug:"+this.getPage().getRequestPath());
-			HtmlMacroComponent tj = (HtmlMacroComponent)getPage().getComponentDefinition("timedJump", false).newInstance(getPage(), null);
+			// HtmlMacroComponent tj = (HtmlMacroComponent)getPage().getComponentDefinition("timedJump", false).newInstance(getPage(), null);
+			TimedJump tj = new TimedJump();
 			tj.applyProperties();
 			tj.setDynamicProperty("title", "跳转");
 			tj.setDynamicProperty("preMsg", "恭喜，注册成功！");
