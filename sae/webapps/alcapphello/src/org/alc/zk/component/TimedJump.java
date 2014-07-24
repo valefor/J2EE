@@ -2,9 +2,10 @@ package org.alc.zk.component;
 
 import org.zkoss.composite.Composite;
 import org.zkoss.zk.ui.HtmlMacroComponent;
+import org.zkoss.zk.ui.IdSpace;
 
 @Composite(name="timedJump", macroURI="/ui/macro/timedJump.zul")
-public class TimedJump extends HtmlMacroComponent {
+public class TimedJump extends HtmlMacroComponent implements IdSpace {
 
 	/**
 	 * 

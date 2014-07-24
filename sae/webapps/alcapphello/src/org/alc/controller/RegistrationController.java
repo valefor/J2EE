@@ -5,19 +5,15 @@ import org.alc.entity.User;
 import org.alc.zk.component.TimedJump;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.Executions;
-import org.zkoss.zk.ui.HtmlMacroComponent;
 import org.zkoss.zk.ui.WrongValueException;
-import org.zkoss.zk.ui.metainfo.ComponentDefinitionMap;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.VariableResolver;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.select.annotation.WireVariable;
 import org.zkoss.zul.Button;
-import org.zkoss.zul.Checkbox;
+import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Textbox;
-import org.zkoss.zul.Timer;
 import org.zkoss.zul.Window;
 
 @VariableResolver(org.zkoss.zkplus.spring.DelegatingVariableResolver.class)
@@ -42,6 +38,9 @@ public class RegistrationController extends SelectorComposer<Component> {
 	
 	@Wire("#emailBox")
 	private Textbox email;
+	
+	@Wire("#birthdayBox")
+	private Datebox birthday;
 	
 	@Wire
 	private Button submitButton;
@@ -90,18 +89,6 @@ public class RegistrationController extends SelectorComposer<Component> {
 		}
 	}
 	
-	/*
-	@Listen("onBlur = #cfmPwdBox")
-	public void confirmPassword() {
-		cfmPassword.clearErrorMessage();
-		if ( !cfmPassword.getText().equals(password.getText()) ) {
-			System.out.println(cfmPassword.getText());
-			System.out.println(password.getText());
-			throw new WrongValueException(cfmPassword,Labels.getLabel("err.passwordMismatch"));
-		}
-	}
-	*/
-	
 	@Listen("onClick = #submitButton")
 	public void submit() {
 		System.out.println("Submitting...");
@@ -112,25 +99,31 @@ public class RegistrationController extends SelectorComposer<Component> {
 			user.setName(userName.getValue());
 			user.setPassword(password.getValue());
 			user.setEmail(email.getValue());
-			//user.setBirthday(birthday)
+			user.setBirthday(birthday.getValue());
+			//userDao.persist(user);
+			
 			System.out.println(">>>>Debug:"+user.toString());
 			// Redirect
 			regWin.detach();
 			
-			ComponentDefinitionMap map = getPage().getComponentDefinitionMap();
-			System.out.println(">>>>Debug:"+map);
-			System.out.println(">>>>Debug:"+this.getPage().getRequestPath());
 			// HtmlMacroComponent tj = (HtmlMacroComponent)getPage().getComponentDefinition("timedJump", false).newInstance(getPage(), null);
-			TimedJump tj = new TimedJump();
-			tj.applyProperties();
-			tj.setDynamicProperty("title", "跳转");
-			tj.setDynamicProperty("preMsg", "恭喜，注册成功！");
-			tj.setDynamicProperty("cd", "5");
-			tj.setDynamicProperty("postMsg", "秒后将跳转到");
-			tj.setDynamicProperty("jumpTo", "登陆页面");
-			tj.setDynamicProperty("jumpToUrl", "/public/login.zul");
-			tj.afterCompose();
-			tj.setPage(getPage());
+			// Redirect
+			redirectToLoginPage();
 		}
+	}
+	
+	private void redirectToLoginPage() {
+		TimedJump tj = new TimedJump();
+		tj.applyProperties();
+		// Buggy macro composition, we need to specify macro URI here again.
+		tj.setMacroURI(Labels.getLabel("links.ui.macro.timedJump"));
+		tj.setDynamicProperty("title", "跳转");
+		tj.setDynamicProperty("preMsg", "恭喜，注册成功！");
+		tj.setDynamicProperty("cd", "5");
+		tj.setDynamicProperty("postMsg", "秒后将跳转到");
+		tj.setDynamicProperty("jumpTo", "登陆页面");
+		tj.setDynamicProperty("jumpToUrl", Labels.getLabel("links.uri.login"));
+		tj.afterCompose();
+		tj.setPage(getPage());
 	}
 }

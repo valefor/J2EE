@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     6/20/2013 3:04:13 PM                         */
+/* Created on:     2014/7/24 11:57:51                           */
 /*==============================================================*/
 
 
@@ -32,7 +32,7 @@ create table authority
 /*==============================================================*/
 create table reply
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    userId               int not null,
    sectionId            int not null,
    topicId              int not null,
@@ -46,7 +46,7 @@ create table reply
 /*==============================================================*/
 create table section
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    name                 varchar(20) not null,
    profile              varchar(200),
    statement            varchar(200),
@@ -70,7 +70,7 @@ create table section_master
 /*==============================================================*/
 create table topic
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    sectionId            int not null,
    userId               int not null,
    replyCount           int,
@@ -90,7 +90,7 @@ create table topic
 /*==============================================================*/
 create table user
 (
-   id                   int not null,
+   id                   int not null auto_increment,
    name                 varchar(255) not null,
    password             varchar(100) not null,
    email                varchar(100) not null,

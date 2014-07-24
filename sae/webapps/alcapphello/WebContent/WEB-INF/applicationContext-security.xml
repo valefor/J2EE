@@ -74,8 +74,8 @@
 		<beans:property name="securityMetadataSource">
 			<filter-security-metadata-source path-type="ant">
 								
-				<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS"/>
-				<intercept-url pattern="/public/registration.zul" access="ROLE_ANONYMOUS"/>
+				<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS" requires-channel="https"/>
+				<intercept-url pattern="/public/registration.zul" access="ROLE_ANONYMOUS" requires-channel="https"/>
 				<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS"/>
 								
 				<intercept-url pattern="/mgmt/**" access="ROLE_ROOT"/>
@@ -111,6 +111,7 @@
 	<beans:bean id="loginUrlAuthenticationEntryPoint"
 		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
 		<beans:property name="loginFormUrl" value="/public/login.zul"/>
+		<!-- <beans:property name="forceHttps" value="true"/> -->
 	</beans:bean>
 	<beans:bean id="saeUsernamePasswordAuthenticationFilter"
 		class="org.alc.sae.ss.web.filter.SaeUsernamePasswordAuthenticationFilter">
@@ -152,11 +153,43 @@
 	<!-- ********************************** -->
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="myUserDetailsService">
-			<password-encoder hash="md5" />
+			<password-encoder hash="md5">
+				<salt-source user-property="deadbeaf"/>
+			</password-encoder>
 		</authentication-provider>
 	</authentication-manager>
 
+	<!-- ********************************** -->
+	<!-- 		Redirect to SSL channel 	-->
+	<!-- ********************************** -->
+	<bean id="channelProcessingFilter"
+		class="org.springframework.security.securechannel.ChannelProcessingFilter">
+		<property name="channelDecisionManager" ref="channelDecisionManager" />
+		<property name="filterInvocationDefinitionSource">
+			<security:filter-invocation-definition-source
+				path-type="ant">
+				<!--You can configure further rules here about which pages should use 
+					SSL. -->
+				<security:intercept-url pattern="/public/login.html"
+					access="REQUIRES_SECURE_CHANNEL" />
+			</security:filter-invocation-definition-source>
+		</property>
+	</bean>
 
+	<bean id="channelDecisionManager"
+		class="org.springframework.security.securechannel.ChannelDecisionManagerImpl">
+		<property name="channelProcessors">
+			<list>
+				<ref bean="secureChannelProcessor" />
+				<ref bean="insecureChannelProcessor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="secureChannelProcessor"
+		class="org.springframework.security.securechannel.SecureChannelProcessor" />
+	<bean id="insecureChannelProcessor"
+		class="org.springframework.security.securechannel.InsecureChannelProcessor" />
 
 	<!-- Customize Access Decision Manager(AffirmativeBased is the default one) -->
 	<beans:bean id="affirmativeBased" class="org.springframework.security.access.vote.AffirmativeBased">

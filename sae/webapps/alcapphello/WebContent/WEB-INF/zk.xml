@@ -29,9 +29,20 @@
 		<name>org.zkoss.util.logging.hierarchy.disabled</name>
 		<value>true</value>
 	</library-property>
+	<!-- ====================================================== -->
+	<!--    Using user defined Captcha Engine					-->
+	<!-- ====================================================== -->
 	<library-property>
         <name>org.zkoss.zul.captcha.engine.class</name>
         <value>org.alc.zk.ZkCaptchaEngine</value>
+	</library-property>
+	<!-- ====================================================== -->
+	<!--    Composite Component:  								-->
+	<!--    	Auto scan component definitions 				-->
+	<!-- ====================================================== -->
+	<library-property>
+    	<name>org.zkoss.composite.packageScan</name>
+    	<value>org.alc.zk.component</value>
 	</library-property>
 <!-- 	<library-property> -->
 <!--     <name>org.zkoss.zk.ui.metainfo.page.Loader.class</name> -->
@@ -47,18 +58,10 @@
 	<listener>
 		<listener-class>org.alc.zk.MyAppInit</listener-class>
 	</listener>
-	<listener>
+	<!-- <listener>
 		<listener-class>org.alc.zk.PageInitiator</listener-class>
-	</listener>
+	</listener> -->
 	
-	<!-- ====================================================== -->
-	<!--    Composite Component:  								-->
-	<!--    	Auto scan component definitions 				-->
-	<!-- ====================================================== -->
-	<library-property>
-    	<name>org.zkoss.composite.packageScan</name>
-    	<value>org.alc.zk.component</value>
-	</library-property>
 	
 	<!-- GAE/SAE doesn't allow user's thread -->
 	<client-config>
