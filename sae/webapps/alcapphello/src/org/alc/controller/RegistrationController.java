@@ -1,8 +1,13 @@
 package org.alc.controller;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.alc.dao.impl.UserDao;
+import org.alc.entity.Authority;
 import org.alc.entity.User;
 import org.alc.zk.component.TimedJump;
+import org.springframework.security.authentication.encoding.MessageDigestPasswordEncoder;
 import org.zkoss.util.resource.Labels;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.WrongValueException;
@@ -23,6 +28,9 @@ public class RegistrationController extends SelectorComposer<Component> {
 
 	@WireVariable
 	private UserDao userDao;
+	
+	@WireVariable
+	private MessageDigestPasswordEncoder passwordEncoder;
 	
 	@Wire("#regWin")
 	private Window regWin;
@@ -96,11 +104,16 @@ public class RegistrationController extends SelectorComposer<Component> {
 			throw new WrongValueException("Invalid register info");
 		} else {
 			User user = new User();
+			Set<Authority> authorities = new HashSet<Authority>();
+			Authority authority = new Authority();
+			authority.setRole("ROLE_USER");
+			authorities.add(authority);
 			user.setName(userName.getValue());
-			user.setPassword(password.getValue());
+			user.setPassword(passwordEncoder.encodePassword(password.getValue(), userName.getValue()));
+			user.setAuthorities(authorities);
 			user.setEmail(email.getValue());
 			user.setBirthday(birthday.getValue());
-			//userDao.persist(user);
+			userDao.persist(user);
 			
 			System.out.println(">>>>Debug:"+user.toString());
 			// Redirect
