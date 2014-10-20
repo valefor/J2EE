@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
  * Standard Spring Security API interfaces: GrantedAuthority
  *
  */
-public class AuthorityWrapper implements GrantedAuthority {
+public class AuthorityWrapper implements GrantedAuthority, Comparable{
 
 	/**
 	 * 
@@ -29,6 +29,12 @@ public class AuthorityWrapper implements GrantedAuthority {
 	@Override
 	public String toString() {
 		return auth.getRole();
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

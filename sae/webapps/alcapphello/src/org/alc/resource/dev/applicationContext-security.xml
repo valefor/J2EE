@@ -14,19 +14,19 @@
 	<http access-decision-manager-ref="affirmativeBased">
 		<!-- ZK AU reqeust -->
 		<intercept-url pattern="/zkau/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
-		
-		<!-- the login page: ANONYMOUSE ONLY -->		
+
+		<!-- the login page: ANONYMOUSE ONLY -->
 		<intercept-url pattern="/public/login.zul" access="ROLE_ANONYMOUS" />
 		<intercept-url pattern="/public/registration.zul"
 			access="ROLE_ANONYMOUS" />
-			<intercept-url pattern="/public/j_spring_security_check" access="ROLE_ANONYMOUS" />
+		<intercept-url pattern="/public/j_spring_security_check"
+			access="ROLE_ANONYMOUS" />
 		<!-- the login page:IS_AUTHENTICATED_ANONYMOUSLY -->
 		<!-- pages for anonymous access in an application -->
 		<intercept-url pattern="/index.zul" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<intercept-url pattern="/public/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 		<!-- secure pages -->
-		<intercept-url pattern="/**"
-			access="ROLE_USER" />
+		<intercept-url pattern="/**" access="ROLE_USER" />
 
 		<form-login login-page="/public/login.zul"
 			authentication-failure-url="/public/login.zul?login_error=1"
@@ -40,7 +40,7 @@
 			max-sessions="1" error-if-maximum-exceeded="true" /> </session-management> -->
 
 		<access-denied-handler error-page="/" />
-		
+
 
 	</http>
 
@@ -54,15 +54,16 @@
 	</authentication-manager>
 
 	<!-- Customize Access Decision Maker(AffirmativeBased is the default one) -->
-	<beans:bean id="affirmativeBased" class="org.springframework.security.access.vote.AffirmativeBased">
+	<beans:bean id="affirmativeBased"
+		class="org.springframework.security.access.vote.AffirmativeBased">
 		<beans:property name="decisionVoters">
 			<beans:list>
-				<beans:ref bean="roleVoter"/>
-				<beans:ref bean="authenticatedVoter"/>
+				<beans:ref bean="roleVoter" />
+				<beans:ref bean="authenticatedVoter" />
 			</beans:list>
 		</beans:property>
 	</beans:bean>
-	
+
 	<!-- Role Voter -->
 	<beans:bean id="roleVoter"
 		class="org.springframework.security.access.vote.RoleHierarchyVoter">
@@ -74,17 +75,20 @@
 			<beans:value>
 				ROLE_ROOT > ROLE_ADMIN
 				ROLE_ADMIN > ROLE_SUPER
-				ROLE_SUPER > ROLE_USER
+				ROLE_SUPER
+				> ROLE_USER
 			</beans:value>
 		</beans:property>
 	</beans:bean>
-	
+
 	<!-- Authenticated Voter -->
-	<beans:bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter"/>
-	
+	<beans:bean id="authenticatedVoter"
+		class="org.springframework.security.access.vote.AuthenticatedVoter" />
+
 	<!-- Customize Message Source -->
 	<beans:bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-		<beans:property name="basename" value="org/springframework/security/messages" />
+		<beans:property name="basename"
+			value="org/springframework/security/messages" />
 	</beans:bean>
 </beans:beans>

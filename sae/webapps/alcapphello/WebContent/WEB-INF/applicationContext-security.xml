@@ -154,7 +154,7 @@
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="myUserDetailsService">
 			<password-encoder ref="passwordEncoder">
-				<salt-source user-property="username"/>
+<!-- 				<salt-source user-property="username"/> -->
 			</password-encoder>
 		</authentication-provider>
 	</authentication-manager>
