@@ -85,13 +85,7 @@
 	
 	<!-- Spring Security -->
 	<import resource="applicationContext-security.xml"/>
+	
+	<import resource="classpath:META-INF/webservice.xml"/>
 
-
-	<import resource="classpath:META-INF/cxf/cxf.xml" />  
-    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />  
-    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />  
-      
-    <jaxws:endpoint id="greetingService"  
-        implementor="org.alc.ws.service.impl.GreetingServiceImpl"   
-        address="/GreetingService" />
 </beans>

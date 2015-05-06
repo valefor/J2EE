@@ -4,10 +4,10 @@ import java.util.Calendar;
 
 import javax.jws.WebService;
 
-import org.alc.ws.service.GreetingService;
+import org.alc.ws.service.Greeting;
 
-@WebService(endpointInterface = "org.alc.ws.service.GreetingService") 
-public class GreetingServiceImpl implements GreetingService {
+@WebService(endpointInterface = "org.alc.ws.service.Greeting", serviceName="Greeting") 
+public class GreetingImpl implements Greeting {
 
 	@Override
 	public String greeting(String userName) {
